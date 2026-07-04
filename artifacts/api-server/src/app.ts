@@ -45,8 +45,11 @@ app.use(
     origin: (origin, callback) => {
       // Allow same-origin requests (no Origin header) and explicitly allowed origins.
       // In development, allow all origins for ergonomics.
-      const isReplitDomain = /^https?:\/\/[^/]+\.replit\.(app|dev)/.test(origin ?? "");
-      if (!origin || process.env.NODE_ENV === "development" || isReplitDomain || allowedOrigins.some(o => origin.startsWith(o))) {
+      // Anchored at end to prevent suffix attacks (e.g. foo.replit.app.evil.com)
+      const isReplitDomain = /^https?:\/\/[a-z0-9][a-z0-9-]*\.replit\.(app|dev)(:\d+)?$/.test(origin ?? "");
+      // Exact match allowlist (startsWith would allow prefix spoofing)
+      const isAllowedOrigin = allowedOrigins.some(o => origin === o);
+      if (!origin || process.env.NODE_ENV === "development" || isReplitDomain || isAllowedOrigin) {
         callback(null, true);
       } else {
         callback(new Error(`CORS: origin ${origin} not allowed`));
