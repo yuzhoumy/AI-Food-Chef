@@ -24,18 +24,6 @@ function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): nu
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-/**
- * Apply a soft filter: only narrows the candidate list if at least `minResults`
- * restaurants survive. Otherwise the full list is returned unchanged.
- */
-function softFilter<T>(
-  list: T[],
-  predicate: (item: T) => boolean,
-  minResults = 2,
-): T[] {
-  const filtered = list.filter(predicate);
-  return filtered.length >= minResults ? filtered : list;
-}
 
 type RecommendationBody = {
   mood: string;
@@ -89,70 +77,67 @@ async function makeRecommendation(userId: string, body: RecommendationBody) {
     }
   }
 
-  // ── Step 2: distance filter (hard — based on real coordinates) ───────────
+  // ── Step 2: distance filter ──────────────────────────────────────────────
   if (body.userLat != null && body.userLng != null && body.distance != null) {
     const { userLat, userLng, distance } = body;
-    candidates = softFilter(
-      candidates,
-      (r) => {
-        if (r.latitude == null || r.longitude == null) return true; // keep ungeocoded
-        return haversineKm(userLat, userLng, r.latitude, r.longitude) <= distance;
-      },
-      3,
-    );
+    candidates = candidates.filter((r) => {
+      if (r.latitude == null || r.longitude == null) return true; // keep ungeocoded
+      return haversineKm(userLat, userLng, r.latitude, r.longitude) <= distance;
+    });
   }
 
-  // ── Step 3: soft filters — each only applies if ≥3 restaurants survive ──
+  // ── Step 3: preference filters ───────────────────────────────────────────
 
-  // Budget: user's maxBudget (numeric) must cover the restaurant's minimum price.
-  // A restaurant is "affordable" if you can get a meal for ≤ maxBudget.
+  // Budget: restaurant's minimum price must be within the user's cap
   if (body.maxBudget != null) {
     const cap = body.maxBudget;
-    candidates = softFilter(candidates, (r) => r.priceMin <= cap, 3);
+    candidates = candidates.filter((r) => r.priceMin <= cap);
   }
 
   // Cuisine: case-insensitive substring match against cuisines[] or cuisine field
   if (body.cuisine) {
     const needle = body.cuisine.toLowerCase();
-    candidates = softFilter(
-      candidates,
+    candidates = candidates.filter(
       (r) =>
         r.cuisine.toLowerCase().includes(needle) ||
         r.cuisines.some((c) => c.toLowerCase().includes(needle)),
-      3,
     );
   }
 
   // Dining occasion: e.g. "Date Night", "Family", "Casual"
   if (body.diningOccasion) {
     const occ = body.diningOccasion.toLowerCase();
-    candidates = softFilter(
-      candidates,
-      (r) => r.diningOccasion.some((d) => d.toLowerCase().includes(occ) || occ.includes(d.toLowerCase())),
-      3,
+    candidates = candidates.filter((r) =>
+      r.diningOccasion.some(
+        (d) => d.toLowerCase().includes(occ) || occ.includes(d.toLowerCase()),
+      ),
     );
   }
 
   // Atmosphere / vibe: case-insensitive
   if (body.atmosphere) {
     const vibe = body.atmosphere.toLowerCase();
-    candidates = softFilter(
-      candidates,
-      (r) =>
-        r.atmosphere.some(
-          (a) => a.toLowerCase().includes(vibe) || vibe.includes(a.toLowerCase()),
-        ),
-      3,
+    candidates = candidates.filter((r) =>
+      r.atmosphere.some(
+        (a) => a.toLowerCase().includes(vibe) || vibe.includes(a.toLowerCase()),
+      ),
     );
   }
 
   // Dining preference (dine-in / takeaway / delivery)
   if (body.diningPreference) {
-    candidates = softFilter(
-      candidates,
-      (r) => r.diningOptions.some((d) => d.toLowerCase() === body.diningPreference!.toLowerCase()),
-      3,
+    candidates = candidates.filter((r) =>
+      r.diningOptions.some(
+        (d) => d.toLowerCase() === body.diningPreference!.toLowerCase(),
+      ),
     );
+  }
+
+  // ── Step 4: bail out if nothing survived all filters ─────────────────────
+  if (candidates.length === 0) {
+    const err = new Error("There is no restaurant that suits your needs!") as Error & { code: string };
+    err.code = "NO_MATCH";
+    throw err;
   }
 
   // ── Step 4: sort by rating so AI sees the best options first ────────────
@@ -222,6 +207,15 @@ async function makeRecommendation(userId: string, body: RecommendationBody) {
   };
 }
 
+function handleRecommendationError(err: unknown, res: import("express").Response): void {
+  if (err instanceof Error && (err as any).code === "NO_MATCH") {
+    res.status(422).json({ error: err.message, code: "NO_MATCH" });
+    return;
+  }
+  const message = err instanceof Error ? err.message : "Failed to get recommendation";
+  res.status(500).json({ error: message });
+}
+
 router.post("/recommendations", requireAuth, async (req, res): Promise<void> => {
   const userId = (req as any).userId as string;
   const parsed = GetRecommendationBody.safeParse(req.body);
@@ -233,8 +227,7 @@ router.post("/recommendations", requireAuth, async (req, res): Promise<void> => 
     const result = await makeRecommendation(userId, parsed.data);
     res.json(result);
   } catch (err: unknown) {
-    const message = err instanceof Error ? err.message : "Failed to get recommendation";
-    res.status(422).json({ error: message });
+    handleRecommendationError(err, res);
   }
 });
 
@@ -249,8 +242,7 @@ router.post("/recommendations/shuffle", requireAuth, async (req, res): Promise<v
     const result = await makeRecommendation(userId, parsed.data);
     res.json(result);
   } catch (err: unknown) {
-    const message = err instanceof Error ? err.message : "Failed to get recommendation";
-    res.status(422).json({ error: message });
+    handleRecommendationError(err, res);
   }
 });
 

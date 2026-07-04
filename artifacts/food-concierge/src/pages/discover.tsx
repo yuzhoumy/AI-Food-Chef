@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
-import { useGetUserPreferences, useGetRecommendation } from "@workspace/api-client-react";
+import { useGetUserPreferences, useGetRecommendation, ApiError } from "@workspace/api-client-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Sparkles, Users, User, Heart, LocateFixed, MapPin, Loader2, AlertCircle } from "lucide-react";
 import { useAppState } from "@/store/app-state";
@@ -128,11 +128,24 @@ export default function Discover() {
           setLastResult(result);
           setLocation("/recommendation");
         },
-        onError: () => {
-          // Navigate to the recommendation page and show the "no match" empty state
-          setLastResult(null);
-          setNoResult(true);
-          setLocation("/recommendation");
+        onError: (err) => {
+          // Only show the "no match" empty state for an explicit NO_MATCH response
+          const isNoMatch =
+            err instanceof ApiError &&
+            err.status === 422 &&
+            (err.data as { code?: string } | null)?.code === "NO_MATCH";
+
+          if (isNoMatch) {
+            setLastResult(null);
+            setNoResult(true);
+            setLocation("/recommendation");
+          } else {
+            toast({
+              title: "Couldn't find a match",
+              description: "Something went wrong on our end. Please try again in a moment.",
+              variant: "destructive",
+            });
+          }
         },
       },
     );
