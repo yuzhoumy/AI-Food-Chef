@@ -172,7 +172,7 @@
   }
 
   body {
-    background: linear-gradient(145deg, hsl(192, 90%, 50%) 0%, hsl(202, 86%, 40%) 45%, hsl(218, 80%, 30%) 100%);
+    background: linear-gradient(145deg, hsl(190, 96%, 62%) 0%, hsl(200, 92%, 54%) 45%, hsl(220, 88%, 44%) 100%);
     background-attachment: fixed;
     @apply font-sans antialiased text-foreground selection:bg-primary/40 selection:text-primary-foreground;
   }
@@ -215,6 +215,10 @@
     opacity: 0.55;
     cursor: not-allowed;
   }
+  .btn-jelly:focus-visible {
+    outline: 3px solid hsl(var(--ring));
+    outline-offset: 3px;
+  }
 
   /* ── Glass surface (glassmorphism on gradient bg) ─────────────────────── */
   .glass {
@@ -223,9 +227,9 @@
     border: 1.5px solid rgba(255, 255, 255, 0.30);
   }
   .glass-dark {
-    background: rgba(10, 40, 80, 0.35);
+    background: rgba(10, 40, 80, 0.55);
     backdrop-filter: blur(12px);
-    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    border: 1.5px solid rgba(255, 255, 255, 0.20);
   }
 
   /* ── Watercolor card (sage green + cream) ─────────────────────────────── */
@@ -241,6 +245,11 @@
   }
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+
+  /* ── Text shadow for white copy on bright gradient backgrounds ─────────── */
+  .text-shadow {
+    text-shadow: 0 1px 3px rgba(0, 40, 80, 0.35);
   }
 
   /* ── Elevation helpers ────────────────────────────────────────────────── */

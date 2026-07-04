@@ -27,8 +27,8 @@ export default function Dashboard() {
     <Shell>
       <div className="flex flex-col gap-10 max-w-5xl mx-auto py-8 animate-in fade-in duration-500">
         
-        <div className="flex items-center gap-4">
-          <div className="w-16 h-16 rounded-full bg-primary/20 text-primary flex items-center justify-center overflow-hidden shrink-0 border-2 border-primary/30">
+        <div className="flex items-center gap-4 glass-dark rounded-3xl p-5">
+          <div className="w-16 h-16 rounded-full bg-white/20 text-white flex items-center justify-center overflow-hidden shrink-0 border-2 border-white/30">
             {user?.imageUrl ? (
               <img src={user.imageUrl} alt="Avatar" className="w-full h-full object-cover" />
             ) : (
@@ -39,7 +39,7 @@ export default function Dashboard() {
             <h1 className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
               Hello, {user?.firstName || "Foodie"}
             </h1>
-            <p className="text-muted-foreground font-medium">Here's your taste profile at a glance.</p>
+            <p className="text-white/90 font-medium">Here's your taste profile at a glance.</p>
           </div>
         </div>
 

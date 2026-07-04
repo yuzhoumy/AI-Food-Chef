@@ -1,0 +1,14 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "1j-o2mK2Z-L2V8dlchrRu"
+uri = "file://screenshots/history.jpg"
+type = "image"
+title = "Updated History page"
+
+[[outputs]]
+id = "-eZITPkNDR9EE4Wb2B2N5"
+uri = "file://screenshots/dashboard.jpg"
+type = "image"
+title = "Updated Dashboard page"

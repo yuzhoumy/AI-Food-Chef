@@ -12,12 +12,12 @@ export default function RecommendationHistory() {
     <Shell>
       <div className="flex flex-col gap-8 max-w-4xl mx-auto py-8">
         
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 glass-dark rounded-3xl p-6">
           <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight flex items-center gap-3">
             <History className="w-10 h-10 text-primary" />
             Your History
           </h1>
-          <p className="text-lg text-muted-foreground font-medium">
+          <p className="text-lg text-white/90 font-medium">
             Past moods and where we sent you.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function RecommendationHistory() {
             <MessageCircle className="w-16 h-16 text-muted-foreground/30 mb-4" />
             <h3 className="text-2xl font-bold text-foreground mb-2">No history yet</h3>
             <p className="text-muted-foreground font-medium mb-6">Ask for a recommendation and it will show up here.</p>
-            <Link href="/discover" className="bg-primary text-primary-foreground font-bold px-6 py-3 rounded-full hover:bg-primary/90 transition-colors">
+            <Link href="/discover" className="btn-jelly rounded-full px-6 py-3 font-bold">
               Make a request
             </Link>
           </div>
