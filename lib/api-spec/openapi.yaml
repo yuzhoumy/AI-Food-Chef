@@ -3,13 +3,23 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: AI Food Concierge API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: preferences
+    description: User preference management
+  - name: restaurants
+    description: Restaurant discovery
+  - name: recommendations
+    description: AI-powered restaurant recommendations
+  - name: favorites
+    description: User favorites management
+  - name: dashboard
+    description: User dashboard and statistics
 paths:
   /healthz:
     get:
@@ -24,6 +34,257 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /preferences:
+    get:
+      operationId: getUserPreferences
+      tags: [preferences]
+      summary: Get user preferences
+      responses:
+        "200":
+          description: User preferences
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserPreferences"
+        "401":
+          description: Unauthorized
+    put:
+      operationId: updatePreferences
+      tags: [preferences]
+      summary: Update user preferences
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PreferencesInput"
+      responses:
+        "200":
+          description: Updated preferences
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserPreferences"
+        "400":
+          description: Invalid input
+        "401":
+          description: Unauthorized
+
+  /restaurants:
+    get:
+      operationId: listRestaurants
+      tags: [restaurants]
+      summary: List restaurants with optional filters
+      parameters:
+        - name: cuisine
+          in: query
+          schema:
+            type: string
+        - name: budget
+          in: query
+          schema:
+            type: string
+        - name: atmosphere
+          in: query
+          schema:
+            type: string
+        - name: distance
+          in: query
+          schema:
+            type: number
+        - name: openNow
+          in: query
+          schema:
+            type: boolean
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: List of restaurants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Restaurant"
+
+  /restaurants/featured:
+    get:
+      operationId: getFeaturedRestaurants
+      tags: [restaurants]
+      summary: Get featured restaurants
+      responses:
+        "200":
+          description: Featured restaurants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Restaurant"
+
+  /restaurants/{id}:
+    get:
+      operationId: getRestaurant
+      tags: [restaurants]
+      summary: Get restaurant by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Restaurant details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Restaurant"
+        "404":
+          description: Not found
+
+  /recommendations:
+    post:
+      operationId: getRecommendation
+      tags: [recommendations]
+      summary: Get AI-powered restaurant recommendation based on mood and context
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RecommendationRequest"
+      responses:
+        "200":
+          description: Restaurant recommendation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RecommendationResult"
+        "401":
+          description: Unauthorized
+
+  /recommendations/shuffle:
+    post:
+      operationId: shuffleRecommendation
+      tags: [recommendations]
+      summary: Get a different restaurant recommendation (shuffle)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RecommendationRequest"
+      responses:
+        "200":
+          description: New restaurant recommendation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RecommendationResult"
+        "401":
+          description: Unauthorized
+
+  /recommendations/history:
+    get:
+      operationId: getRecommendationHistory
+      tags: [recommendations]
+      summary: Get user's recommendation history
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        "200":
+          description: Recommendation history
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/RecommendationHistory"
+        "401":
+          description: Unauthorized
+
+  /favorites:
+    get:
+      operationId: listFavorites
+      tags: [favorites]
+      summary: Get user's favorite restaurants
+      responses:
+        "200":
+          description: List of favorites
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/FavoriteRestaurant"
+        "401":
+          description: Unauthorized
+    post:
+      operationId: addFavorite
+      tags: [favorites]
+      summary: Add restaurant to favorites
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FavoriteInput"
+      responses:
+        "201":
+          description: Added to favorites
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FavoriteRestaurant"
+        "400":
+          description: Already favorited
+        "401":
+          description: Unauthorized
+
+  /favorites/{restaurantId}:
+    delete:
+      operationId: removeFavorite
+      tags: [favorites]
+      summary: Remove restaurant from favorites
+      parameters:
+        - name: restaurantId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Removed
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not found
+
+  /dashboard:
+    get:
+      operationId: getDashboard
+      tags: [dashboard]
+      summary: Get user dashboard statistics
+      responses:
+        "200":
+          description: Dashboard data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashboardData"
+        "401":
+          description: Unauthorized
+
 components:
   schemas:
     HealthStatus:
@@ -34,3 +295,288 @@ components:
       required:
         - status
 
+    UserPreferences:
+      type: object
+      properties:
+        id:
+          type: integer
+        userId:
+          type: string
+        isHalal:
+          type: ["boolean", "null"]
+        isVegetarian:
+          type: ["boolean", "null"]
+        spiceLevel:
+          type: ["string", "null"]
+          enum: [mild, medium, spicy, "null"]
+        allergies:
+          type: array
+          items:
+            type: string
+        favoriteCuisines:
+          type: array
+          items:
+            type: string
+        budgetRange:
+          type: ["string", "null"]
+        diningPreference:
+          type: ["string", "null"]
+          enum: [dine-in, takeaway, delivery, "null"]
+        frequentAreas:
+          type: array
+          items:
+            type: string
+        onboardingCompleted:
+          type: boolean
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+      required:
+        - id
+        - userId
+        - isHalal
+        - isVegetarian
+        - spiceLevel
+        - allergies
+        - favoriteCuisines
+        - budgetRange
+        - diningPreference
+        - frequentAreas
+        - onboardingCompleted
+        - createdAt
+        - updatedAt
+
+    PreferencesInput:
+      type: object
+      properties:
+        isHalal:
+          type: ["boolean", "null"]
+        isVegetarian:
+          type: ["boolean", "null"]
+        spiceLevel:
+          type: ["string", "null"]
+        allergies:
+          type: array
+          items:
+            type: string
+        favoriteCuisines:
+          type: array
+          items:
+            type: string
+        budgetRange:
+          type: ["string", "null"]
+        diningPreference:
+          type: ["string", "null"]
+        frequentAreas:
+          type: array
+          items:
+            type: string
+        onboardingCompleted:
+          type: boolean
+
+    Restaurant:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        cuisine:
+          type: string
+        description:
+          type: string
+        address:
+          type: string
+        area:
+          type: string
+        latitude:
+          type: ["number", "null"]
+        longitude:
+          type: ["number", "null"]
+        budgetRange:
+          type: string
+          enum: [RM5-RM15, RM15-RM30, RM30+]
+        atmosphere:
+          type: array
+          items:
+            type: string
+        diningOptions:
+          type: array
+          items:
+            type: string
+        openingHours:
+          type: string
+        isOpenNow:
+          type: boolean
+        rating:
+          type: number
+        reviewCount:
+          type: integer
+        photos:
+          type: array
+          items:
+            type: string
+        popularDishes:
+          type: array
+          items:
+            type: string
+        isHalal:
+          type: boolean
+        isVegetarianFriendly:
+          type: boolean
+        tags:
+          type: array
+          items:
+            type: string
+        isFeatured:
+          type: boolean
+        createdAt:
+          type: string
+      required:
+        - id
+        - name
+        - cuisine
+        - description
+        - address
+        - area
+        - latitude
+        - longitude
+        - budgetRange
+        - atmosphere
+        - diningOptions
+        - openingHours
+        - isOpenNow
+        - rating
+        - reviewCount
+        - photos
+        - popularDishes
+        - isHalal
+        - isVegetarianFriendly
+        - tags
+        - isFeatured
+        - createdAt
+
+    RecommendationRequest:
+      type: object
+      properties:
+        mood:
+          type: string
+          description: Natural language mood/craving description
+        budget:
+          type: ["string", "null"]
+        distance:
+          type: ["number", "null"]
+        cuisine:
+          type: ["string", "null"]
+        atmosphere:
+          type: ["string", "null"]
+        diningPreference:
+          type: ["string", "null"]
+        excludeRestaurantIds:
+          type: array
+          items:
+            type: integer
+          description: IDs of restaurants to exclude (for shuffle)
+      required:
+        - mood
+
+    RecommendationResult:
+      type: object
+      properties:
+        restaurant:
+          $ref: "#/components/schemas/Restaurant"
+        matchReason:
+          type: string
+          description: Why this restaurant was recommended
+        moodInterpretation:
+          type: string
+          description: How the AI interpreted the mood
+        score:
+          type: number
+        alternativeIds:
+          type: array
+          items:
+            type: integer
+      required:
+        - restaurant
+        - matchReason
+        - moodInterpretation
+        - score
+        - alternativeIds
+
+    RecommendationHistory:
+      type: object
+      properties:
+        id:
+          type: integer
+        restaurant:
+          $ref: "#/components/schemas/Restaurant"
+        mood:
+          type: string
+        matchReason:
+          type: string
+        createdAt:
+          type: string
+      required:
+        - id
+        - restaurant
+        - mood
+        - matchReason
+        - createdAt
+
+    FavoriteRestaurant:
+      type: object
+      properties:
+        id:
+          type: integer
+        restaurant:
+          $ref: "#/components/schemas/Restaurant"
+        createdAt:
+          type: string
+      required:
+        - id
+        - restaurant
+        - createdAt
+
+    FavoriteInput:
+      type: object
+      properties:
+        restaurantId:
+          type: integer
+      required:
+        - restaurantId
+
+    DashboardData:
+      type: object
+      properties:
+        totalFavorites:
+          type: integer
+        totalRecommendations:
+          type: integer
+        topCuisines:
+          type: array
+          items:
+            type: object
+            properties:
+              cuisine:
+                type: string
+              count:
+                type: integer
+            required:
+              - cuisine
+              - count
+        recentRecommendations:
+          type: array
+          items:
+            $ref: "#/components/schemas/RecommendationHistory"
+        favoriteRestaurants:
+          type: array
+          items:
+            $ref: "#/components/schemas/FavoriteRestaurant"
+      required:
+        - totalFavorites
+        - totalRecommendations
+        - topCuisines
+        - recentRecommendations
+        - favoriteRestaurants
