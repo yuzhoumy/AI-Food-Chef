@@ -1,23 +1,58 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
-import { useGetUserPreferences } from "@workspace/api-client-react";
+import { useGetUserPreferences, useGetRecommendation } from "@workspace/api-client-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Search, Sparkles, SlidersHorizontal, Navigation2, Flame } from "lucide-react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
-import { useGetRecommendation } from "@workspace/api-client-react";
+import { Sparkles, Users, User, Heart } from "lucide-react";
 import { useAppState } from "@/store/app-state";
 
-const discoverSchema = z.object({
-  mood: z.string().min(3, "Please tell us a bit more about how you're feeling."),
-  budget: z.string().nullable().optional(),
-  cuisine: z.string().nullable().optional(),
-  atmosphere: z.string().nullable().optional(),
-});
+// ── Types ──────────────────────────────────────────────────────────────────
 
-type DiscoverValues = z.infer<typeof discoverSchema>;
+type DiningOccasion = "solo" | "date" | "family";
+type Vibe = "Casual" | "Quiet" | "Romantic" | "Outdoor" | "Lively" | "Cozy";
+
+const DINING_OCCASIONS: { value: DiningOccasion; label: string; icon: React.ElementType }[] = [
+  { value: "solo", label: "Solo", icon: User },
+  { value: "date", label: "Date", icon: Heart },
+  { value: "family", label: "Family", icon: Users },
+];
+
+const VIBES: Vibe[] = ["Casual", "Quiet", "Romantic", "Outdoor", "Lively", "Cozy"];
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+
+function priceLabel(value: number): string {
+  if (value <= 15) return `Up to RM${value}`;
+  if (value <= 30) return `Up to RM${value}`;
+  return "RM30 and above";
+}
+
+function priceToBudget(value: number): string {
+  if (value <= 15) return "RM5-RM15";
+  if (value <= 30) return "RM15-RM30";
+  return "RM30+";
+}
+
+function distanceLabel(value: number): string {
+  return `Within ${value} km`;
+}
+
+// ── Section wrapper ────────────────────────────────────────────────────────
+
+function Section({ step, title, children }: { step: number; title: string; children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center gap-3">
+        <span className="w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shrink-0">
+          {step}
+        </span>
+        <h2 className="text-base font-bold text-foreground tracking-tight">{title}</h2>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+// ── Main component ─────────────────────────────────────────────────────────
 
 export default function Discover() {
   const [, setLocation] = useLocation();
@@ -25,15 +60,10 @@ export default function Discover() {
   const getRecommendation = useGetRecommendation();
   const { setCurrentRequest, setLastResult } = useAppState();
 
-  const form = useForm<DiscoverValues>({
-    resolver: zodResolver(discoverSchema),
-    defaultValues: {
-      mood: "",
-      budget: null,
-      cuisine: null,
-      atmosphere: null,
-    },
-  });
+  const [occasion, setOccasion] = useState<DiningOccasion | null>(null);
+  const [vibe, setVibe] = useState<Vibe | null>(null);
+  const [price, setPrice] = useState(30);
+  const [distance, setDistance] = useState(10);
 
   useEffect(() => {
     if (preferences && !preferences.onboardingCompleted) {
@@ -41,199 +71,184 @@ export default function Discover() {
     }
   }, [preferences, setLocation]);
 
-  const onSubmit = (data: DiscoverValues) => {
+  const handleSubmit = () => {
+    // Construct a natural mood string from selections so the AI has context
+    const parts: string[] = [];
+    if (occasion === "solo") parts.push("solo meal");
+    else if (occasion === "date") parts.push("date night");
+    else if (occasion === "family") parts.push("family outing");
+    if (vibe) parts.push(`${vibe.toLowerCase()} atmosphere`);
+    const mood = parts.length > 0
+      ? `Looking for a ${parts.join(", ")}`
+      : "Looking for a great meal";
+
     const requestData = {
-      mood: data.mood,
-      budget: data.budget || undefined,
-      cuisine: data.cuisine || undefined,
-      atmosphere: data.atmosphere || undefined,
+      mood,
+      budget: priceToBudget(price),
+      distance,
+      atmosphere: vibe ?? undefined,
+      diningPreference: undefined,
     };
-    
+
     setCurrentRequest(requestData);
-    
-    getRecommendation.mutate({ data: requestData }, {
-      onSuccess: (result) => {
-        setLastResult(result);
-        setLocation("/recommendation");
-      }
-    });
+    getRecommendation.mutate(
+      { data: requestData },
+      {
+        onSuccess: (result) => {
+          setLastResult(result);
+          setLocation("/recommendation");
+        },
+      },
+    );
   };
 
   if (prefsLoading) {
     return (
-      <div className="flex flex-col gap-6 w-full max-w-2xl mx-auto mt-12 animate-in fade-in duration-500">
-        <Skeleton className="h-12 w-3/4 rounded-xl" />
-        <Skeleton className="h-64 w-full rounded-3xl" />
-        <div className="flex gap-4">
-          <Skeleton className="h-10 w-24 rounded-full" />
-          <Skeleton className="h-10 w-24 rounded-full" />
-          <Skeleton className="h-10 w-24 rounded-full" />
-        </div>
+      <div className="flex flex-col gap-8 w-full max-w-xl mx-auto mt-12 animate-in fade-in duration-500">
+        <Skeleton className="h-10 w-2/3 rounded-xl" />
+        <Skeleton className="h-32 w-full rounded-3xl" />
+        <Skeleton className="h-32 w-full rounded-3xl" />
+        <Skeleton className="h-24 w-full rounded-3xl" />
+        <Skeleton className="h-24 w-full rounded-3xl" />
       </div>
     );
   }
 
-  const quickMoods = [
-    "I need spicy comfort food after a long day",
-    "A quiet cafe to read a book and chill",
-    "Casual dinner with friends, lots of sharing",
-    "Healthy, clean eating to reset",
-  ];
-
   return (
-    <div className="flex flex-col gap-8 w-full max-w-3xl mx-auto py-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      
-      <div className="flex flex-col gap-2">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight">
+    <div className="flex flex-col gap-10 w-full max-w-xl mx-auto py-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
+
+      {/* Header */}
+      <div className="flex flex-col gap-1">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
           What are you craving?
         </h1>
-        <p className="text-lg text-muted-foreground font-medium">
-          Describe your vibe. Be as specific or as weird as you want.
+        <p className="text-muted-foreground font-medium">
+          Answer a few quick questions and we'll find your perfect match.
         </p>
       </div>
 
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-8">
-          
-          {/* Main Hero Input */}
-          <FormField
-            control={form.control}
-            name="mood"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-primary/5 rounded-3xl blur-xl transition-all group-focus-within:bg-primary/20"></div>
-                    <div className="relative bg-card border-2 border-border group-focus-within:border-primary/50 rounded-3xl overflow-hidden shadow-sm transition-all duration-300">
-                      <textarea
-                        {...field}
-                        placeholder="e.g. I'm stressed from work and need some really good nasi lemak with extra sambal..."
-                        className="w-full bg-transparent p-6 md:p-8 text-xl md:text-2xl font-medium text-foreground placeholder:text-muted-foreground outline-none resize-none min-h-[160px]"
-                        data-testid="input-mood"
-                      />
-                      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6">
-                        <button
-                          type="submit"
-                          disabled={getRecommendation.isPending}
-                          className="bg-primary text-primary-foreground font-bold px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all flex items-center gap-2 hover:-translate-y-1 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed"
-                          data-testid="button-submit-mood"
-                        >
-                          {getRecommendation.isPending ? (
-                            <>
-                              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                              <span>Finding match...</span>
-                            </>
-                          ) : (
-                            <>
-                              <Sparkles className="w-5 h-5" />
-                              <span>Find My Match</span>
-                            </>
-                          )}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </FormControl>
-                <FormMessage className="text-destructive font-medium ml-4 mt-2" />
-              </FormItem>
-            )}
+      {/* Q1 — Dining occasion */}
+      <Section step={1} title="Dining occasion">
+        <div className="flex gap-3">
+          {DINING_OCCASIONS.map(({ value, label, icon: Icon }) => {
+            const active = occasion === value;
+            return (
+              <button
+                key={value}
+                type="button"
+                data-testid={`occasion-${value}`}
+                onClick={() => setOccasion(active ? null : value)}
+                className={[
+                  "flex flex-1 flex-col items-center gap-2 py-5 rounded-2xl border-2 font-semibold text-sm transition-all",
+                  active
+                    ? "border-primary bg-primary/8 text-primary"
+                    : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground",
+                ].join(" ")}
+              >
+                <Icon className={["w-6 h-6", active ? "text-primary" : "text-muted-foreground"].join(" ")} strokeWidth={1.8} />
+                {label}
+              </button>
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* Q2 — Vibe */}
+      <Section step={2} title="Vibe">
+        <div className="flex flex-wrap gap-2">
+          {VIBES.map((v) => {
+            const active = vibe === v;
+            return (
+              <button
+                key={v}
+                type="button"
+                data-testid={`vibe-${v.toLowerCase()}`}
+                onClick={() => setVibe(active ? null : v)}
+                className={[
+                  "px-5 py-2.5 rounded-full border-2 text-sm font-semibold transition-all",
+                  active
+                    ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                    : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground",
+                ].join(" ")}
+              >
+                {v}
+              </button>
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* Q3 — Price range */}
+      <Section step={3} title="Price range">
+        <div className="bg-card border border-border rounded-2xl px-6 py-5 flex flex-col gap-4">
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-muted-foreground">Max budget per person</span>
+            <span className="text-sm font-bold text-primary">{priceLabel(price)}</span>
+          </div>
+          <input
+            type="range"
+            min={10}
+            max={60}
+            step={5}
+            value={price}
+            onChange={(e) => setPrice(Number(e.target.value))}
+            data-testid="slider-price"
+            className="w-full h-2 rounded-full accent-primary cursor-pointer"
           />
-
-          {/* Quick Moods */}
-          <div className="flex flex-col gap-3">
-            <span className="text-sm font-bold text-muted-foreground uppercase tracking-wider">Try these out</span>
-            <div className="flex flex-wrap gap-2">
-              {quickMoods.map((mood) => (
-                <button
-                  key={mood}
-                  type="button"
-                  onClick={() => form.setValue("mood", mood)}
-                  className="bg-card border border-border hover:border-primary/50 text-foreground text-sm font-medium px-4 py-2 rounded-xl transition-colors text-left"
-                >
-                  {mood}
-                </button>
-              ))}
-            </div>
+          <div className="flex justify-between text-xs text-muted-foreground font-medium">
+            <span>RM10</span>
+            <span>RM30</span>
+            <span>RM60+</span>
           </div>
+        </div>
+      </Section>
 
-          {/* Context Filters */}
-          <div className="bg-card border border-border rounded-3xl p-6 shadow-sm flex flex-col gap-6">
-            <div className="flex items-center gap-2 text-foreground font-bold pb-4 border-b border-border">
-              <SlidersHorizontal className="w-5 h-5 text-primary" />
-              <h3>Refine your context (Optional)</h3>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              <FormField
-                control={form.control}
-                name="budget"
-                render={({ field }) => (
-                  <FormItem className="flex flex-col gap-2">
-                    <label className="text-sm font-bold text-muted-foreground uppercase tracking-wider">Budget</label>
-                    <select
-                      {...field}
-                      value={field.value || ""}
-                      onChange={(e) => field.onChange(e.target.value || null)}
-                      className="bg-muted border border-border text-foreground text-sm font-medium px-4 py-3 rounded-xl outline-none focus:border-primary/50"
-                    >
-                      <option value="">Any Budget</option>
-                      <option value="RM5-RM15">RM5 - RM15</option>
-                      <option value="RM15-RM30">RM15 - RM30</option>
-                      <option value="RM30+">RM30+</option>
-                    </select>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="cuisine"
-                render={({ field }) => (
-                  <FormItem className="flex flex-col gap-2">
-                    <label className="text-sm font-bold text-muted-foreground uppercase tracking-wider">Cuisine Focus</label>
-                    <select
-                      {...field}
-                      value={field.value || ""}
-                      onChange={(e) => field.onChange(e.target.value || null)}
-                      className="bg-muted border border-border text-foreground text-sm font-medium px-4 py-3 rounded-xl outline-none focus:border-primary/50"
-                    >
-                      <option value="">Anything goes</option>
-                      <option value="Malaysian">Malaysian</option>
-                      <option value="Japanese">Japanese</option>
-                      <option value="Korean">Korean</option>
-                      <option value="Western">Western</option>
-                      <option value="Cafe">Cafe</option>
-                    </select>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="atmosphere"
-                render={({ field }) => (
-                  <FormItem className="flex flex-col gap-2">
-                    <label className="text-sm font-bold text-muted-foreground uppercase tracking-wider">Vibe</label>
-                    <select
-                      {...field}
-                      value={field.value || ""}
-                      onChange={(e) => field.onChange(e.target.value || null)}
-                      className="bg-muted border border-border text-foreground text-sm font-medium px-4 py-3 rounded-xl outline-none focus:border-primary/50"
-                    >
-                      <option value="">Don't care</option>
-                      <option value="Quiet">Quiet</option>
-                      <option value="Lively">Lively</option>
-                      <option value="Cozy">Cozy</option>
-                      <option value="Romantic">Romantic</option>
-                    </select>
-                  </FormItem>
-                )}
-              />
-            </div>
+      {/* Q4 — Maximum distance */}
+      <Section step={4} title="Maximum distance">
+        <div className="bg-card border border-border rounded-2xl px-6 py-5 flex flex-col gap-4">
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-muted-foreground">How far are you willing to go?</span>
+            <span className="text-sm font-bold text-primary">{distanceLabel(distance)}</span>
           </div>
+          <input
+            type="range"
+            min={1}
+            max={50}
+            step={1}
+            value={distance}
+            onChange={(e) => setDistance(Number(e.target.value))}
+            data-testid="slider-distance"
+            className="w-full h-2 rounded-full accent-primary cursor-pointer"
+          />
+          <div className="flex justify-between text-xs text-muted-foreground font-medium">
+            <span>1 km</span>
+            <span>25 km</span>
+            <span>50 km</span>
+          </div>
+        </div>
+      </Section>
 
-        </form>
-      </Form>
+      {/* Submit */}
+      <button
+        type="button"
+        onClick={handleSubmit}
+        disabled={getRecommendation.isPending}
+        data-testid="button-find-match"
+        className="w-full bg-primary text-primary-foreground font-bold text-base py-4 rounded-2xl shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {getRecommendation.isPending ? (
+          <>
+            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            Finding your match...
+          </>
+        ) : (
+          <>
+            <Sparkles className="w-5 h-5" />
+            Find My Match
+          </>
+        )}
+      </button>
+
     </div>
   );
 }
