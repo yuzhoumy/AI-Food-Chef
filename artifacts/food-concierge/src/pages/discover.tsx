@@ -70,7 +70,7 @@ export default function Discover() {
   const [, setLocation] = useLocation();
   const { data: preferences, isLoading: prefsLoading } = useGetUserPreferences();
   const getRecommendation = useGetRecommendation();
-  const { setCurrentRequest, setLastResult } = useAppState();
+  const { setCurrentRequest, setLastResult, setNoResult } = useAppState();
   const { toast } = useToast();
   const { location: userLocation, request: requestLocation } = useUserLocation();
 
@@ -119,19 +119,20 @@ export default function Discover() {
     };
 
     setCurrentRequest({ ...requestData, distance: hasLocation ? distance : undefined });
+    setNoResult(false);
     getRecommendation.mutate(
       { data: requestData },
       {
         onSuccess: (result) => {
+          setNoResult(false);
           setLastResult(result);
           setLocation("/recommendation");
         },
         onError: () => {
-          toast({
-            title: "Couldn't find a match",
-            description: "Something went wrong on our end. Please try again in a moment.",
-            variant: "destructive",
-          });
+          // Navigate to the recommendation page and show the "no match" empty state
+          setLastResult(null);
+          setNoResult(true);
+          setLocation("/recommendation");
         },
       },
     );

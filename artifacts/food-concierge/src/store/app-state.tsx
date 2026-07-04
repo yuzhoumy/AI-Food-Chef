@@ -6,6 +6,8 @@ interface AppStateContextType {
   setCurrentRequest: (req: RecommendationRequest | null) => void;
   lastResult: RecommendationResult | null;
   setLastResult: (res: RecommendationResult | null) => void;
+  noResult: boolean;
+  setNoResult: (v: boolean) => void;
 }
 
 const AppStateContext = createContext<AppStateContextType | undefined>(undefined);
@@ -13,6 +15,7 @@ const AppStateContext = createContext<AppStateContextType | undefined>(undefined
 export function AppStateProvider({ children }: { children: ReactNode }) {
   const [currentRequest, setCurrentRequest] = useState<RecommendationRequest | null>(null);
   const [lastResult, setLastResult] = useState<RecommendationResult | null>(null);
+  const [noResult, setNoResult] = useState(false);
 
   return (
     <AppStateContext.Provider
@@ -21,6 +24,8 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
         setCurrentRequest,
         lastResult,
         setLastResult,
+        noResult,
+        setNoResult,
       }}
     >
       {children}

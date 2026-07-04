@@ -3,22 +3,68 @@ import { useLocation, Link } from "wouter";
 import { useAppState } from "@/store/app-state";
 import { useShuffleRecommendation } from "@workspace/api-client-react";
 import { Shell } from "@/components/shell";
-import { MapPin, Navigation, Shuffle, Star, MessageCircle, Utensils, Heart, Sparkles } from "lucide-react";
+import { MapPin, Navigation, Shuffle, Star, MessageCircle, Utensils, SearchX, ArrowLeft, Sparkles } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Recommendation() {
   const [, setLocation] = useLocation();
-  const { currentRequest, lastResult, setLastResult } = useAppState();
+  const { currentRequest, lastResult, setLastResult, noResult } = useAppState();
   const shuffleMutation = useShuffleRecommendation();
   const { toast } = useToast();
 
   useEffect(() => {
-    if (!lastResult && !currentRequest) {
+    if (!lastResult && !currentRequest && !noResult) {
       setLocation("/discover");
     }
-  }, [lastResult, currentRequest, setLocation]);
+  }, [lastResult, currentRequest, noResult, setLocation]);
 
+  // ── No-match empty state ────────────────────────────────────────────────
+  if (noResult) {
+    return (
+      <Shell>
+        <div className="flex flex-col items-center justify-center gap-8 max-w-lg mx-auto py-16 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
+          {/* Icon */}
+          <div
+            className="w-24 h-24 rounded-full flex items-center justify-center shadow-xl"
+            style={{
+              background: "linear-gradient(135deg, hsl(38,55%,96%) 0%, hsl(100,18%,90%) 100%)",
+              border: "2.5px solid hsl(100,22%,74%)",
+            }}
+          >
+            <SearchX className="w-12 h-12" style={{ color: "hsl(220,45%,40%)" }} />
+          </div>
+
+          {/* Message */}
+          <div className="flex flex-col gap-3">
+            <h1 className="font-display text-3xl md:text-4xl text-white drop-shadow-lg leading-tight">
+              There is no restaurant that suits your needs!
+            </h1>
+            <p className="text-white/70 font-medium text-base leading-relaxed">
+              Try relaxing your filters — a wider budget range, different cuisine, or a larger distance radius often opens up great options.
+            </p>
+          </div>
+
+          {/* CTA */}
+          <Link
+            href="/discover"
+            className="flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-base transition-all hover:-translate-y-0.5"
+            style={{
+              background: "linear-gradient(to bottom, #FFEF4D, #FFD800)",
+              boxShadow: "0 5px 0 #B89200, 0 8px 16px rgba(0,0,0,0.22)",
+              color: "hsl(220,45%,12%)",
+              border: "2.5px solid rgba(255,255,255,0.75)",
+            }}
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Adjust my search
+          </Link>
+        </div>
+      </Shell>
+    );
+  }
+
+  // ── Loading skeleton while request is in-flight ─────────────────────────
   if (!lastResult) {
     return (
       <Shell>
