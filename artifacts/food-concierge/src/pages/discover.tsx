@@ -7,6 +7,7 @@ import { useAppState } from "@/store/app-state";
 import { Shell } from "@/components/shell";
 import { useToast } from "@/hooks/use-toast";
 import { useUserLocation } from "@/hooks/use-user-location";
+import { LocationMap } from "@/components/location-map";
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
@@ -377,7 +378,17 @@ export default function Discover() {
               )}
             </div>
 
-            {/* Slider — only active when location is granted */}
+            {/* OSM map — appears after location is granted, pin centred on user */}
+            {userLocation.status === "granted" && (
+              <LocationMap
+                lat={userLocation.lat}
+                lng={userLocation.lng}
+                height="200px"
+                zoom={15}
+              />
+            )}
+
+            {/* Distance slider — only active when location is granted */}
             <div className={hasLocation ? "" : "opacity-40 pointer-events-none select-none"}>
               <div className="flex items-center justify-between mb-3">
                 <span className="text-sm text-muted-foreground font-medium">How far are you willing to go?</span>
