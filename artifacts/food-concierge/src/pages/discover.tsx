@@ -18,6 +18,11 @@ const DINING_OCCASIONS: { value: DiningOccasion; label: string; icon: React.Elem
 
 const VIBES: Vibe[] = ["Casual", "Quiet", "Romantic", "Outdoor", "Lively", "Cozy"];
 
+const CUISINES = [
+  "Malay", "Chinese", "Indian", "Mamak", "Japanese",
+  "Korean", "Thai", "Western", "Italian", "Middle Eastern",
+];
+
 // ── Helpers ────────────────────────────────────────────────────────────────
 
 function priceLabel(value: number): string {
@@ -62,6 +67,7 @@ export default function Discover() {
 
   const [occasion, setOccasion] = useState<DiningOccasion | null>(null);
   const [vibe, setVibe] = useState<Vibe | null>(null);
+  const [cuisine, setCuisine] = useState<string | null>(null);
   const [price, setPrice] = useState(30);
   const [distance, setDistance] = useState(10);
 
@@ -78,6 +84,7 @@ export default function Discover() {
     else if (occasion === "date") parts.push("date night");
     else if (occasion === "family") parts.push("family outing");
     if (vibe) parts.push(`${vibe.toLowerCase()} atmosphere`);
+    if (cuisine) parts.push(`${cuisine} cuisine`);
     const mood = parts.length > 0
       ? `Looking for a ${parts.join(", ")}`
       : "Looking for a great meal";
@@ -178,8 +185,33 @@ export default function Discover() {
         </div>
       </Section>
 
-      {/* Q3 — Price range */}
-      <Section step={3} title="Price range">
+      {/* Q3 — Cuisine (optional) */}
+      <Section step={3} title="Any cuisine in mind? — optional">
+        <div className="flex flex-wrap gap-2">
+          {CUISINES.map((c) => {
+            const active = cuisine === c;
+            return (
+              <button
+                key={c}
+                type="button"
+                data-testid={`cuisine-${c.toLowerCase().replace(/\s+/g, "-")}`}
+                onClick={() => setCuisine(active ? null : c)}
+                className={[
+                  "px-5 py-2.5 rounded-full border-2 text-sm font-semibold transition-all",
+                  active
+                    ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                    : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground",
+                ].join(" ")}
+              >
+                {c}
+              </button>
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* Q4 — Price range */}
+      <Section step={4} title="Price range">
         <div className="bg-card border border-border rounded-2xl px-6 py-5 flex flex-col gap-4">
           <div className="flex items-center justify-between">
             <span className="text-sm text-muted-foreground">Max budget per person</span>
@@ -203,8 +235,8 @@ export default function Discover() {
         </div>
       </Section>
 
-      {/* Q4 — Maximum distance */}
-      <Section step={4} title="Maximum distance">
+      {/* Q5 — Maximum distance */}
+      <Section step={5} title="Maximum distance">
         <div className="bg-card border border-border rounded-2xl px-6 py-5 flex flex-col gap-4">
           <div className="flex items-center justify-between">
             <span className="text-sm text-muted-foreground">How far are you willing to go?</span>
