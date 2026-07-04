@@ -1,0 +1,703 @@
+Product Requirements Document (PRD)
+Project Name
+AI Food Concierge – Smart Food Decision Web App
+
+1. Product Overview
+Product Vision
+Help people decide what to eat in under 30 seconds by replacing endless restaurant browsing with intelligent, personalized recommendations based on mood, preferences, and context.
+Product Mission
+Reduce decision fatigue by acting as an AI food concierge that understands users before recommending where and what they should eat.
+
+2. Problem Statement
+The Problem
+Many people struggle with one simple daily question:
+"What should I eat today?"
+Although platforms like Google Maps, Foodpanda, and GrabFood provide thousands of restaurant options, they require users to manually compare restaurants, menus, ratings, and reviews.
+Instead of making the decision easier, the abundance of choices creates choice overload, leading to decision fatigue.
+As a result, users often:
+    • 
+Spend 10–20 minutes deciding what to eat
+    • 
+    • 
+Repeatedly choose the same meals
+    • 
+    • 
+Buy unhealthy fast food because it's easier
+    • 
+    • 
+Skip meals altogether
+    • 
+    • 
+Experience frustration when eating with friends because nobody can decide
+    • 
+Current food discovery platforms answer:
+"What restaurants are nearby?"
+They do not answer:
+"What do I actually feel like eating right now?"
+Our product bridges this gap.
+
+3. Goals
+Business Goals
+    • 
+Become the fastest food decision platform.
+    • 
+    • 
+Increase user retention through personalized recommendations.
+    • 
+    • 
+Encourage restaurant discovery.
+    • 
+    • 
+Build an AI-powered recommendation engine that improves over time.
+    • 
+User Goals
+Users should be able to:
+    • 
+Decide what to eat in less than 30 seconds.
+    • 
+    • 
+Discover restaurants that match their mood.
+    • 
+    • 
+Avoid scrolling through endless restaurant lists.
+    • 
+    • 
+Receive recommendations that match their dietary needs and budget.
+    • 
+
+4. Target Users
+Primary Users
+1. Work-Life Balancers
+Busy professionals who have limited time during lunch or dinner.
+Needs
+    • 
+Fast recommendations
+    • 
+    • 
+Nearby restaurants
+    • 
+    • 
+Budget-friendly options
+    • 
+    • 
+Minimal decision-making
+    • 
+Pain Points
+    • 
+Too many choices
+    • 
+    • 
+Limited lunch break
+    • 
+    • 
+Always eating the same food
+    • 
+
+2. Social Planners
+People organizing meals with friends, family, or coworkers.
+Needs
+    • 
+Restaurants everyone can enjoy
+    • 
+    • 
+Group-friendly places
+    • 
+    • 
+Easy decision process
+    • 
+Pain Points
+    • 
+Endless "Where should we eat?"
+    • 
+    • 
+Different food preferences
+    • 
+    • 
+Difficult to reach consensus
+    • 
+
+3. Context-Driven Eaters
+Users whose choices depend on specific circumstances.
+Examples
+    • 
+Vegetarian
+    • 
+    • 
+Halal only
+    • 
+    • 
+Keto
+    • 
+    • 
+Allergies
+    • 
+    • 
+Limited budget
+    • 
+    • 
+Quiet environment
+    • 
+Pain Points
+    • 
+Existing apps require too much filtering
+    • 
+    • 
+Irrelevant restaurant suggestions
+    • 
+    • 
+Wasted time browsing
+    • 
+
+5. Value Proposition
+Unlike Google Maps or food delivery apps that simply list restaurants, our app understands how users feel and what they need before recommending a restaurant.
+The recommendation is based on:
+    • 
+Mood
+    • 
+    • 
+Dietary preferences
+    • 
+    • 
+Budget
+    • 
+    • 
+Distance
+    • 
+    • 
+Weather
+    • 
+    • 
+Time
+    • 
+    • 
+Previous eating history
+    • 
+    • 
+Restaurant atmosphere
+    • 
+
+6. Key Features
+Feature 1: User Registration & Preference Survey
+Description
+New users complete a short onboarding survey.
+Permanent Preferences
+    • 
+Halal / Non-Halal
+    • 
+    • 
+Vegetarian / Non-Vegetarian
+    • 
+    • 
+Preferred spice level
+    • 
+    • 
+Food allergies
+    • 
+    • 
+Favorite cuisines
+    • 
+    • 
+Preferred budget
+    • 
+    • 
+Dining preference
+    • 
+    • 
+Frequently visited areas
+    • 
+Benefits
+    • 
+Personalized recommendations
+    • 
+    • 
+Better AI accuracy
+    • 
+    • 
+Less repeated filtering
+    • 
+
+Feature 2: Smart Context Filtering
+Description
+Instead of searching manually, users select or enter their current context.
+Available Filters
+Budget
+    • 
+RM5–RM15
+    • 
+    • 
+RM15–RM30
+    • 
+    • 
+RM30+
+    • 
+Distance
+    • 
+1 km
+    • 
+    • 
+3 km
+    • 
+    • 
+5 km
+    • 
+    • 
+10 km
+    • 
+Cuisine
+    • 
+Malaysian
+    • 
+    • 
+Chinese
+    • 
+    • 
+Japanese
+    • 
+    • 
+Korean
+    • 
+    • 
+Indian
+    • 
+    • 
+Western
+    • 
+    • 
+Fast Food
+    • 
+    • 
+Dessert
+    • 
+    • 
+Café
+    • 
+Dining Preference
+    • 
+Dine-in
+    • 
+    • 
+Takeaway
+    • 
+    • 
+Delivery
+    • 
+Restaurant Atmosphere
+    • 
+Quiet
+    • 
+    • 
+Family
+    • 
+    • 
+Romantic
+    • 
+    • 
+Casual
+    • 
+    • 
+Outdoor
+    • 
+
+Feature 3: Mood-Based Recommendation
+Description
+Users can describe their feelings naturally.
+Examples
+    • 
+"I'm stressed."
+    • 
+    • 
+"I want comfort food."
+    • 
+    • 
+"I feel like eating something spicy."
+    • 
+    • 
+"I want something refreshing."
+    • 
+    • 
+"I'm celebrating."
+    • 
+    • 
+"I'm craving noodles."
+    • 
+AI interprets the input and recommends suitable restaurants.
+
+Feature 4: One-Tap Decision
+Description
+Instead of displaying 100 restaurants, the app recommends:
+Today's Best Match
+The recommendation considers:
+    • 
+User preferences
+    • 
+    • 
+Mood
+    • 
+    • 
+Time
+    • 
+    • 
+Weather
+    • 
+    • 
+Budget
+    • 
+    • 
+Previous choices
+    • 
+    • 
+Location
+    • 
+If users dislike the recommendation:
+    • 
+Shuffle Again
+    • 
+    • 
+Show Top 5
+    • 
+    • 
+Change Filters
+    • 
+
+Feature 5: AI Recommendation Engine
+The recommendation score combines:
+    • 
+Mood similarity
+    • 
+    • 
+Cuisine preference
+    • 
+    • 
+Distance
+    • 
+    • 
+Budget
+    • 
+    • 
+Restaurant rating
+    • 
+    • 
+Opening hours
+    • 
+    • 
+Previous visits
+    • 
+    • 
+Weather suitability
+    • 
+    • 
+Time of day
+    • 
+Example
+Raining
+↓
+Suggest:
+    • 
+Ramen
+    • 
+    • 
+Hotpot
+    • 
+    • 
+Soup
+    • 
+Sunny afternoon
+↓
+Suggest:
+    • 
+Ice cream
+    • 
+    • 
+Café
+    • 
+    • 
+Smoothies
+    • 
+
+Feature 6: Restaurant Details
+Each recommendation includes:
+    • 
+Restaurant name
+    • 
+    • 
+Photos
+    • 
+    • 
+Cuisine
+    • 
+    • 
+Estimated price
+    • 
+    • 
+Distance
+    • 
+    • 
+Opening hours
+    • 
+    • 
+Google rating
+    • 
+    • 
+Popular dishes
+    • 
+    • 
+Atmosphere tags
+    • 
+Buttons
+    • 
+Navigate
+    • 
+    • 
+Save
+    • 
+    • 
+Share
+    • 
+    • 
+View Menu
+    • 
+
+Feature 7: Navigation
+After selection, users can:
+    • 
+Open Google Maps
+    • 
+    • 
+View estimated travel time
+    • 
+    • 
+Walking directions
+    • 
+    • 
+Driving directions
+    • 
+
+Feature 8: Favorites & History
+Users can:
+    • 
+Save favorite restaurants
+    • 
+    • 
+View previous visits
+    • 
+    • 
+Reorder past recommendations
+    • 
+The AI learns from these behaviors.
+
+7. User Flow
+First-Time User
+Register
+↓
+Complete Preference Survey
+↓
+Set Dietary Preferences
+↓
+Home Screen
+↓
+Enter Mood
+↓
+Apply Filters
+↓
+AI Recommendation
+↓
+Restaurant Details
+↓
+Navigate
+
+Returning User
+Open App
+↓
+Location Detected
+↓
+Mood Prompt
+↓
+AI Recommendation
+↓
+Navigate
+
+8. Functional Requirements
+User Management
+    • 
+Register account
+    • 
+    • 
+Login
+    • 
+    • 
+Logout
+    • 
+    • 
+Edit profile
+    • 
+    • 
+Update preferences
+    • 
+Recommendation Engine
+    • 
+Process mood input
+    • 
+    • 
+Apply filters
+    • 
+    • 
+Recommend restaurants
+    • 
+    • 
+Learn from user history
+    • 
+    • 
+Shuffle recommendations
+    • 
+Restaurant Search
+    • 
+Nearby restaurants
+    • 
+    • 
+Cuisine search
+    • 
+    • 
+Budget search
+    • 
+    • 
+Distance search
+    • 
+    • 
+Open-now filter
+    • 
+Navigation
+    • 
+Open Google Maps
+    • 
+    • 
+Route planning
+    • 
+    • 
+Travel time estimation
+    • 
+User Preferences
+Store:
+    • 
+Allergies
+    • 
+    • 
+Halal preference
+    • 
+    • 
+Vegetarian preference
+    • 
+    • 
+Spice level
+    • 
+    • 
+Budget
+    • 
+    • 
+Favorite cuisines
+    • 
+
+9. Non-Functional Requirements
+Performance
+    • 
+Recommendation generated within 3 seconds
+    • 
+    • 
+Page loading below 2 seconds
+    • 
+Availability
+    • 
+99.9% uptime
+    • 
+Security
+    • 
+Secure authentication
+    • 
+    • 
+Encrypted user data
+    • 
+    • 
+GDPR/PDPA compliant
+    • 
+Scalability
+Support:
+    • 
+Thousands of restaurants
+    • 
+    • 
+Thousands of concurrent users
+    • 
+Usability
+    • 
+Mobile-first responsive design
+    • 
+    • 
+Simple interface
+    • 
+    • 
+One-handed navigation
+    • 
+    • 
+Recommendation within three taps
+    • 
+
+10. Success Metrics (KPIs)
+KPI
+Target
+Time to first recommendation
+< 30 seconds
+Recommendation generation
+< 3 seconds
+User satisfaction rating
+> 4.5/5
+Weekly active users
+60%+ retention
+Recommendation acceptance rate
+> 70%
+Average decision time reduction
+50%
+
+11. Future Enhancements
+Phase 2
+    • 
+Group decision mode (vote with friends)
+    • 
+    • 
+AI voice assistant
+    • 
+    • 
+Restaurant reservation integration
+    • 
+    • 
+Meal planning calendar
+    • 
+    • 
+Nutrition tracking
+    • 
+    • 
+Loyalty rewards
+    • 
+    • 
+Food challenge mode ("Try Something New")
+    • 
+    • 
+Personalized food trends
+    • 
+Phase 3
+    • 
+Integration with GrabFood and Foodpanda
+    • 
+    • 
+Wearable device integration
+    • 
+    • 
+AI-powered image recognition for food cravings
+    • 
+    • 
+Smart notifications based on meal habits
+    • 
+    • 
+Family profiles and shared preferences
+    • 
+
+12. Unique Selling Proposition (USP)
+Traditional food apps focus on searching for restaurants, requiring users to manually browse and compare options. Our AI Food Concierge focuses on making the decision. By combining mood analysis, personal preferences, contextual filters, and AI-driven recommendations, the app eliminates decision fatigue and helps users confidently choose what and where to eat in seconds, making the dining experience faster, more personalized, and less overwhelming.

@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "AI Food Concierge"
+version = "1.0.0"
+id = "artifacts/food-concierge"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22008
+
+[services.development]
+run = "pnpm --filter @workspace/food-concierge run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/food-concierge", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/food-concierge/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22008"
+BASE_PATH = "/"
