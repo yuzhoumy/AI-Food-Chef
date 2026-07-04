@@ -11,9 +11,7 @@ function formatRestaurant(r: typeof restaurantsTable.$inferSelect) {
   return { ...r, createdAt: r.createdAt.toISOString() };
 }
 
-/**
- * Haversine distance in kilometres between two lat/lng points.
- */
+/** Haversine distance in km */
 function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
   const R = 6371;
   const dLat = (lat2 - lat1) * (Math.PI / 180);
@@ -26,67 +24,148 @@ function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): nu
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-async function makeRecommendation(
-  userId: string,
-  body: {
-    mood: string;
-    budget?: string | null;
-    distance?: number | null;
-    cuisine?: string | null;
-    atmosphere?: string | null;
-    diningPreference?: string | null;
-    excludeRestaurantIds?: number[];
-    userLat?: number | null;
-    userLng?: number | null;
-  },
-) {
-  // Get user preferences
+/**
+ * Apply a soft filter: only narrows the candidate list if at least `minResults`
+ * restaurants survive. Otherwise the full list is returned unchanged.
+ */
+function softFilter<T>(
+  list: T[],
+  predicate: (item: T) => boolean,
+  minResults = 2,
+): T[] {
+  const filtered = list.filter(predicate);
+  return filtered.length >= minResults ? filtered : list;
+}
+
+type RecommendationBody = {
+  mood: string;
+  budget?: string | null;
+  maxBudget?: number | null;
+  distance?: number | null;
+  cuisine?: string | null;
+  atmosphere?: string | null;
+  diningOccasion?: string | null;
+  diningPreference?: string | null;
+  excludeRestaurantIds?: number[];
+  userLat?: number | null;
+  userLng?: number | null;
+};
+
+async function makeRecommendation(userId: string, body: RecommendationBody) {
   const userPrefs = await db
     .select()
     .from(preferencesTable)
     .where(eq(preferencesTable.userId, userId))
     .then((r) => r[0]);
 
-  // Get candidate restaurants
   const allRestaurants = await db
     .select()
     .from(restaurantsTable)
-    .where(eq(restaurantsTable.isOpenNow, true))
-    .limit(100);
+    .where(eq(restaurantsTable.isOpenNow, true));
 
-  // Apply hard filters
+  // ── Step 1: hard exclusions ──────────────────────────────────────────────
   let candidates = allRestaurants;
-  if (userPrefs?.isHalal === true) candidates = candidates.filter((r) => r.isHalal);
-  if (userPrefs?.isVegetarian === true) candidates = candidates.filter((r) => r.isVegetarianFriendly);
-  if (body.cuisine) candidates = candidates.filter((r) => r.cuisine.toLowerCase() === body.cuisine!.toLowerCase());
-  if (body.budget) candidates = candidates.filter((r) => r.budgetRange === body.budget);
-  if (body.atmosphere) candidates = candidates.filter((r) => r.atmosphere.includes(body.atmosphere!));
-  if (body.diningPreference) candidates = candidates.filter((r) => r.diningOptions.includes(body.diningPreference!));
-  if (body.excludeRestaurantIds?.length)
-    candidates = candidates.filter((r) => !body.excludeRestaurantIds!.includes(r.id));
 
-  // Distance filter: only apply when user location AND a distance cap are provided
+  if (body.excludeRestaurantIds?.length) {
+    candidates = candidates.filter((r) => !body.excludeRestaurantIds!.includes(r.id));
+  }
+
+  // Dietary hard constraints — never relaxed, even if zero results.
+  // A halal user must never receive a non-halal recommendation.
+  if (userPrefs?.isHalal === true) {
+    candidates = candidates.filter((r) => r.isHalal);
+    if (candidates.length === 0) {
+      throw new Error(
+        "No halal restaurants are available right now. Try adjusting your other filters.",
+      );
+    }
+  }
+  if (userPrefs?.isVegetarian === true) {
+    candidates = candidates.filter((r) => r.isVegetarianFriendly);
+    if (candidates.length === 0) {
+      throw new Error(
+        "No vegetarian-friendly restaurants are available right now. Try adjusting your other filters.",
+      );
+    }
+  }
+
+  // ── Step 2: distance filter (hard — based on real coordinates) ───────────
   if (body.userLat != null && body.userLng != null && body.distance != null) {
     const { userLat, userLng, distance } = body;
-    const withinRange = candidates.filter((r) => {
-      if (r.latitude == null || r.longitude == null) return true; // keep ungeocoded
-      return haversineKm(userLat, userLng, r.latitude, r.longitude) <= distance;
-    });
-    // Only apply the distance cap if it doesn't eliminate all candidates
-    if (withinRange.length > 0) candidates = withinRange;
+    candidates = softFilter(
+      candidates,
+      (r) => {
+        if (r.latitude == null || r.longitude == null) return true; // keep ungeocoded
+        return haversineKm(userLat, userLng, r.latitude, r.longitude) <= distance;
+      },
+      3,
+    );
   }
 
-  // Fallback: if too few candidates after all filters, relax to all restaurants
-  if (candidates.length < 3) {
-    candidates = allRestaurants.filter((r) => !body.excludeRestaurantIds?.includes(r.id));
+  // ── Step 3: soft filters — each only applies if ≥3 restaurants survive ──
+
+  // Budget: user's maxBudget (numeric) must cover the restaurant's minimum price.
+  // A restaurant is "affordable" if you can get a meal for ≤ maxBudget.
+  if (body.maxBudget != null) {
+    const cap = body.maxBudget;
+    candidates = softFilter(candidates, (r) => r.priceMin <= cap, 3);
   }
+
+  // Cuisine: case-insensitive substring match against cuisines[] or cuisine field
+  if (body.cuisine) {
+    const needle = body.cuisine.toLowerCase();
+    candidates = softFilter(
+      candidates,
+      (r) =>
+        r.cuisine.toLowerCase().includes(needle) ||
+        r.cuisines.some((c) => c.toLowerCase().includes(needle)),
+      3,
+    );
+  }
+
+  // Dining occasion: e.g. "Date Night", "Family", "Casual"
+  if (body.diningOccasion) {
+    const occ = body.diningOccasion.toLowerCase();
+    candidates = softFilter(
+      candidates,
+      (r) => r.diningOccasion.some((d) => d.toLowerCase().includes(occ) || occ.includes(d.toLowerCase())),
+      3,
+    );
+  }
+
+  // Atmosphere / vibe: case-insensitive
+  if (body.atmosphere) {
+    const vibe = body.atmosphere.toLowerCase();
+    candidates = softFilter(
+      candidates,
+      (r) =>
+        r.atmosphere.some(
+          (a) => a.toLowerCase().includes(vibe) || vibe.includes(a.toLowerCase()),
+        ),
+      3,
+    );
+  }
+
+  // Dining preference (dine-in / takeaway / delivery)
+  if (body.diningPreference) {
+    candidates = softFilter(
+      candidates,
+      (r) => r.diningOptions.some((d) => d.toLowerCase() === body.diningPreference!.toLowerCase()),
+      3,
+    );
+  }
+
+  // ── Step 4: sort by rating so AI sees the best options first ────────────
+  candidates = [...candidates].sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
 
   const aiResult = await getAIRecommendation({
     mood: body.mood,
+    maxBudget: body.maxBudget,
     budget: body.budget,
     distance: body.distance,
     cuisine: body.cuisine,
     atmosphere: body.atmosphere,
+    diningOccasion: body.diningOccasion,
     diningPreference: body.diningPreference,
     userPreferences: userPrefs
       ? {
@@ -101,8 +180,12 @@ async function makeRecommendation(
       id: r.id,
       name: r.name,
       cuisine: r.cuisine,
+      cuisines: r.cuisines,
       description: r.description,
+      priceMin: r.priceMin,
+      priceMax: r.priceMax,
       budgetRange: r.budgetRange,
+      diningOccasion: r.diningOccasion,
       atmosphere: r.atmosphere,
       rating: r.rating,
       isHalal: r.isHalal,
@@ -121,7 +204,6 @@ async function makeRecommendation(
 
   if (!restaurant) throw new Error("Recommended restaurant not found");
 
-  // Save to history
   await db.insert(recommendationsTable).values({
     userId,
     restaurantId: restaurant.id,
@@ -142,33 +224,38 @@ async function makeRecommendation(
 
 router.post("/recommendations", requireAuth, async (req, res): Promise<void> => {
   const userId = (req as any).userId as string;
-
   const parsed = GetRecommendationBody.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: parsed.error.message });
     return;
   }
-
-  const result = await makeRecommendation(userId, parsed.data);
-  res.json(result);
+  try {
+    const result = await makeRecommendation(userId, parsed.data);
+    res.json(result);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Failed to get recommendation";
+    res.status(422).json({ error: message });
+  }
 });
 
 router.post("/recommendations/shuffle", requireAuth, async (req, res): Promise<void> => {
   const userId = (req as any).userId as string;
-
   const parsed = ShuffleRecommendationBody.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: parsed.error.message });
     return;
   }
-
-  const result = await makeRecommendation(userId, parsed.data);
-  res.json(result);
+  try {
+    const result = await makeRecommendation(userId, parsed.data);
+    res.json(result);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Failed to get recommendation";
+    res.status(422).json({ error: message });
+  }
 });
 
 router.get("/recommendations/history", requireAuth, async (req, res): Promise<void> => {
   const userId = (req as any).userId as string;
-
   const params = GetRecommendationHistoryQueryParams.safeParse(req.query);
   const limit = params.success ? (params.data.limit ?? 20) : 20;
 

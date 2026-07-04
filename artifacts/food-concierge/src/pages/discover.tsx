@@ -88,22 +88,31 @@ export default function Discover() {
   const hasLocation = userLocation.status === "granted";
 
   const handleSubmit = () => {
+    // Build a natural-language mood string as a hint for the AI
     const parts: string[] = [];
-    if (occasion === "solo") parts.push("solo meal");
-    else if (occasion === "date") parts.push("date night");
-    else if (occasion === "family") parts.push("family outing");
+    if (occasion === "solo") parts.push("a solo meal");
+    else if (occasion === "date") parts.push("a date night");
+    else if (occasion === "family") parts.push("a family outing");
     if (vibe) parts.push(`${vibe.toLowerCase()} atmosphere`);
-    if (cuisine) parts.push(`${cuisine} cuisine`);
-    const mood = parts.length > 0
-      ? `Looking for a ${parts.join(", ")}`
-      : "Looking for a great meal";
+    if (cuisine) parts.push(`${cuisine} food`);
+    const mood =
+      parts.length > 0 ? `Looking for ${parts.join(", ")}` : "Looking for a great meal";
+
+    // Map form occasion to the dining occasion values stored on restaurants
+    const diningOccasionMap: Record<DiningOccasion, string> = {
+      solo: "Casual",
+      date: "Date Night",
+      family: "Family",
+    };
 
     const requestData = {
       mood,
       budget: priceToBudget(price),
+      maxBudget: price,                              // exact number for numeric filtering
       distance: hasLocation ? distance : undefined,
+      cuisine: cuisine ?? undefined,                 // send as structured field
       atmosphere: vibe ?? undefined,
-      diningPreference: undefined,
+      diningOccasion: occasion ? diningOccasionMap[occasion] : undefined,
       userLat: hasLocation ? userLocation.lat : undefined,
       userLng: hasLocation ? userLocation.lng : undefined,
     };

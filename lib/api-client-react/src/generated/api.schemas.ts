@@ -114,12 +114,16 @@ export interface RecommendationRequest {
   mood: string;
   /** @nullable */
   budget?: string | null;
+  /** Exact max price per person in RM from the price slider */
+  maxBudget?: number | null;
   /** @nullable */
   distance?: number | null;
   /** @nullable */
   cuisine?: string | null;
   /** @nullable */
   atmosphere?: string | null;
+  /** Dining occasion label e.g. "Date Night", "Family", "Casual" */
+  diningOccasion?: string | null;
   /** @nullable */
   diningPreference?: string | null;
   /** IDs of restaurants to exclude (for shuffle) */

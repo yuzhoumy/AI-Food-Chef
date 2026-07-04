@@ -179,9 +179,11 @@ export const GetRestaurantResponse = zod.object({
 export const GetRecommendationBody = zod.object({
   "mood": zod.string().describe('Natural language mood\/craving description'),
   "budget": zod.string().nullish(),
+  "maxBudget": zod.number().nullish().describe('Exact max price per person in RM from slider'),
   "distance": zod.number().nullish(),
   "cuisine": zod.string().nullish(),
   "atmosphere": zod.string().nullish(),
+  "diningOccasion": zod.string().nullish().describe('Dining occasion: Casual, Date Night, Family, etc.'),
   "diningPreference": zod.string().nullish(),
   "excludeRestaurantIds": zod.array(zod.number()).optional().describe('IDs of restaurants to exclude (for shuffle)'),
   "userLat": zod.number().nullish().describe('User latitude for distance filtering'),
@@ -226,9 +228,11 @@ export const GetRecommendationResponse = zod.object({
 export const ShuffleRecommendationBody = zod.object({
   "mood": zod.string().describe('Natural language mood\/craving description'),
   "budget": zod.string().nullish(),
+  "maxBudget": zod.number().nullish().describe('Exact max price per person in RM from slider'),
   "distance": zod.number().nullish(),
   "cuisine": zod.string().nullish(),
   "atmosphere": zod.string().nullish(),
+  "diningOccasion": zod.string().nullish().describe('Dining occasion: Casual, Date Night, Family, etc.'),
   "diningPreference": zod.string().nullish(),
   "excludeRestaurantIds": zod.array(zod.number()).optional().describe('IDs of restaurants to exclude (for shuffle)'),
   "userLat": zod.number().nullish().describe('User latitude for distance filtering'),
