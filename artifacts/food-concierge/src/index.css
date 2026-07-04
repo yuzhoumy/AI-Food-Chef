@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Shrikhand&display=swap');
 @layer theme, base, clerk, components, utilities;
 @import 'tailwindcss';
 @import 'tw-animate-css';
@@ -59,6 +59,7 @@
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 
   --font-sans: var(--app-font-sans);
+  --font-display: var(--app-font-display);
   --font-serif: var(--app-font-serif);
   --font-mono: var(--app-font-mono);
 
@@ -68,86 +69,83 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* LIGHT MODE - Warm & Energetic */
+/* ── Vibrant Lemonade Design System ──────────────────────────────────────── */
 :root {
-  --button-outline: rgba(0, 0, 0, 0.1);
-  --badge-outline: rgba(0, 0, 0, 0.05);
-
+  --button-outline: rgba(255, 255, 255, 0.5);
+  --badge-outline: rgba(255, 255, 255, 0.15);
   --opaque-button-border-intensity: -8;
 
-  --elevate-1: rgba(0, 0, 0, 0.03);
-  --elevate-2: rgba(0, 0, 0, 0.08);
+  --elevate-1: rgba(0, 0, 0, 0.04);
+  --elevate-2: rgba(0, 0, 0, 0.10);
 
-  --background: 33 100% 98%; /* #FFFBF7 */
-  --foreground: 19 45% 12%; /* #2D1A11 */
-  
-  --border: 30 40% 85%; /* #E8DCCB */
-  --input: 30 40% 85%; /* #E8DCCB */
-  --ring: 16 100% 60%; /* #FF6B35 */
+  /* Vibrant cyan-blue — page gradient surface */
+  --background: 200 82% 42%;
+  --foreground: 0 0% 100%;          /* white text on gradient */
 
-  --card: 0 0% 100%; /* #FFFFFF */
-  --card-foreground: 19 45% 12%; /* #2D1A11 */
-  --card-border: 30 40% 92%; /* #F5EAE0 */
+  --border: 200 55% 58%;
+  --input: 200 45% 52%;
+  --ring: 52 100% 55%;              /* lemon yellow focus ring */
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 19 45% 12%;
-  --popover-border: 30 40% 85%;
+  /* Cream — watercolor card surface */
+  --card: 38 55% 96%;               /* #FAF5EC */
+  --card-foreground: 220 45% 12%;   /* deep navy */
+  --card-border: 38 35% 86%;        /* warm parchment border */
 
-  --primary: 16 100% 60%; /* #FF6B35 */
-  --primary-foreground: 0 0% 100%; /* #FFFFFF */
+  --popover: 38 55% 96%;
+  --popover-foreground: 220 45% 12%;
+  --popover-border: 38 35% 86%;
 
-  --secondary: 30 100% 83%; /* #FFD2A6 */
-  --secondary-foreground: 19 45% 12%; /* #2D1A11 */
+  /* Lemon yellow — primary CTA */
+  --primary: 52 100% 54%;           /* #FFE01A vivid lemon */
+  --primary-foreground: 220 45% 12%; /* deep navy on yellow */
 
-  --muted: 32 43% 92%; /* #F4EBE1 */
-  --muted-foreground: 24 16% 41%; /* #786457 */
+  /* Sage green — secondary/watercolor accent */
+  --secondary: 100 24% 55%;         /* #87A878 sage */
+  --secondary-foreground: 0 0% 100%;
 
-  --accent: 35 100% 64%; /* #FFB347 */
-  --accent-foreground: 19 45% 12%; /* #2D1A11 */
+  /* Muted — medium blue-grey, works on cream cards */
+  --muted: 200 30% 86%;
+  --muted-foreground: 220 30% 38%;  /* dark enough for cream, ok on gradient */
 
-  --destructive: 0 84% 60%; 
+  /* Lemon green — leaf accent */
+  --accent: 82 52% 44%;             /* #6BAA28 */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --sidebar: 33 100% 98%;
-  --sidebar-foreground: 19 45% 12%;
-  --sidebar-border: 30 40% 85%;
-  --sidebar-primary: 16 100% 60%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 32 43% 92%;
-  --sidebar-accent-foreground: 19 45% 12%;
-  --sidebar-ring: 16 100% 60%;
+  /* Sidebar — deep ocean blue */
+  --sidebar: 215 72% 22%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-border: 215 55% 32%;
+  --sidebar-primary: 52 100% 54%;
+  --sidebar-primary-foreground: 220 45% 12%;
+  --sidebar-accent: 215 60% 30%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-ring: 52 100% 54%;
 
-  --chart-1: 16 100% 60%;
-  --chart-2: 35 100% 64%;
-  --chart-3: 142 71% 45%;
-  --chart-4: 310 80% 60%;
-  --chart-5: 230 100% 65%;
+  --chart-1: 52 100% 54%;
+  --chart-2: 82 52% 44%;
+  --chart-3: 100 24% 55%;
+  --chart-4: 200 82% 42%;
+  --chart-5: 215 72% 22%;
 
   --app-font-sans: 'Plus Jakarta Sans', sans-serif;
+  --app-font-display: 'Shrikhand', cursive;
   --app-font-serif: Georgia, serif;
   --app-font-mono: Menlo, monospace;
-  
-  --radius: 1rem; /* 16px */
-  
-  --shadow-2xs: 0px 2px 0px 0px rgba(45, 26, 17, 0.05);
-  --shadow-xs: 0px 2px 0px 0px rgba(45, 26, 17, 0.05);
-  --shadow-sm:
-    0px 2px 0px 0px rgba(45, 26, 17, 0.05),
-    0px 1px 2px -1px rgba(45, 26, 17, 0.05);
-  --shadow:
-    0px 2px 0px 0px rgba(45, 26, 17, 0.05),
-    0px 1px 2px -1px rgba(45, 26, 17, 0.05);
-  --shadow-md:
-    0px 2px 0px 0px rgba(45, 26, 17, 0.05),
-    0px 2px 4px -1px rgba(45, 26, 17, 0.05);
-  --shadow-lg:
-    0px 4px 12px 0px rgba(45, 26, 17, 0.08),
-    0px 8px 24px -4px rgba(45, 26, 17, 0.04);
-  --shadow-xl:
-    0px 8px 24px 0px rgba(45, 26, 17, 0.08),
-    0px 16px 32px -4px rgba(45, 26, 17, 0.04);
-  --shadow-2xl: 0px 2px 0px 0px rgba(45, 26, 17, 0.05);
-  
+
+  --radius: 1rem;
+
+  --shadow-2xs: 0px 2px 0px 0px rgba(10, 40, 70, 0.08);
+  --shadow-xs: 0px 2px 4px 0px rgba(10, 40, 70, 0.08);
+  --shadow-sm: 0px 2px 4px 0px rgba(10, 40, 70, 0.08), 0px 1px 2px -1px rgba(10, 40, 70, 0.06);
+  --shadow: 0px 2px 4px 0px rgba(10, 40, 70, 0.08), 0px 1px 2px -1px rgba(10, 40, 70, 0.06);
+  --shadow-md: 0px 4px 8px 0px rgba(10, 40, 70, 0.10), 0px 2px 4px -1px rgba(10, 40, 70, 0.07);
+  --shadow-lg: 0px 8px 20px 0px rgba(10, 40, 70, 0.14), 0px 4px 8px -2px rgba(10, 40, 70, 0.08);
+  --shadow-xl: 0px 16px 32px 0px rgba(10, 40, 70, 0.16), 0px 8px 16px -4px rgba(10, 40, 70, 0.10);
+  --shadow-2xl: 0px 24px 48px 0px rgba(10, 40, 70, 0.20);
+
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 
@@ -161,7 +159,7 @@
 }
 
 .dark {
-  /* No dark mode needed, defaulting to light mode */
+  /* No dark mode — single vibrant theme */
 }
 
 @layer base {
@@ -169,8 +167,14 @@
     @apply border-border;
   }
 
+  html, body {
+    min-height: 100dvh;
+  }
+
   body {
-    @apply font-sans antialiased bg-background text-foreground selection:bg-primary/20 selection:text-primary;
+    background: linear-gradient(145deg, hsl(192, 90%, 50%) 0%, hsl(202, 86%, 40%) 45%, hsl(218, 80%, 30%) 100%);
+    background-attachment: fixed;
+    @apply font-sans antialiased text-foreground selection:bg-primary/40 selection:text-primary-foreground;
   }
 }
 
@@ -185,6 +189,61 @@
     pointer-events: none;
   }
 
+  /* ── Jelly Button ──────────────────────────────────────────────────────── */
+  /* Lemonade-inspired: vivid lemon yellow gradient, white outline, deep drop shadow */
+  .btn-jelly {
+    background: linear-gradient(to bottom, #FFEF4D 0%, #FFD800 55%, #F5C800 100%);
+    border: 3px solid rgba(255, 255, 255, 0.80);
+    box-shadow: 0 6px 0 #B89200, 0 9px 20px rgba(0, 0, 0, 0.28);
+    color: hsl(220, 45%, 12%);
+    font-weight: 800;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .btn-jelly:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #B89200, 0 13px 24px rgba(0, 0, 0, 0.30);
+  }
+  .btn-jelly:active:not(:disabled) {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #B89200, 0 3px 8px rgba(0, 0, 0, 0.20);
+  }
+  .btn-jelly:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  /* ── Glass surface (glassmorphism on gradient bg) ─────────────────────── */
+  .glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 255, 255, 0.30);
+  }
+  .glass-dark {
+    background: rgba(10, 40, 80, 0.35);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+  }
+
+  /* ── Watercolor card (sage green + cream) ─────────────────────────────── */
+  .card-watercolor {
+    background: linear-gradient(135deg, hsl(38, 55%, 96%) 0%, hsl(100, 18%, 90%) 100%);
+    border: 2px solid hsl(100, 22%, 74%);
+  }
+
+  /* ── Scrollbar hide ───────────────────────────────────────────────────── */
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ── Elevation helpers ────────────────────────────────────────────────── */
   .no-default-hover-elevate { }
   .no-default-active-elevate { }
 

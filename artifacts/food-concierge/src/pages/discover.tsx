@@ -49,10 +49,17 @@ function Section({ step, title, children }: { step: number; title: string; child
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-3">
-        <span className="w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shrink-0">
+        <span
+          className="w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center shrink-0 border-2 border-white/60"
+          style={{
+            background: "linear-gradient(to bottom, #FFEF4D, #FFD800)",
+            color: "hsl(220,45%,12%)",
+            boxShadow: "0 3px 0 #B89200",
+          }}
+        >
           {step}
         </span>
-        <h2 className="text-base font-bold text-foreground tracking-tight">{title}</h2>
+        <h2 className="text-base font-bold text-white tracking-tight drop-shadow-sm">{title}</h2>
       </div>
       {children}
     </div>
@@ -81,7 +88,6 @@ export default function Discover() {
   }, [preferences, setLocation]);
 
   const handleSubmit = () => {
-    // Construct a natural mood string from selections so the AI has context
     const parts: string[] = [];
     if (occasion === "solo") parts.push("solo meal");
     else if (occasion === "date") parts.push("date night");
@@ -123,178 +129,220 @@ export default function Discover() {
     return (
       <Shell>
         <div className="flex flex-col gap-8 w-full max-w-xl mx-auto mt-12 animate-in fade-in duration-500">
-          <Skeleton className="h-10 w-2/3 rounded-xl" />
-          <Skeleton className="h-32 w-full rounded-3xl" />
-          <Skeleton className="h-32 w-full rounded-3xl" />
-          <Skeleton className="h-24 w-full rounded-3xl" />
-          <Skeleton className="h-24 w-full rounded-3xl" />
+          <Skeleton className="h-10 w-2/3 rounded-xl bg-white/20" />
+          <Skeleton className="h-32 w-full rounded-3xl bg-white/20" />
+          <Skeleton className="h-32 w-full rounded-3xl bg-white/20" />
+          <Skeleton className="h-24 w-full rounded-3xl bg-white/20" />
         </div>
       </Shell>
     );
   }
 
+  /* Shared glass style for inactive selection buttons */
+  const inactiveGlass = "rgba(255,255,255,0.14)";
+  const inactiveBorder = "1.5px solid rgba(255,255,255,0.28)";
+
   return (
     <Shell>
-    <div className="flex flex-col gap-10 w-full max-w-xl mx-auto py-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
+      <div className="flex flex-col gap-10 w-full max-w-xl mx-auto py-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
 
-      {/* Header */}
-      <div className="flex flex-col gap-1">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
-          What are you craving?
-        </h1>
-        <p className="text-muted-foreground font-medium">
-          Answer a few quick questions and we'll find your perfect match.
-        </p>
+        {/* Header */}
+        <div className="flex flex-col gap-1">
+          <h1 className="font-display text-4xl md:text-5xl text-white drop-shadow-lg">
+            What are you craving?
+          </h1>
+          <p className="text-white/70 font-medium">
+            Answer a few quick questions and we'll find your perfect match.
+          </p>
+        </div>
+
+        {/* Q1 — Dining occasion */}
+        <Section step={1} title="Dining occasion">
+          <div className="flex gap-3">
+            {DINING_OCCASIONS.map(({ value, label, icon: Icon }) => {
+              const active = occasion === value;
+              return (
+                <button
+                  key={value}
+                  type="button"
+                  data-testid={`occasion-${value}`}
+                  onClick={() => setOccasion(active ? null : value)}
+                  className="flex flex-1 flex-col items-center gap-2 py-5 rounded-2xl font-semibold text-sm transition-all duration-150"
+                  style={
+                    active
+                      ? {
+                          background: "linear-gradient(to bottom, #FFEF4D, #FFD800)",
+                          border: "2.5px solid rgba(255,255,255,0.75)",
+                          boxShadow: "0 5px 0 #B89200, 0 8px 16px rgba(0,0,0,0.22)",
+                          color: "hsl(220,45%,12%)",
+                          transform: "translateY(-1px)",
+                        }
+                      : {
+                          background: inactiveGlass,
+                          border: inactiveBorder,
+                          color: "rgba(255,255,255,0.85)",
+                          backdropFilter: "blur(8px)",
+                        }
+                  }
+                >
+                  <Icon className="w-6 h-6" strokeWidth={1.8} />
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+        </Section>
+
+        {/* Q2 — Vibe */}
+        <Section step={2} title="Vibe">
+          <div className="flex flex-wrap gap-2">
+            {VIBES.map((v) => {
+              const active = vibe === v;
+              return (
+                <button
+                  key={v}
+                  type="button"
+                  data-testid={`vibe-${v.toLowerCase()}`}
+                  onClick={() => setVibe(active ? null : v)}
+                  className="px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-150"
+                  style={
+                    active
+                      ? {
+                          background: "linear-gradient(to bottom, #FFEF4D, #FFD800)",
+                          border: "2.5px solid rgba(255,255,255,0.75)",
+                          boxShadow: "0 4px 0 #B89200",
+                          color: "hsl(220,45%,12%)",
+                          transform: "translateY(-1px)",
+                        }
+                      : {
+                          background: inactiveGlass,
+                          border: inactiveBorder,
+                          color: "rgba(255,255,255,0.85)",
+                          backdropFilter: "blur(8px)",
+                        }
+                  }
+                >
+                  {v}
+                </button>
+              );
+            })}
+          </div>
+        </Section>
+
+        {/* Q3 — Cuisine (optional) */}
+        <Section step={3} title="Any cuisine in mind? — optional">
+          <div className="flex flex-wrap gap-2">
+            {CUISINES.map((c) => {
+              const active = cuisine === c;
+              return (
+                <button
+                  key={c}
+                  type="button"
+                  data-testid={`cuisine-${c.toLowerCase().replace(/\s+/g, "-")}`}
+                  onClick={() => setCuisine(active ? null : c)}
+                  className="px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-150"
+                  style={
+                    active
+                      ? {
+                          background: "linear-gradient(to bottom, hsl(82,60%,52%), hsl(82,55%,42%))",
+                          border: "2.5px solid rgba(255,255,255,0.75)",
+                          boxShadow: "0 4px 0 hsl(82,60%,28%)",
+                          color: "white",
+                          transform: "translateY(-1px)",
+                        }
+                      : {
+                          background: inactiveGlass,
+                          border: inactiveBorder,
+                          color: "rgba(255,255,255,0.85)",
+                          backdropFilter: "blur(8px)",
+                        }
+                  }
+                >
+                  {c}
+                </button>
+              );
+            })}
+          </div>
+        </Section>
+
+        {/* Q4 — Price range */}
+        <Section step={4} title="Price range">
+          <div className="card-watercolor rounded-2xl px-6 py-5 flex flex-col gap-4 shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-muted-foreground font-medium">Max budget per person</span>
+              <span className="text-sm font-extrabold" style={{ color: "hsl(82,55%,35%)" }}>
+                {priceLabel(price)}
+              </span>
+            </div>
+            <input
+              type="range"
+              min={10}
+              max={60}
+              step={5}
+              value={price}
+              onChange={(e) => setPrice(Number(e.target.value))}
+              data-testid="slider-price"
+              className="w-full h-2 rounded-full cursor-pointer"
+              style={{ accentColor: "hsl(52,100%,50%)" }}
+            />
+            <div className="flex justify-between text-xs text-muted-foreground font-bold">
+              <span>RM10</span>
+              <span>RM30</span>
+              <span>RM60+</span>
+            </div>
+          </div>
+        </Section>
+
+        {/* Q5 — Maximum distance */}
+        <Section step={5} title="Maximum distance">
+          <div className="card-watercolor rounded-2xl px-6 py-5 flex flex-col gap-4 shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-muted-foreground font-medium">How far are you willing to go?</span>
+              <span className="text-sm font-extrabold" style={{ color: "hsl(82,55%,35%)" }}>
+                {distanceLabel(distance)}
+              </span>
+            </div>
+            <input
+              type="range"
+              min={1}
+              max={50}
+              step={1}
+              value={distance}
+              onChange={(e) => setDistance(Number(e.target.value))}
+              data-testid="slider-distance"
+              className="w-full h-2 rounded-full cursor-pointer"
+              style={{ accentColor: "hsl(52,100%,50%)" }}
+            />
+            <div className="flex justify-between text-xs text-muted-foreground font-bold">
+              <span>1 km</span>
+              <span>25 km</span>
+              <span>50 km</span>
+            </div>
+          </div>
+        </Section>
+
+        {/* Submit */}
+        <button
+          type="button"
+          onClick={handleSubmit}
+          disabled={getRecommendation.isPending}
+          data-testid="button-find-match"
+          className="btn-jelly w-full text-base py-4 rounded-2xl gap-2 text-lg"
+        >
+          {getRecommendation.isPending ? (
+            <>
+              <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+              Finding your match…
+            </>
+          ) : (
+            <>
+              <Sparkles className="w-5 h-5" />
+              Find My Match
+            </>
+          )}
+        </button>
+
       </div>
-
-      {/* Q1 — Dining occasion */}
-      <Section step={1} title="Dining occasion">
-        <div className="flex gap-3">
-          {DINING_OCCASIONS.map(({ value, label, icon: Icon }) => {
-            const active = occasion === value;
-            return (
-              <button
-                key={value}
-                type="button"
-                data-testid={`occasion-${value}`}
-                onClick={() => setOccasion(active ? null : value)}
-                className={[
-                  "flex flex-1 flex-col items-center gap-2 py-5 rounded-2xl border-2 font-semibold text-sm transition-all",
-                  active
-                    ? "border-primary bg-primary/8 text-primary"
-                    : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground",
-                ].join(" ")}
-              >
-                <Icon className={["w-6 h-6", active ? "text-primary" : "text-muted-foreground"].join(" ")} strokeWidth={1.8} />
-                {label}
-              </button>
-            );
-          })}
-        </div>
-      </Section>
-
-      {/* Q2 — Vibe */}
-      <Section step={2} title="Vibe">
-        <div className="flex flex-wrap gap-2">
-          {VIBES.map((v) => {
-            const active = vibe === v;
-            return (
-              <button
-                key={v}
-                type="button"
-                data-testid={`vibe-${v.toLowerCase()}`}
-                onClick={() => setVibe(active ? null : v)}
-                className={[
-                  "px-5 py-2.5 rounded-full border-2 text-sm font-semibold transition-all",
-                  active
-                    ? "border-primary bg-primary text-primary-foreground shadow-sm"
-                    : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground",
-                ].join(" ")}
-              >
-                {v}
-              </button>
-            );
-          })}
-        </div>
-      </Section>
-
-      {/* Q3 — Cuisine (optional) */}
-      <Section step={3} title="Any cuisine in mind? — optional">
-        <div className="flex flex-wrap gap-2">
-          {CUISINES.map((c) => {
-            const active = cuisine === c;
-            return (
-              <button
-                key={c}
-                type="button"
-                data-testid={`cuisine-${c.toLowerCase().replace(/\s+/g, "-")}`}
-                onClick={() => setCuisine(active ? null : c)}
-                className={[
-                  "px-5 py-2.5 rounded-full border-2 text-sm font-semibold transition-all",
-                  active
-                    ? "border-primary bg-primary text-primary-foreground shadow-sm"
-                    : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground",
-                ].join(" ")}
-              >
-                {c}
-              </button>
-            );
-          })}
-        </div>
-      </Section>
-
-      {/* Q4 — Price range */}
-      <Section step={4} title="Price range">
-        <div className="bg-card border border-border rounded-2xl px-6 py-5 flex flex-col gap-4">
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">Max budget per person</span>
-            <span className="text-sm font-bold text-primary">{priceLabel(price)}</span>
-          </div>
-          <input
-            type="range"
-            min={10}
-            max={60}
-            step={5}
-            value={price}
-            onChange={(e) => setPrice(Number(e.target.value))}
-            data-testid="slider-price"
-            className="w-full h-2 rounded-full accent-primary cursor-pointer"
-          />
-          <div className="flex justify-between text-xs text-muted-foreground font-medium">
-            <span>RM10</span>
-            <span>RM30</span>
-            <span>RM60+</span>
-          </div>
-        </div>
-      </Section>
-
-      {/* Q5 — Maximum distance */}
-      <Section step={5} title="Maximum distance">
-        <div className="bg-card border border-border rounded-2xl px-6 py-5 flex flex-col gap-4">
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">How far are you willing to go?</span>
-            <span className="text-sm font-bold text-primary">{distanceLabel(distance)}</span>
-          </div>
-          <input
-            type="range"
-            min={1}
-            max={50}
-            step={1}
-            value={distance}
-            onChange={(e) => setDistance(Number(e.target.value))}
-            data-testid="slider-distance"
-            className="w-full h-2 rounded-full accent-primary cursor-pointer"
-          />
-          <div className="flex justify-between text-xs text-muted-foreground font-medium">
-            <span>1 km</span>
-            <span>25 km</span>
-            <span>50 km</span>
-          </div>
-        </div>
-      </Section>
-
-      {/* Submit */}
-      <button
-        type="button"
-        onClick={handleSubmit}
-        disabled={getRecommendation.isPending}
-        data-testid="button-find-match"
-        className="w-full bg-primary text-primary-foreground font-bold text-base py-4 rounded-2xl shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {getRecommendation.isPending ? (
-          <>
-            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-            Finding your match...
-          </>
-        ) : (
-          <>
-            <Sparkles className="w-5 h-5" />
-            Find My Match
-          </>
-        )}
-      </button>
-
-    </div>
     </Shell>
   );
 }
