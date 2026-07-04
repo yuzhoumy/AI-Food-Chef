@@ -2,10 +2,23 @@ import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { useGetUserPreferences, useUpdatePreferences } from "@workspace/api-client-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Check, ChevronRight, Utensils, Leaf, Flame, CreditCard, ShoppingBag, Coffee } from "lucide-react";
+import { Check, ChevronRight, Leaf, Flame, AlertTriangle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-type Step = 1 | 2 | 3 | 4;
+type Step = 1 | 2 | 3;
+
+const COMMON_ALLERGENS = [
+  "Peanuts",
+  "Tree Nuts",
+  "Shellfish",
+  "Seafood",
+  "Dairy",
+  "Eggs",
+  "Gluten",
+  "Soy",
+  "Sesame",
+  "Msg",
+];
 
 export default function Onboarding() {
   const [, setLocation] = useLocation();
@@ -15,12 +28,10 @@ export default function Onboarding() {
 
   const [step, setStep] = useState<Step>(1);
   const [formData, setFormData] = useState({
-    isHalal: false as boolean | null,
-    isVegetarian: false as boolean | null,
-    spiceLevel: "medium",
-    budgetRange: "RM15-RM30",
-    diningPreference: "dine-in",
-    favoriteCuisines: [] as string[],
+    isHalal: false as boolean,
+    isVegetarian: false as boolean,
+    spiceLevel: "medium" as string,
+    allergies: [] as string[],
   });
 
   useEffect(() => {
@@ -32,16 +43,14 @@ export default function Onboarding() {
           isHalal: preferences.isHalal ?? false,
           isVegetarian: preferences.isVegetarian ?? false,
           spiceLevel: preferences.spiceLevel ?? "medium",
-          budgetRange: preferences.budgetRange ?? "RM15-RM30",
-          diningPreference: preferences.diningPreference ?? "dine-in",
-          favoriteCuisines: preferences.favoriteCuisines || [],
+          allergies: preferences.allergies ?? [],
         });
       }
     }
   }, [preferences, setLocation]);
 
   const handleNext = () => {
-    if (step < 4) {
+    if (step < 3) {
       setStep((s) => (s + 1) as Step);
     } else {
       handleComplete();
@@ -50,39 +59,26 @@ export default function Onboarding() {
 
   const handleComplete = () => {
     updatePreferences.mutate(
-      {
-        data: {
-          ...formData,
-          onboardingCompleted: true,
-        },
-      },
+      { data: { ...formData, onboardingCompleted: true } },
       {
         onSuccess: () => {
-          toast({
-            title: "Preferences saved!",
-            description: "We're ready to find your next meal.",
-          });
+          toast({ title: "Preferences saved!", description: "We're ready to find your next meal." });
           setLocation("/discover");
         },
         onError: () => {
-          toast({
-            title: "Oops!",
-            description: "Something went wrong saving your preferences.",
-            variant: "destructive",
-          });
+          toast({ title: "Oops!", description: "Something went wrong saving your preferences.", variant: "destructive" });
         },
-      }
+      },
     );
   };
 
-  const toggleCuisine = (cuisine: string) => {
-    setFormData((prev) => {
-      const exists = prev.favoriteCuisines.includes(cuisine);
-      if (exists) {
-        return { ...prev, favoriteCuisines: prev.favoriteCuisines.filter((c) => c !== cuisine) };
-      }
-      return { ...prev, favoriteCuisines: [...prev.favoriteCuisines, cuisine] };
-    });
+  const toggleAllergen = (allergen: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      allergies: prev.allergies.includes(allergen)
+        ? prev.allergies.filter((a) => a !== allergen)
+        : [...prev.allergies, allergen],
+    }));
   };
 
   if (prefsLoading) {
@@ -94,57 +90,61 @@ export default function Onboarding() {
     );
   }
 
-  const cuisines = ["Malaysian", "Western", "Japanese", "Korean", "Chinese", "Indian", "Middle Eastern", "Cafe"];
-
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background">
       {/* Progress bar */}
       <div className="w-full h-2 bg-muted">
-        <div 
+        <div
           className="h-full bg-primary transition-all duration-500 ease-out"
-          style={{ width: `${(step / 4) * 100}%` }}
-        ></div>
+          style={{ width: `${(step / 3) * 100}%` }}
+        />
       </div>
 
       <div className="flex-1 flex flex-col items-center justify-center p-6 w-full max-w-2xl mx-auto">
-        <div className="w-full bg-card border-2 border-border rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
-          
+        <div className="w-full bg-card border-2 border-border rounded-3xl p-8 md:p-12 shadow-xl">
+
+          {/* Step 1 — Dietary needs */}
           {step === 1 && (
             <div className="animate-in slide-in-from-right-8 fade-in duration-300 flex flex-col gap-8">
               <div className="flex flex-col gap-3">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
                   <Leaf className="w-6 h-6" />
                 </div>
-                <h2 className="text-3xl font-extrabold text-foreground">Dietary Basics</h2>
+                <h2 className="text-3xl font-extrabold text-foreground">Dietary Needs</h2>
                 <p className="text-muted-foreground font-medium text-lg">Let's make sure we only show what you can eat.</p>
               </div>
 
               <div className="flex flex-col gap-4">
-                <label className="flex items-center justify-between p-5 rounded-2xl border-2 cursor-pointer transition-all hover:bg-muted/50 data-[state=on]:border-primary data-[state=on]:bg-primary/5" data-state={formData.isHalal ? "on" : "off"}>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-lg">Halal Only</span>
-                    <span className="text-muted-foreground text-sm font-medium">Show only halal-certified or Muslim-owned spots</span>
-                  </div>
-                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${formData.isHalal ? "bg-primary border-primary" : "border-muted-foreground"}`}>
-                    {formData.isHalal && <Check className="w-4 h-4 text-white" />}
-                  </div>
-                  <input type="checkbox" className="hidden" checked={formData.isHalal || false} onChange={(e) => setFormData({ ...formData, isHalal: e.target.checked })} />
-                </label>
-
-                <label className="flex items-center justify-between p-5 rounded-2xl border-2 cursor-pointer transition-all hover:bg-muted/50 data-[state=on]:border-primary data-[state=on]:bg-primary/5" data-state={formData.isVegetarian ? "on" : "off"}>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-lg">Vegetarian</span>
-                    <span className="text-muted-foreground text-sm font-medium">Show spots with good vegetarian options</span>
-                  </div>
-                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${formData.isVegetarian ? "bg-primary border-primary" : "border-muted-foreground"}`}>
-                    {formData.isVegetarian && <Check className="w-4 h-4 text-white" />}
-                  </div>
-                  <input type="checkbox" className="hidden" checked={formData.isVegetarian || false} onChange={(e) => setFormData({ ...formData, isVegetarian: e.target.checked })} />
-                </label>
+                {[
+                  { key: "isHalal" as const, label: "Halal Only", desc: "Show only halal-certified or Muslim-owned spots" },
+                  { key: "isVegetarian" as const, label: "Vegetarian", desc: "Show spots with good vegetarian options" },
+                ].map(({ key, label, desc }) => (
+                  <label
+                    key={key}
+                    className="flex items-center justify-between p-5 rounded-2xl border-2 cursor-pointer transition-all hover:bg-muted/50 data-[state=on]:border-primary data-[state=on]:bg-primary/5"
+                    data-state={formData[key] ? "on" : "off"}
+                    data-testid={`toggle-${key}`}
+                  >
+                    <div className="flex flex-col">
+                      <span className="font-bold text-lg">{label}</span>
+                      <span className="text-muted-foreground text-sm font-medium">{desc}</span>
+                    </div>
+                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 transition-colors ${formData[key] ? "bg-primary border-primary" : "border-muted-foreground"}`}>
+                      {formData[key] && <Check className="w-4 h-4 text-white" />}
+                    </div>
+                    <input
+                      type="checkbox"
+                      className="hidden"
+                      checked={formData[key]}
+                      onChange={(e) => setFormData({ ...formData, [key]: e.target.checked })}
+                    />
+                  </label>
+                ))}
               </div>
             </div>
           )}
 
+          {/* Step 2 — Spice tolerance */}
           {step === 2 && (
             <div className="animate-in slide-in-from-right-8 fade-in duration-300 flex flex-col gap-8">
               <div className="flex flex-col gap-3">
@@ -163,6 +163,8 @@ export default function Onboarding() {
                 ].map((level) => (
                   <button
                     key={level.id}
+                    type="button"
+                    data-testid={`spice-${level.id}`}
                     onClick={() => setFormData({ ...formData, spiceLevel: level.id })}
                     className={`flex flex-col items-center text-center p-6 rounded-2xl border-2 transition-all ${
                       formData.spiceLevel === level.id
@@ -178,95 +180,74 @@ export default function Onboarding() {
             </div>
           )}
 
+          {/* Step 3 — Allergies */}
           {step === 3 && (
             <div className="animate-in slide-in-from-right-8 fade-in duration-300 flex flex-col gap-8">
               <div className="flex flex-col gap-3">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
-                  <Utensils className="w-6 h-6" />
+                  <AlertTriangle className="w-6 h-6" />
                 </div>
-                <h2 className="text-3xl font-extrabold text-foreground">Favorite Cuisines</h2>
-                <p className="text-muted-foreground font-medium text-lg">Pick a few you usually gravitate towards.</p>
+                <h2 className="text-3xl font-extrabold text-foreground">Allergies</h2>
+                <p className="text-muted-foreground font-medium text-lg">
+                  Select anything you need to avoid. We'll keep it in mind every time.
+                </p>
               </div>
 
               <div className="flex flex-wrap gap-3">
-                {cuisines.map((cuisine) => {
-                  const isSelected = formData.favoriteCuisines.includes(cuisine);
+                {COMMON_ALLERGENS.map((allergen) => {
+                  const selected = formData.allergies.includes(allergen);
                   return (
                     <button
-                      key={cuisine}
-                      onClick={() => toggleCuisine(cuisine)}
+                      key={allergen}
+                      type="button"
+                      data-testid={`allergen-${allergen.toLowerCase().replace(/\s+/g, "-")}`}
+                      onClick={() => toggleAllergen(allergen)}
                       className={`px-5 py-3 rounded-full border-2 font-bold text-sm transition-all ${
-                        isSelected
-                          ? "border-primary bg-primary text-primary-foreground shadow-md"
-                          : "border-border bg-card text-muted-foreground hover:border-primary/50"
+                        selected
+                          ? "border-destructive bg-destructive/10 text-destructive"
+                          : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
                       }`}
                     >
-                      {cuisine}
+                      {allergen}
                     </button>
                   );
                 })}
               </div>
+
+              {formData.allergies.length === 0 && (
+                <p className="text-sm text-muted-foreground font-medium">
+                  Nothing selected — we'll assume no restrictions.
+                </p>
+              )}
             </div>
           )}
 
-          {step === 4 && (
-            <div className="animate-in slide-in-from-right-8 fade-in duration-300 flex flex-col gap-8">
-              <div className="flex flex-col gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
-                  <CreditCard className="w-6 h-6" />
-                </div>
-                <h2 className="text-3xl font-extrabold text-foreground">Standard Budget</h2>
-                <p className="text-muted-foreground font-medium text-lg">What's your usual spend for a casual meal?</p>
-              </div>
-
-              <div className="flex flex-col gap-4">
-                {[
-                  { id: "RM5-RM15", label: "RM5 - RM15", desc: "Kopitiam, Mamak, Street Food" },
-                  { id: "RM15-RM30", label: "RM15 - RM30", desc: "Casual Dining, Cafes" },
-                  { id: "RM30+", label: "RM30+", desc: "Premium Restaurants, Fine Dining" },
-                ].map((budget) => (
-                  <label
-                    key={budget.id}
-                    className="flex items-center p-5 rounded-2xl border-2 cursor-pointer transition-all hover:bg-muted/50 data-[state=on]:border-primary data-[state=on]:bg-primary/5"
-                    data-state={formData.budgetRange === budget.id ? "on" : "off"}
-                  >
-                    <input
-                      type="radio"
-                      name="budget"
-                      className="hidden"
-                      checked={formData.budgetRange === budget.id}
-                      onChange={() => setFormData({ ...formData, budgetRange: budget.id })}
-                    />
-                    <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mr-4 transition-colors ${formData.budgetRange === budget.id ? "border-primary" : "border-muted-foreground"}`}>
-                      {formData.budgetRange === budget.id && <div className="w-3 h-3 bg-primary rounded-full"></div>}
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-bold text-lg">{budget.label}</span>
-                      <span className="text-muted-foreground text-sm font-medium">{budget.desc}</span>
-                    </div>
-                  </label>
-                ))}
-              </div>
-            </div>
-          )}
-
+          {/* Footer nav */}
           <div className="mt-12 flex justify-between items-center pt-6 border-t border-border">
             {step > 1 ? (
               <button
+                type="button"
                 onClick={() => setStep((s) => (s - 1) as Step)}
                 className="text-muted-foreground font-bold hover:text-foreground px-4 py-2 transition-colors"
               >
                 Back
               </button>
-            ) : <div></div>}
+            ) : (
+              <div />
+            )}
 
             <button
+              type="button"
               onClick={handleNext}
               disabled={updatePreferences.isPending}
               className="bg-foreground text-background font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:bg-foreground/90 transition-all flex items-center gap-2 disabled:opacity-50"
             >
-              {updatePreferences.isPending ? "Saving..." : step === 4 ? "Complete Setup" : "Next Step"}
-              {!updatePreferences.isPending && step < 4 && <ChevronRight className="w-5 h-5" />}
+              {updatePreferences.isPending
+                ? "Saving..."
+                : step === 3
+                ? "Complete Setup"
+                : "Next Step"}
+              {!updatePreferences.isPending && step < 3 && <ChevronRight className="w-5 h-5" />}
             </button>
           </div>
 
