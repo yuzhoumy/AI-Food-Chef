@@ -1,6 +1,6 @@
 import { Router, type IRouter } from "express";
-import { eq, and, sql } from "drizzle-orm";
-import { db, restaurantsTable } from "@workspace/db";
+import { eq, and } from "drizzle-orm";
+import { db, restaurantsTable, createRestaurantSchema } from "@workspace/db";
 import { ListRestaurantsQueryParams, GetRestaurantParams } from "@workspace/api-zod";
 
 const router: IRouter = Router();
@@ -44,7 +44,6 @@ router.get("/restaurants", async (req, res): Promise<void> => {
 
   const restaurants = await query.limit(limit ?? 20);
 
-  // Filter by atmosphere if provided (array contains)
   const filtered = atmosphere
     ? restaurants.filter(r => r.atmosphere.includes(atmosphere))
     : restaurants;
@@ -59,7 +58,11 @@ router.get("/restaurants/:id", async (req, res): Promise<void> => {
     return;
   }
 
-  const restaurant = await db.select().from(restaurantsTable).where(eq(restaurantsTable.id, params.data.id)).then(r => r[0]);
+  const restaurant = await db
+    .select()
+    .from(restaurantsTable)
+    .where(eq(restaurantsTable.id, params.data.id))
+    .then(r => r[0]);
 
   if (!restaurant) {
     res.status(404).json({ error: "Restaurant not found" });
@@ -67,6 +70,50 @@ router.get("/restaurants/:id", async (req, res): Promise<void> => {
   }
 
   res.json(formatRestaurant(restaurant));
+});
+
+/**
+ * POST /restaurants
+ * Create a new user-submitted restaurant listing.
+ */
+router.post("/restaurants", async (req, res): Promise<void> => {
+  const parsed = createRestaurantSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: parsed.error.issues.map((i: { message: string }) => i.message).join(", ") });
+    return;
+  }
+
+  const data = parsed.data;
+
+  // Derive legacy fields from new structured data for backward compatibility
+  const cuisine = data.cuisines[0] ?? "";
+  const budgetRange = `RM${data.priceMin}-RM${data.priceMax}`;
+
+  const [restaurant] = await db
+    .insert(restaurantsTable)
+    .values({
+      name: data.name,
+      cuisine,
+      cuisines: data.cuisines,
+      description: data.description,
+      address: data.address,
+      area: data.area ?? "",
+      budgetRange,
+      priceMin: data.priceMin,
+      priceMax: data.priceMax,
+      diningOccasion: data.diningOccasion,
+      photos: data.photos ?? [],
+      isHalal: data.isHalal ?? false,
+      isVegetarianFriendly: data.isVegetarianFriendly ?? false,
+      isUserSubmitted: true,
+      isOpenNow: true,
+      rating: 0,
+      reviewCount: 0,
+      tags: [...data.cuisines, ...data.diningOccasion],
+    })
+    .returning();
+
+  res.status(201).json(formatRestaurant(restaurant));
 });
 
 export default router;

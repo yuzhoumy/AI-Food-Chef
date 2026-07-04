@@ -15,13 +15,10 @@ export default function Home() {
           </span>
         </div>
         <div className="flex items-center gap-3">
-          <Link
-            href="/sign-in"
-            className="text-sm font-bold text-white/90 hover:text-white transition-colors px-4 py-2 rounded-full hover:bg-white/10"
-          >
-            Log In
+          <Link href="/add-restaurant" className="text-sm font-bold text-white/90 hover:text-white transition-colors px-4 py-2 rounded-full hover:bg-white/10">
+            List a Restaurant
           </Link>
-          <Link href="/sign-up" className="btn-jelly text-sm px-5 py-2.5 rounded-full gap-1.5">
+          <Link href="/discover" className="btn-jelly text-sm px-5 py-2.5 rounded-full gap-1.5">
             Get Started
           </Link>
         </div>
@@ -52,15 +49,15 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
-              <Link href="/sign-up" className="btn-jelly text-lg px-8 py-4 rounded-2xl gap-2">
+              <Link href="/discover" className="btn-jelly text-lg px-8 py-4 rounded-2xl gap-2">
                 <Sparkles className="w-5 h-5" />
                 Start Discovering
               </Link>
               <Link
-                href="/sign-in"
+                href="/add-restaurant"
                 className="glass text-white text-center text-lg font-bold px-8 py-4 rounded-2xl hover:bg-white/25 transition-all"
               >
-                I have an account
+                List a Restaurant
               </Link>
             </div>
           </div>

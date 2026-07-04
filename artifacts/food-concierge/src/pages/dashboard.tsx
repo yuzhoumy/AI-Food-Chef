@@ -2,11 +2,9 @@ import { Shell } from "@/components/shell";
 import { useGetDashboard } from "@workspace/api-client-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { User, Target, Heart, UtensilsCrossed } from "lucide-react";
-import { useUser } from "@clerk/react";
 
 export default function Dashboard() {
   const { data: dashboard, isLoading } = useGetDashboard();
-  const { user } = useUser();
 
   if (isLoading || !dashboard) {
     return (
@@ -29,15 +27,11 @@ export default function Dashboard() {
         
         <div className="flex items-center gap-4 glass-dark rounded-3xl p-5">
           <div className="w-16 h-16 rounded-full bg-white/20 text-white flex items-center justify-center overflow-hidden shrink-0 border-2 border-white/30">
-            {user?.imageUrl ? (
-              <img src={user.imageUrl} alt="Avatar" className="w-full h-full object-cover" />
-            ) : (
-              <User className="w-8 h-8" />
-            )}
+            <User className="w-8 h-8" />
           </div>
           <div className="flex flex-col">
             <h1 className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">
-              Hello, {user?.firstName || "Foodie"}
+              Hello, Foodie!
             </h1>
             <p className="text-white/90 font-medium">Here's your taste profile at a glance.</p>
           </div>

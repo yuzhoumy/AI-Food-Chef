@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Compass, Heart, History, User, UserCircle } from "lucide-react";
+import { Compass, Heart, History, User, UserCircle, PlusCircle } from "lucide-react";
 import { ReactNode } from "react";
 
 export function Shell({ children }: { children: ReactNode }) {
@@ -10,6 +10,7 @@ export function Shell({ children }: { children: ReactNode }) {
     { href: "/favorites", icon: Heart, label: "Favourites" },
     { href: "/history", icon: History, label: "History" },
     { href: "/dashboard", icon: User, label: "Dashboard" },
+    { href: "/add-restaurant", icon: PlusCircle, label: "Add" },
   ];
 
   return (
@@ -61,8 +62,20 @@ export function Shell({ children }: { children: ReactNode }) {
           })}
         </nav>
 
-        {/* Settings */}
-        <div className="pt-4 border-t border-sidebar-border/40">
+        {/* Separator + Add Restaurant CTA */}
+        <div className="flex flex-col gap-3 pt-4 border-t border-sidebar-border/40">
+          <Link
+            href="/add-restaurant"
+            className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-bold text-sm ${
+              location === "/add-restaurant"
+                ? "bg-white/20 text-sidebar-foreground"
+                : "text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-white/10"
+            }`}
+          >
+            <PlusCircle className="w-5 h-5" />
+            <span>List a Restaurant</span>
+          </Link>
+
           <Link
             href="/settings"
             className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 font-bold text-sm ${
@@ -86,7 +99,7 @@ export function Shell({ children }: { children: ReactNode }) {
 
       {/* ── Mobile Bottom Nav ───────────────────────────────────────────── */}
       <nav
-        className="md:hidden fixed bottom-0 left-0 right-0 px-4 py-2 flex items-center justify-around z-50 bg-sidebar/80 border-t border-sidebar-border/40"
+        className="md:hidden fixed bottom-0 left-0 right-0 px-2 py-2 flex items-center justify-around z-50 bg-sidebar/80 border-t border-sidebar-border/40"
         style={{
           backdropFilter: "blur(16px)",
           paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
@@ -98,7 +111,7 @@ export function Shell({ children }: { children: ReactNode }) {
             <Link
               key={item.href}
               href={item.href}
-              className="flex flex-col items-center gap-1 p-2"
+              className="flex flex-col items-center gap-0.5 p-1.5"
             >
               <div
                 className="p-2 rounded-full transition-all duration-200"
@@ -113,12 +126,12 @@ export function Shell({ children }: { children: ReactNode }) {
                 }
               >
                 <item.icon
-                  className={`w-5 h-5 ${isActive ? "" : "text-sidebar-foreground/50"}`}
+                  className={`w-4 h-4 ${isActive ? "" : "text-sidebar-foreground/50"}`}
                   style={isActive ? { color: "hsl(220,45%,12%)" } : {}}
                 />
               </div>
               <span
-                className={`text-[10px] font-bold ${
+                className={`text-[9px] font-bold ${
                   isActive ? "text-sidebar-primary" : "text-sidebar-foreground/50"
                 }`}
               >

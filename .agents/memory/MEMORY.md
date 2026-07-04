@@ -1,0 +1,4 @@
+- [Auth: guest mode](auth-guest-mode.md) — Clerk fully removed; all routes use a fixed "guest" userId; frontend has no sign-in wall
+- [DB declarations must be rebuilt after schema changes](db-rebuild.md) — @workspace/db uses composite TS project refs; run `pnpm exec tsc --build lib/db` after any schema edit or new columns won't appear in API server types
+- [Object storage: presigned URL flow](object-storage-flow.md) — upload goes client→/api/storage/uploads/request-url→GCS directly; serving path is /api/storage/objects/<uuid>; photos stored as full serving URLs in DB
+- [Restaurant schema dual fields](restaurant-schema.md) — cuisines[] (new) coexists with cuisine (legacy); diningOccasion[] alongside atmosphere[]; priceMin/priceMax alongside budgetRange string
