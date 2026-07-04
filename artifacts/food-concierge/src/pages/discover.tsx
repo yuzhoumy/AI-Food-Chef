@@ -4,6 +4,8 @@ import { useGetUserPreferences, useGetRecommendation } from "@workspace/api-clie
 import { Skeleton } from "@/components/ui/skeleton";
 import { Sparkles, Users, User, Heart } from "lucide-react";
 import { useAppState } from "@/store/app-state";
+import { Shell } from "@/components/shell";
+import { useToast } from "@/hooks/use-toast";
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
@@ -64,6 +66,7 @@ export default function Discover() {
   const { data: preferences, isLoading: prefsLoading } = useGetUserPreferences();
   const getRecommendation = useGetRecommendation();
   const { setCurrentRequest, setLastResult } = useAppState();
+  const { toast } = useToast();
 
   const [occasion, setOccasion] = useState<DiningOccasion | null>(null);
   const [vibe, setVibe] = useState<Vibe | null>(null);
@@ -105,23 +108,33 @@ export default function Discover() {
           setLastResult(result);
           setLocation("/recommendation");
         },
+        onError: () => {
+          toast({
+            title: "Couldn't find a match",
+            description: "Something went wrong on our end. Please try again in a moment.",
+            variant: "destructive",
+          });
+        },
       },
     );
   };
 
   if (prefsLoading) {
     return (
-      <div className="flex flex-col gap-8 w-full max-w-xl mx-auto mt-12 animate-in fade-in duration-500">
-        <Skeleton className="h-10 w-2/3 rounded-xl" />
-        <Skeleton className="h-32 w-full rounded-3xl" />
-        <Skeleton className="h-32 w-full rounded-3xl" />
-        <Skeleton className="h-24 w-full rounded-3xl" />
-        <Skeleton className="h-24 w-full rounded-3xl" />
-      </div>
+      <Shell>
+        <div className="flex flex-col gap-8 w-full max-w-xl mx-auto mt-12 animate-in fade-in duration-500">
+          <Skeleton className="h-10 w-2/3 rounded-xl" />
+          <Skeleton className="h-32 w-full rounded-3xl" />
+          <Skeleton className="h-32 w-full rounded-3xl" />
+          <Skeleton className="h-24 w-full rounded-3xl" />
+          <Skeleton className="h-24 w-full rounded-3xl" />
+        </div>
+      </Shell>
     );
   }
 
   return (
+    <Shell>
     <div className="flex flex-col gap-10 w-full max-w-xl mx-auto py-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
 
       {/* Header */}
@@ -282,5 +295,6 @@ export default function Discover() {
       </button>
 
     </div>
+    </Shell>
   );
 }
