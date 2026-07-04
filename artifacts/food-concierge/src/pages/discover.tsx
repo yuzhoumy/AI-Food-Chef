@@ -327,7 +327,7 @@ export default function Discover() {
           onClick={handleSubmit}
           disabled={getRecommendation.isPending}
           data-testid="button-find-match"
-          className="btn-jelly w-full text-base py-4 rounded-2xl gap-2 text-lg"
+          className="btn-glass-cta w-full py-4 rounded-2xl gap-2"
         >
           {getRecommendation.isPending ? (
             <>

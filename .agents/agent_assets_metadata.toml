@@ -12,3 +12,9 @@ id = "-eZITPkNDR9EE4Wb2B2N5"
 uri = "file://screenshots/dashboard.jpg"
 type = "image"
 title = "Updated Dashboard page"
+
+[[outputs]]
+id = "-j7WjLNnODGPGYuIrmRGI"
+uri = "file://screenshots/discover-glass-cta.jpg"
+type = "image"
+title = "Discover page with new glass CTA"

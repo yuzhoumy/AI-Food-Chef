@@ -71,64 +71,65 @@
 
 /* ── Vibrant Lemonade Design System ──────────────────────────────────────── */
 :root {
-  --button-outline: rgba(255, 255, 255, 0.5);
-  --badge-outline: rgba(255, 255, 255, 0.15);
+  --button-outline: rgba(255, 255, 255, 0.6);
+  --badge-outline: rgba(255, 255, 255, 0.25);
   --opaque-button-border-intensity: -8;
 
-  --elevate-1: rgba(0, 0, 0, 0.04);
-  --elevate-2: rgba(0, 0, 0, 0.10);
+  --elevate-1: rgba(0, 40, 80, 0.05);
+  --elevate-2: rgba(0, 40, 80, 0.12);
 
-  /* Vibrant cyan-blue — page gradient surface */
-  --background: 200 82% 42%;
-  --foreground: 0 0% 100%;          /* white text on gradient */
+  /* ADJUSTED: Highly vibrant, luminous cyan-blue base surface */
+  --background: 188 90% 50%;
+  --foreground: 0 0% 100%;          
 
-  --border: 200 55% 58%;
-  --input: 200 45% 52%;
-  --ring: 52 100% 55%;              /* lemon yellow focus ring */
+  /* ADJUSTED: Higher contrast borders for visibility against bright background */
+  --border: 190 80% 40%;
+  --input: 190 70% 45%;
+  --ring: 48 100% 50%;              /* High-vis warm lemon yellow focus ring */
 
   /* Cream — watercolor card surface */
   --card: 38 55% 96%;               /* #FAF5EC */
   --card-foreground: 220 45% 12%;   /* deep navy */
-  --card-border: 38 35% 86%;        /* warm parchment border */
+  --card-border: 38 35% 86%;        
 
   --popover: 38 55% 96%;
   --popover-foreground: 220 45% 12%;
   --popover-border: 38 35% 86%;
 
   /* Lemon yellow — primary CTA */
-  --primary: 52 100% 54%;           /* #FFE01A vivid lemon */
-  --primary-foreground: 220 45% 12%; /* deep navy on yellow */
+  --primary: 48 100% 52%;           /* #FFD700 slightly warmer, higher contrast lemon yellow */
+  --primary-foreground: 220 50% 10%; /* Extra deep navy for premium legibility */
 
   /* Sage green — secondary/watercolor accent */
-  --secondary: 100 24% 55%;         /* #87A878 sage */
+  --secondary: 105 28% 48%;         /* Lifted green contrast */
   --secondary-foreground: 0 0% 100%;
 
-  /* Muted — medium blue-grey, works on cream cards */
-  --muted: 200 30% 86%;
-  --muted-foreground: 220 30% 38%;  /* dark enough for cream, ok on gradient */
+  /* Muted */
+  --muted: 190 30% 90%;
+  --muted-foreground: 220 40% 28%;  /* Darkened for much better reading contrast */
 
   /* Lemon green — leaf accent */
-  --accent: 82 52% 44%;             /* #6BAA28 */
+  --accent: 85 60% 42%;             
   --accent-foreground: 0 0% 100%;
 
-  --destructive: 0 84% 60%;
+  --destructive: 356 85% 58%;
   --destructive-foreground: 0 0% 100%;
 
   /* Sidebar — deep ocean blue */
-  --sidebar: 215 72% 22%;
+  --sidebar: 215 72% 18%;
   --sidebar-foreground: 0 0% 100%;
-  --sidebar-border: 215 55% 32%;
-  --sidebar-primary: 52 100% 54%;
-  --sidebar-primary-foreground: 220 45% 12%;
-  --sidebar-accent: 215 60% 30%;
+  --sidebar-border: 215 55% 28%;
+  --sidebar-primary: 48 100% 52%;
+  --sidebar-primary-foreground: 220 50% 10%;
+  --sidebar-accent: 215 60% 26%;
   --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-ring: 52 100% 54%;
+  --sidebar-ring: 48 100% 52%;
 
-  --chart-1: 52 100% 54%;
-  --chart-2: 82 52% 44%;
-  --chart-3: 100 24% 55%;
-  --chart-4: 200 82% 42%;
-  --chart-5: 215 72% 22%;
+  --chart-1: 48 100% 52%;
+  --chart-2: 85 60% 42%;
+  --chart-3: 105 28% 48%;
+  --chart-4: 188 90% 50%;
+  --chart-5: 215 72% 18%;
 
   --app-font-sans: 'Plus Jakarta Sans', sans-serif;
   --app-font-display: 'Shrikhand', cursive;
@@ -137,14 +138,14 @@
 
   --radius: 1rem;
 
-  --shadow-2xs: 0px 2px 0px 0px rgba(10, 40, 70, 0.08);
-  --shadow-xs: 0px 2px 4px 0px rgba(10, 40, 70, 0.08);
-  --shadow-sm: 0px 2px 4px 0px rgba(10, 40, 70, 0.08), 0px 1px 2px -1px rgba(10, 40, 70, 0.06);
-  --shadow: 0px 2px 4px 0px rgba(10, 40, 70, 0.08), 0px 1px 2px -1px rgba(10, 40, 70, 0.06);
-  --shadow-md: 0px 4px 8px 0px rgba(10, 40, 70, 0.10), 0px 2px 4px -1px rgba(10, 40, 70, 0.07);
-  --shadow-lg: 0px 8px 20px 0px rgba(10, 40, 70, 0.14), 0px 4px 8px -2px rgba(10, 40, 70, 0.08);
-  --shadow-xl: 0px 16px 32px 0px rgba(10, 40, 70, 0.16), 0px 8px 16px -4px rgba(10, 40, 70, 0.10);
-  --shadow-2xl: 0px 24px 48px 0px rgba(10, 40, 70, 0.20);
+  --shadow-2xs: 0px 2px 0px 0px rgba(0, 40, 80, 0.08);
+  --shadow-xs: 0px 2px 4px 0px rgba(0, 40, 80, 0.08);
+  --shadow-sm: 0px 2px 4px 0px rgba(0, 40, 80, 0.08), 0px 1px 2px -1px rgba(0, 40, 80, 0.06);
+  --shadow: 0px 2px 4px 0px rgba(0, 40, 80, 0.08), 0px 1px 2px -1px rgba(0, 40, 80, 0.06);
+  --shadow-md: 0px 4px 8px 0px rgba(0, 40, 80, 0.12), 0px 2px 4px -1px rgba(0, 40, 80, 0.09);
+  --shadow-lg: 0px 8px 20px 0px rgba(0, 40, 80, 0.16), 0px 4px 8px -2px rgba(0, 40, 80, 0.10);
+  --shadow-xl: 0px 16px 32px 0px rgba(0, 40, 80, 0.20), 0px 8px 16px -4px rgba(0, 40, 80, 0.12);
+  --shadow-2xl: 0px 24px 48px 0px rgba(0, 40, 80, 0.25);
 
   --tracking-normal: 0em;
   --spacing: 0.25rem;
@@ -172,7 +173,8 @@
   }
 
   body {
-    background: linear-gradient(145deg, hsl(190, 96%, 62%) 0%, hsl(200, 92%, 54%) 45%, hsl(220, 88%, 44%) 100%);
+    /* ADJUSTED: Brighter, electric neon teal-to-sky-blue fluid gradient */
+    background: linear-gradient(135deg, hsl(175, 100%, 54%) 0%, hsl(188, 100%, 50%) 50%, hsl(200, 100%, 56%) 100%);
     background-attachment: fixed;
     @apply font-sans antialiased text-foreground selection:bg-primary/40 selection:text-primary-foreground;
   }
@@ -190,12 +192,12 @@
   }
 
   /* ── Jelly Button ──────────────────────────────────────────────────────── */
-  /* Lemonade-inspired: vivid lemon yellow gradient, white outline, deep drop shadow */
+  /* ADJUSTED: Darker 3D base shadow (#A17A00) for sharp visibility against hyper-bright gradients */
   .btn-jelly {
-    background: linear-gradient(to bottom, #FFEF4D 0%, #FFD800 55%, #F5C800 100%);
-    border: 3px solid rgba(255, 255, 255, 0.80);
-    box-shadow: 0 6px 0 #B89200, 0 9px 20px rgba(0, 0, 0, 0.28);
-    color: hsl(220, 45%, 12%);
+    background: linear-gradient(to bottom, #FFF37A 0%, #FFD700 50%, #E6B800 100%);
+    border: 3px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 6px 0 #A17A00, 0 10px 24px rgba(0, 25, 50, 0.35);
+    color: hsl(220, 50%, 10%);
     font-weight: 800;
     transition: transform 0.12s ease, box-shadow 0.12s ease;
     display: inline-flex;
@@ -205,11 +207,11 @@
   }
   .btn-jelly:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 8px 0 #B89200, 0 13px 24px rgba(0, 0, 0, 0.30);
+    box-shadow: 0 8px 0 #A17A00, 0 14px 28px rgba(0, 25, 50, 0.38);
   }
   .btn-jelly:active:not(:disabled) {
     transform: translateY(4px);
-    box-shadow: 0 2px 0 #B89200, 0 3px 8px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 2px 0 #A17A00, 0 4px 10px rgba(0, 25, 50, 0.25);
   }
   .btn-jelly:disabled {
     opacity: 0.55;
@@ -220,22 +222,58 @@
     outline-offset: 3px;
   }
 
-  /* ── Glass surface (glassmorphism on gradient bg) ─────────────────────── */
+  /* ── Heavy glass CTA button (viscous, fluid glass) ─────────────────────── */
+  .btn-glass-cta {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: hsl(220, 45%, 12%);
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(20px) saturate(160%);
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 8px 32px 0 rgba(0, 40, 80, 0.15);
+    transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .btn-glass-cta:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.36);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.45), 0 10px 36px 0 rgba(0, 40, 80, 0.18);
+  }
+  .btn-glass-cta:active:not(:disabled) {
+    transform: translateY(1px) scale(0.99);
+  }
+  .btn-glass-cta:focus-visible {
+    outline: 3px solid hsl(var(--ring));
+    outline-offset: 3px;
+  }
+  .btn-glass-cta:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* ── Glass surface (Enhanced Dynamic Liquid Glass Effects) ─────────────────── */
+  /* ADJUSTED: Amplified opacity and intense blur to trap light like real liquid glass */
   .glass {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    border: 1.5px solid rgba(255, 255, 255, 0.30);
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(20px) saturate(160%);
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 8px 32px 0 rgba(0, 40, 80, 0.15);
   }
   .glass-dark {
-    background: rgba(10, 40, 80, 0.55);
-    backdrop-filter: blur(12px);
-    border: 1.5px solid rgba(255, 255, 255, 0.20);
+    background: rgba(10, 35, 70, 0.65);
+    backdrop-filter: blur(20px) saturate(140%);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.15), 0 8px 32px 0 rgba(0, 20, 40, 0.3);
   }
 
   /* ── Watercolor card (sage green + cream) ─────────────────────────────── */
   .card-watercolor {
-    background: linear-gradient(135deg, hsl(38, 55%, 96%) 0%, hsl(100, 18%, 90%) 100%);
-    border: 2px solid hsl(100, 22%, 74%);
+    background: linear-gradient(135deg, hsl(38, 55%, 96%) 0%, hsl(100, 22%, 92%) 100%);
+    border: 2px solid hsl(100, 25%, 70%);
   }
 
   /* ── Scrollbar hide ───────────────────────────────────────────────────── */
@@ -248,8 +286,9 @@
   }
 
   /* ── Text shadow for white copy on bright gradient backgrounds ─────────── */
+  /* ADJUSTED: Heavy crisp structural shadow to ensure white text pops off the luminous background */
   .text-shadow {
-    text-shadow: 0 1px 3px rgba(0, 40, 80, 0.35);
+    text-shadow: 0 2px 4px rgba(0, 25, 50, 0.55), 0 1px 2px rgba(0, 25, 50, 0.3);
   }
 
   /* ── Elevation helpers ────────────────────────────────────────────────── */
