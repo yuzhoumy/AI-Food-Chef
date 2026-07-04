@@ -183,7 +183,9 @@ export const GetRecommendationBody = zod.object({
   "cuisine": zod.string().nullish(),
   "atmosphere": zod.string().nullish(),
   "diningPreference": zod.string().nullish(),
-  "excludeRestaurantIds": zod.array(zod.number()).optional().describe('IDs of restaurants to exclude (for shuffle)')
+  "excludeRestaurantIds": zod.array(zod.number()).optional().describe('IDs of restaurants to exclude (for shuffle)'),
+  "userLat": zod.number().nullish().describe('User latitude for distance filtering'),
+  "userLng": zod.number().nullish().describe('User longitude for distance filtering')
 })
 
 export const GetRecommendationResponse = zod.object({
@@ -228,7 +230,9 @@ export const ShuffleRecommendationBody = zod.object({
   "cuisine": zod.string().nullish(),
   "atmosphere": zod.string().nullish(),
   "diningPreference": zod.string().nullish(),
-  "excludeRestaurantIds": zod.array(zod.number()).optional().describe('IDs of restaurants to exclude (for shuffle)')
+  "excludeRestaurantIds": zod.array(zod.number()).optional().describe('IDs of restaurants to exclude (for shuffle)'),
+  "userLat": zod.number().nullish().describe('User latitude for distance filtering'),
+  "userLng": zod.number().nullish().describe('User longitude for distance filtering')
 })
 
 export const ShuffleRecommendationResponse = zod.object({

@@ -11,25 +11,75 @@ function formatRestaurant(r: typeof restaurantsTable.$inferSelect) {
   return { ...r, createdAt: r.createdAt.toISOString() };
 }
 
-async function makeRecommendation(userId: string, body: { mood: string; budget?: string | null; distance?: number | null; cuisine?: string | null; atmosphere?: string | null; diningPreference?: string | null; excludeRestaurantIds?: number[] }) {
+/**
+ * Haversine distance in kilometres between two lat/lng points.
+ */
+function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * (Math.PI / 180);
+  const dLon = (lon2 - lon1) * (Math.PI / 180);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * (Math.PI / 180)) *
+      Math.cos(lat2 * (Math.PI / 180)) *
+      Math.sin(dLon / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+async function makeRecommendation(
+  userId: string,
+  body: {
+    mood: string;
+    budget?: string | null;
+    distance?: number | null;
+    cuisine?: string | null;
+    atmosphere?: string | null;
+    diningPreference?: string | null;
+    excludeRestaurantIds?: number[];
+    userLat?: number | null;
+    userLng?: number | null;
+  },
+) {
   // Get user preferences
-  const userPrefs = await db.select().from(preferencesTable).where(eq(preferencesTable.userId, userId)).then(r => r[0]);
+  const userPrefs = await db
+    .select()
+    .from(preferencesTable)
+    .where(eq(preferencesTable.userId, userId))
+    .then((r) => r[0]);
 
   // Get candidate restaurants
-  const allRestaurants = await db.select().from(restaurantsTable).where(eq(restaurantsTable.isOpenNow, true)).limit(50);
+  const allRestaurants = await db
+    .select()
+    .from(restaurantsTable)
+    .where(eq(restaurantsTable.isOpenNow, true))
+    .limit(100);
 
-  // Apply hard filters based on user preferences
+  // Apply hard filters
   let candidates = allRestaurants;
-  if (userPrefs?.isHalal === true) candidates = candidates.filter(r => r.isHalal);
-  if (userPrefs?.isVegetarian === true) candidates = candidates.filter(r => r.isVegetarianFriendly);
-  if (body.cuisine) candidates = candidates.filter(r => r.cuisine.toLowerCase() === body.cuisine!.toLowerCase());
-  if (body.budget) candidates = candidates.filter(r => r.budgetRange === body.budget);
-  if (body.atmosphere) candidates = candidates.filter(r => r.atmosphere.includes(body.atmosphere!));
-  if (body.diningPreference) candidates = candidates.filter(r => r.diningOptions.includes(body.diningPreference!));
-  if (body.excludeRestaurantIds?.length) candidates = candidates.filter(r => !body.excludeRestaurantIds!.includes(r.id));
+  if (userPrefs?.isHalal === true) candidates = candidates.filter((r) => r.isHalal);
+  if (userPrefs?.isVegetarian === true) candidates = candidates.filter((r) => r.isVegetarianFriendly);
+  if (body.cuisine) candidates = candidates.filter((r) => r.cuisine.toLowerCase() === body.cuisine!.toLowerCase());
+  if (body.budget) candidates = candidates.filter((r) => r.budgetRange === body.budget);
+  if (body.atmosphere) candidates = candidates.filter((r) => r.atmosphere.includes(body.atmosphere!));
+  if (body.diningPreference) candidates = candidates.filter((r) => r.diningOptions.includes(body.diningPreference!));
+  if (body.excludeRestaurantIds?.length)
+    candidates = candidates.filter((r) => !body.excludeRestaurantIds!.includes(r.id));
 
-  // Fallback: if too few candidates, use all restaurants
-  if (candidates.length < 3) candidates = allRestaurants.filter(r => !body.excludeRestaurantIds?.includes(r.id));
+  // Distance filter: only apply when user location AND a distance cap are provided
+  if (body.userLat != null && body.userLng != null && body.distance != null) {
+    const { userLat, userLng, distance } = body;
+    const withinRange = candidates.filter((r) => {
+      if (r.latitude == null || r.longitude == null) return true; // keep ungeocoded
+      return haversineKm(userLat, userLng, r.latitude, r.longitude) <= distance;
+    });
+    // Only apply the distance cap if it doesn't eliminate all candidates
+    if (withinRange.length > 0) candidates = withinRange;
+  }
+
+  // Fallback: if too few candidates after all filters, relax to all restaurants
+  if (candidates.length < 3) {
+    candidates = allRestaurants.filter((r) => !body.excludeRestaurantIds?.includes(r.id));
+  }
 
   const aiResult = await getAIRecommendation({
     mood: body.mood,
@@ -38,14 +88,16 @@ async function makeRecommendation(userId: string, body: { mood: string; budget?:
     cuisine: body.cuisine,
     atmosphere: body.atmosphere,
     diningPreference: body.diningPreference,
-    userPreferences: userPrefs ? {
-      isHalal: userPrefs.isHalal,
-      isVegetarian: userPrefs.isVegetarian,
-      spiceLevel: userPrefs.spiceLevel,
-      favoriteCuisines: userPrefs.favoriteCuisines,
-      budgetRange: userPrefs.budgetRange,
-    } : undefined,
-    restaurants: candidates.map(r => ({
+    userPreferences: userPrefs
+      ? {
+          isHalal: userPrefs.isHalal,
+          isVegetarian: userPrefs.isVegetarian,
+          spiceLevel: userPrefs.spiceLevel,
+          favoriteCuisines: userPrefs.favoriteCuisines,
+          budgetRange: userPrefs.budgetRange,
+        }
+      : undefined,
+    restaurants: candidates.map((r) => ({
       id: r.id,
       name: r.name,
       cuisine: r.cuisine,
@@ -61,7 +113,11 @@ async function makeRecommendation(userId: string, body: { mood: string; budget?:
     excludeIds: body.excludeRestaurantIds,
   });
 
-  const restaurant = await db.select().from(restaurantsTable).where(eq(restaurantsTable.id, aiResult.restaurantId)).then(r => r[0]);
+  const restaurant = await db
+    .select()
+    .from(restaurantsTable)
+    .where(eq(restaurantsTable.id, aiResult.restaurantId))
+    .then((r) => r[0]);
 
   if (!restaurant) throw new Error("Recommended restaurant not found");
 
@@ -123,15 +179,19 @@ router.get("/recommendations/history", requireAuth, async (req, res): Promise<vo
     .orderBy(desc(recommendationsTable.createdAt))
     .limit(limit);
 
-  const restaurantIds = [...new Set(history.map(h => h.restaurantId))];
-  const restaurants = restaurantIds.length > 0
-    ? await db.select().from(restaurantsTable).then(all => all.filter(r => restaurantIds.includes(r.id)))
-    : [];
+  const restaurantIds = [...new Set(history.map((h) => h.restaurantId))];
+  const restaurants =
+    restaurantIds.length > 0
+      ? await db
+          .select()
+          .from(restaurantsTable)
+          .then((all) => all.filter((r) => restaurantIds.includes(r.id)))
+      : [];
 
-  const restaurantMap = new Map(restaurants.map(r => [r.id, r]));
+  const restaurantMap = new Map(restaurants.map((r) => [r.id, r]));
 
   const result = history
-    .map(h => {
+    .map((h) => {
       const restaurant = restaurantMap.get(h.restaurantId);
       if (!restaurant) return null;
       return {

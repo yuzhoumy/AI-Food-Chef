@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { useGetUserPreferences, useGetRecommendation } from "@workspace/api-client-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Sparkles, Users, User, Heart } from "lucide-react";
+import { Sparkles, Users, User, Heart, LocateFixed, MapPin, Loader2, AlertCircle } from "lucide-react";
 import { useAppState } from "@/store/app-state";
 import { Shell } from "@/components/shell";
 import { useToast } from "@/hooks/use-toast";
+import { useUserLocation } from "@/hooks/use-user-location";
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
@@ -39,10 +40,6 @@ function priceToBudget(value: number): string {
   return "RM30+";
 }
 
-function distanceLabel(value: number): string {
-  return `Within ${value} km`;
-}
-
 // ── Section wrapper ────────────────────────────────────────────────────────
 
 function Section({ step, title, children }: { step: number; title: string; children: React.ReactNode }) {
@@ -74,6 +71,7 @@ export default function Discover() {
   const getRecommendation = useGetRecommendation();
   const { setCurrentRequest, setLastResult } = useAppState();
   const { toast } = useToast();
+  const { location: userLocation, request: requestLocation } = useUserLocation();
 
   const [occasion, setOccasion] = useState<DiningOccasion | null>(null);
   const [vibe, setVibe] = useState<Vibe | null>(null);
@@ -86,6 +84,8 @@ export default function Discover() {
       setLocation("/onboarding");
     }
   }, [preferences, setLocation]);
+
+  const hasLocation = userLocation.status === "granted";
 
   const handleSubmit = () => {
     const parts: string[] = [];
@@ -101,12 +101,14 @@ export default function Discover() {
     const requestData = {
       mood,
       budget: priceToBudget(price),
-      distance,
+      distance: hasLocation ? distance : undefined,
       atmosphere: vibe ?? undefined,
       diningPreference: undefined,
+      userLat: hasLocation ? userLocation.lat : undefined,
+      userLng: hasLocation ? userLocation.lng : undefined,
     };
 
-    setCurrentRequest(requestData);
+    setCurrentRequest({ ...requestData, distance: hasLocation ? distance : undefined });
     getRecommendation.mutate(
       { data: requestData },
       {
@@ -296,28 +298,108 @@ export default function Discover() {
         {/* Q5 — Maximum distance */}
         <Section step={5} title="Maximum distance">
           <div className="card-watercolor rounded-2xl px-6 py-5 flex flex-col gap-4 shadow-lg">
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground font-medium">How far are you willing to go?</span>
-              <span className="text-sm font-extrabold" style={{ color: "hsl(82,55%,35%)" }}>
-                {distanceLabel(distance)}
-              </span>
+
+            {/* Location status row */}
+            <div className="flex items-center justify-between gap-3">
+              {userLocation.status === "idle" && (
+                <>
+                  <span className="text-sm text-muted-foreground font-medium flex-1">
+                    Share your location for accurate distance filtering
+                  </span>
+                  <button
+                    type="button"
+                    onClick={requestLocation}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all shrink-0"
+                    style={{
+                      background: "linear-gradient(to bottom, #FFEF4D, #FFD800)",
+                      boxShadow: "0 3px 0 #B89200",
+                      color: "hsl(220,45%,12%)",
+                    }}
+                  >
+                    <LocateFixed className="w-3.5 h-3.5" />
+                    Use my location
+                  </button>
+                </>
+              )}
+
+              {userLocation.status === "requesting" && (
+                <>
+                  <span className="text-sm text-muted-foreground font-medium flex-1">
+                    Getting your location…
+                  </span>
+                  <Loader2 className="w-4 h-4 text-primary animate-spin shrink-0" />
+                </>
+              )}
+
+              {userLocation.status === "granted" && (
+                <>
+                  <div className="flex items-center gap-1.5 flex-1 min-w-0">
+                    <MapPin className="w-4 h-4 text-primary shrink-0" />
+                    <span className="text-sm font-bold text-foreground truncate">{userLocation.label}</span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={requestLocation}
+                    className="text-xs font-bold text-muted-foreground hover:text-foreground transition-colors shrink-0"
+                  >
+                    Refresh
+                  </button>
+                </>
+              )}
+
+              {(userLocation.status === "denied" || userLocation.status === "error") && (
+                <>
+                  <div className="flex items-center gap-1.5 flex-1">
+                    <AlertCircle className="w-4 h-4 text-destructive shrink-0" />
+                    <span className="text-xs text-destructive font-medium">
+                      {userLocation.status === "denied"
+                        ? "Location access denied"
+                        : userLocation.message}
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={requestLocation}
+                    className="text-xs font-bold text-muted-foreground hover:text-foreground transition-colors shrink-0"
+                  >
+                    Retry
+                  </button>
+                </>
+              )}
             </div>
-            <input
-              type="range"
-              min={1}
-              max={50}
-              step={1}
-              value={distance}
-              onChange={(e) => setDistance(Number(e.target.value))}
-              data-testid="slider-distance"
-              className="w-full h-2 rounded-full cursor-pointer"
-              style={{ accentColor: "hsl(52,100%,50%)" }}
-            />
-            <div className="flex justify-between text-xs text-muted-foreground font-bold">
-              <span>1 km</span>
-              <span>25 km</span>
-              <span>50 km</span>
+
+            {/* Slider — only active when location is granted */}
+            <div className={hasLocation ? "" : "opacity-40 pointer-events-none select-none"}>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm text-muted-foreground font-medium">How far are you willing to go?</span>
+                <span className="text-sm font-extrabold" style={{ color: hasLocation ? "hsl(82,55%,35%)" : undefined }}>
+                  {hasLocation ? `Within ${distance} km` : "—"}
+                </span>
+              </div>
+              <input
+                type="range"
+                min={1}
+                max={50}
+                step={1}
+                value={distance}
+                onChange={(e) => setDistance(Number(e.target.value))}
+                data-testid="slider-distance"
+                className="w-full h-2 rounded-full cursor-pointer"
+                style={{ accentColor: "hsl(52,100%,50%)" }}
+                disabled={!hasLocation}
+              />
+              <div className="flex justify-between text-xs text-muted-foreground font-bold mt-2">
+                <span>1 km</span>
+                <span>25 km</span>
+                <span>50 km</span>
+              </div>
             </div>
+
+            {!hasLocation && userLocation.status === "idle" && (
+              <p className="text-xs text-muted-foreground text-center -mt-1">
+                Enable location above to activate distance filtering
+              </p>
+            )}
           </div>
         </Section>
 

@@ -124,6 +124,10 @@ export interface RecommendationRequest {
   diningPreference?: string | null;
   /** IDs of restaurants to exclude (for shuffle) */
   excludeRestaurantIds?: number[];
+  /** User latitude for distance filtering (from browser Geolocation API) */
+  userLat?: number | null;
+  /** User longitude for distance filtering (from browser Geolocation API) */
+  userLng?: number | null;
 }
 
 export interface RecommendationResult {
