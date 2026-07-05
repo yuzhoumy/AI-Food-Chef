@@ -62,6 +62,69 @@ export interface AIRecommendation {
   alternativeIds: number[];
 }
 
+const STOP_WORDS = new Set([
+  "a", "an", "the", "and", "or", "but", "for", "with", "of", "in", "on", "at", "to", "from",
+  "is", "are", "was", "were", "be", "being", "been", "have", "has", "had", "do", "does", "did",
+  "will", "would", "could", "should", "may", "might", "can", "this", "that", "these", "those",
+  "i", "me", "my", "we", "us", "our", "you", "your", "he", "she", "it", "they", "them", "their",
+  "looking", "great", "good", "want", "wants", "some", "something", "meal", "food", "restaurant",
+  "place", "eat", "dining", "out", "night", "day", "spicy",
+]);
+
+function extractKeywords(text: string): string[] {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s]/g, " ")
+    .split(/\s+/)
+    .filter((w) => w.length > 2 && !STOP_WORDS.has(w));
+}
+
+function scoreRestaurant(ctx: RecommendationContext, r: RecommendationContext["restaurants"][number]): number {
+  let score = 0;
+
+  // Strong signal: exact structured preferences that survived the hard filters
+  if (ctx.cuisine) {
+    const c = ctx.cuisine.toLowerCase();
+    if (r.cuisine.toLowerCase().includes(c) || r.cuisines.some((x) => x.toLowerCase().includes(c))) {
+      score += 10;
+    }
+  }
+  if (ctx.diningOccasion) {
+    const o = ctx.diningOccasion.toLowerCase();
+    if (r.diningOccasion.some((x) => x.toLowerCase().includes(o))) {
+      score += 10;
+    }
+  }
+  if (ctx.atmosphere) {
+    const a = ctx.atmosphere.toLowerCase();
+    if (r.atmosphere.some((x) => x.toLowerCase().includes(a))) {
+      score += 10;
+    }
+  }
+
+  // Secondary signal: natural-language mood keywords across restaurant fields
+  const keywords = extractKeywords(ctx.mood || "");
+  const haystack = [
+    r.name,
+    r.cuisine,
+    ...r.cuisines,
+    r.description,
+    ...r.tags,
+    ...r.atmosphere,
+    ...r.diningOccasion,
+    ...r.popularDishes,
+  ]
+    .join(" ")
+    .toLowerCase();
+  for (const kw of keywords) {
+    if (haystack.includes(kw)) score += 1;
+  }
+
+  // Tiebreaker: community rating
+  score += (r.rating || 0) * 0.5;
+  return score;
+}
+
 export async function getAIRecommendation(ctx: RecommendationContext): Promise<AIRecommendation> {
   // Build a rich, structured line per restaurant so the AI has everything it needs
   const restaurantList = ctx.restaurants
@@ -154,16 +217,42 @@ Respond with ONLY a JSON object, no markdown:
     return validated.data;
   } catch (error) {
     logger.error({ error }, "OpenAI recommendation failed");
-    // Fallback: best-rated available restaurant
+    // Fallback: score remaining candidates by how well they match the user's
+    // explicit preferences and mood, then pick from the top-scored set with
+    // weighted randomness so low-signal requests don't always return the same
+    // highest-rated restaurant.
     const available = ctx.restaurants.filter((r) => !ctx.excludeIds?.includes(r.id));
-    const fallback = available[0];
-    if (!fallback) throw new Error("No restaurants available");
+    if (available.length === 0) throw new Error("No restaurants available");
+    const scored = available
+      .map((r) => ({ restaurant: r, score: scoreRestaurant(ctx, r) }))
+      .sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return (b.restaurant.rating || 0) - (a.restaurant.rating || 0);
+      });
+
+    const TOP_N = 5;
+    const top = scored.slice(0, Math.min(TOP_N, scored.length));
+    const totalWeight = top.reduce((sum, s) => sum + s.score + 1, 0); // +1 gives a baseline chance even when scores are tied/low
+    const rand = Math.random() * totalWeight;
+    let cumulative = 0;
+    let chosen = top[0];
+    for (const entry of top) {
+      cumulative += entry.score + 1;
+      if (rand <= cumulative) {
+        chosen = entry;
+        break;
+      }
+    }
+
     return {
-      restaurantId: fallback.id,
-      moodInterpretation: "Finding the best match for you.",
-      matchReason: "This highly-rated restaurant matches your preferences.",
+      restaurantId: chosen.restaurant.id,
+      moodInterpretation: "Finding the best match for your request.",
+      matchReason: "This spot lines up with your preferences and is highly rated by the community.",
       score: 0.7,
-      alternativeIds: available.slice(1, 5).map((r) => r.id),
+      alternativeIds: scored
+        .filter((s) => s.restaurant.id !== chosen.restaurant.id)
+        .slice(0, 5)
+        .map((s) => s.restaurant.id),
     };
   }
 }

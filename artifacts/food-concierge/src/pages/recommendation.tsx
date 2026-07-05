@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation, Link } from "wouter";
 import { useAppState } from "@/store/app-state";
-import { useShuffleRecommendation } from "@workspace/api-client-react";
+import { useShuffleRecommendation, ApiError } from "@workspace/api-client-react";
 import { Shell } from "@/components/shell";
 import { MapPin, Navigation, Shuffle, Star, MessageCircle, Utensils, SearchX, ArrowLeft, Sparkles } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -9,7 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export default function Recommendation() {
   const [, setLocation] = useLocation();
-  const { currentRequest, lastResult, setLastResult, noResult } = useAppState();
+  const { currentRequest, lastResult, setLastResult, setCurrentRequest, noResult } = useAppState();
   const shuffleMutation = useShuffleRecommendation();
   const { toast } = useToast();
 
@@ -80,12 +80,24 @@ export default function Recommendation() {
 
   const handleShuffle = () => {
     if (!currentRequest) return;
-    const newRequest = { ...currentRequest, excludeRestaurantIds: [restaurant.id] };
+    const previousExcludes = currentRequest.excludeRestaurantIds ?? [];
+    // Accumulate previously shown restaurants so shuffling doesn't ping-pong between the same two
+    const newRequest = {
+      ...currentRequest,
+      excludeRestaurantIds: [...new Set([...previousExcludes, restaurant.id])],
+    };
     shuffleMutation.mutate({ data: newRequest }, {
-      onSuccess: (result) => { setLastResult(result); },
-      onError: () => {
+      onSuccess: (result) => {
+        setLastResult(result);
+        setCurrentRequest(newRequest);
+      },
+      onError: (err) => {
+        const isNoMatch =
+          err instanceof ApiError &&
+          err.status === 422 &&
+          (err.data as { code?: string } | null)?.code === "NO_MATCH";
         toast({
-          title: "Couldn't shuffle",
+          title: isNoMatch ? "No more matches" : "Couldn't shuffle",
           description: "We might be out of fresh options for this exact mood.",
           variant: "destructive"
         });
