@@ -1,0 +1,5296 @@
+[
+    {
+        "id": 45,
+        "name": "Keijometo",
+        "cuisine": "Cafe / Japanese Fusion",
+        "description": "Industrial-themed cafe renowned for its brutalist concrete architecture, specialty matcha beverages, and Japanese sandos.",
+        "address": "3, Jalan Chengai, Taman Melodies, 80250 Johor Bahru, Johor",
+        "area": "Taman Melodies",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM50",
+        "atmosphere": [
+            "Instagrammable",
+            "trendy",
+            "air-conditioned",
+            "Lively"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:30 AM - 8:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 2100,
+        "photos": [],
+        "popular_dishes": [
+            "Watermelon Matcha",
+            "Mentaiko Tamagoyaki Sando",
+            "Salmon Ochazuke"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "matcha",
+            "sando",
+            "industrial",
+            "aesthetic",
+            "cafe"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Japanese Fusion"
+        ],
+        "price_min": 20,
+        "price_max": 50,
+        "dining_occasion": [
+            "Brunch",
+            "Lunch",
+            "Friends",
+            "Casual Lunch"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 46,
+        "name": "Founders Cafe",
+        "cuisine": "Cafe / Western",
+        "description": "A spacious, industrial-chic cafe serving up hearty brunch plates, fresh bagels, and excellent artisanal coffee.",
+        "address": "Tiong Nam Tebrau, 45, Jalan Tiong Emas, Kawasan Perindustrian Tebrau, 81100 Johor Bahru, Johor",
+        "area": "Tebrau",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM30-RM60",
+        "atmosphere": [
+            "trendy",
+            "Lively",
+            "Instagrammable",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.6,
+        "review_count": 1850,
+        "photos": [],
+        "popular_dishes": [
+            "English Breakfast",
+            "Smoked Salmon Bagel",
+            "Flat White"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "brunch",
+            "bagels",
+            "coffee",
+            "pastries"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western"
+        ],
+        "price_min": 30,
+        "price_max": 60,
+        "dining_occasion": [
+            "Brunch",
+            "Group",
+            "Friends",
+            "Casual"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 47,
+        "name": "Nimmies Pastry Cafe",
+        "cuisine": "Cafe / Pastries",
+        "description": "An aesthetically pleasing standalone mansion cafe famous for its flaky croissants, decadent pastries, and fusion mains.",
+        "address": "171, Jalan Beringin, Taman Melodies, 80250 Johor Bahru, Johor",
+        "area": "Taman Melodies",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM45",
+        "atmosphere": [
+            "Instagrammable",
+            "elegant",
+            "boutique",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "8:00 AM - 11:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 1200,
+        "photos": [],
+        "popular_dishes": [
+            "Pistachio Supreme Croissant",
+            "Truffle Mushroom Pasta",
+            "Nasi Lemak Croissant"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "pastry",
+            "croissant",
+            "aesthetic",
+            "dessert"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Fusion"
+        ],
+        "price_min": 20,
+        "price_max": 45,
+        "dining_occasion": [
+            "Tea Time",
+            "Brunch",
+            "Friends",
+            "Date"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 48,
+        "name": "The Replacement - Lodge & Kitchen",
+        "cuisine": "Cafe / Western",
+        "description": "Minimalist, Melbourne-inspired cafe located in the heritage quarter, well known for its B&B vibe, churros, and all-day brunch.",
+        "address": "33, Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM25-RM50",
+        "atmosphere": [
+            "Cozy",
+            "heritage",
+            "Instagrammable",
+            "trendy"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 4:30 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 950,
+        "photos": [],
+        "popular_dishes": [
+            "B&B French Toast",
+            "Churros with Dark Chocolate",
+            "Soft Shell Crab Bao"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "brunch",
+            "churros",
+            "minimalist",
+            "heritage"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western"
+        ],
+        "price_min": 25,
+        "price_max": 50,
+        "dining_occasion": [
+            "Brunch",
+            "Casual",
+            "Tourists",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 49,
+        "name": "Yard & Co.",
+        "cuisine": "Cafe / Fusion",
+        "description": "A popular seaside cafe offering breathtaking ocean views alongside a menu of hearty mains and aesthetic desserts.",
+        "address": "Lot 4785, Jalan Siakap, Kampung Sungai Rengit, 81600 Pengerang, Johor",
+        "area": "Pengerang",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM30-RM60",
+        "atmosphere": [
+            "scenic",
+            "outdoor",
+            "Instagrammable",
+            "Lively"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 PM - 7:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 1100,
+        "photos": [],
+        "popular_dishes": [
+            "Milk Mochi",
+            "Laksa Pasta",
+            "Sunset Lemonade"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "seaside",
+            "ocean view",
+            "dessert",
+            "roadtrip"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Asian Fusion"
+        ],
+        "price_min": 30,
+        "price_max": 60,
+        "dining_occasion": [
+            "Casual Lunch",
+            "Friends",
+            "Family",
+            "Tourists"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 50,
+        "name": "Space Cafe",
+        "cuisine": "Cafe",
+        "description": "Sleek and futuristic coffee shop nestled in the Holiday Villa area, specializing in pour-overs and delicate pastries.",
+        "address": "G-11, Holiday Villa, 260, Jalan Dato Sulaiman, Taman Abad, 80250 Johor Bahru, Johor",
+        "area": "Taman Abad",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "trendy",
+            "quiet",
+            "air-conditioned",
+            "Instagrammable"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "8:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 600,
+        "photos": [],
+        "popular_dishes": [
+            "Hand Brew Coffee",
+            "Canel\u00e9",
+            "Viennoiserie"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "specialty coffee",
+            "futuristic",
+            "pastries"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Desserts"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Tea Time",
+            "Work",
+            "Quick Bite",
+            "Casual"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 51,
+        "name": "Principle Cafe by T.A.M",
+        "cuisine": "Japanese Fusion",
+        "description": "An elegant cafe serving refined Japanese-Western fusion dishes and artisanal desserts in a chic environment.",
+        "address": "82-B, Jalan Trus, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM40-RM80",
+        "atmosphere": [
+            "elegant",
+            "intimate",
+            "upscale",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in"
+        ],
+        "opening_hours": "11:00 AM - 9:00 PM",
+        "is_open_now": null,
+        "rating": 4.6,
+        "review_count": 800,
+        "photos": [],
+        "popular_dishes": [
+            "Truffle Mushroom Risotto",
+            "Yuzu Tart",
+            "Mentaiko Pasta"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "fusion",
+            "dessert",
+            "halal-sourced",
+            "elegant"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Japanese Fusion",
+            "Cafe"
+        ],
+        "price_min": 40,
+        "price_max": 80,
+        "dining_occasion": [
+            "Date Night",
+            "Dinner",
+            "Celebration",
+            "Romantic Dinner"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 52,
+        "name": "Offee",
+        "cuisine": "Cafe",
+        "description": "A visually appealing double-story cafe in downtown JB known for its skylight roof, great coffee, and relaxing ambiance.",
+        "address": "30, Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM30",
+        "atmosphere": [
+            "Cozy",
+            "study-friendly",
+            "Instagrammable",
+            "heritage"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "8:00 AM - 12:00 AM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 450,
+        "photos": [],
+        "popular_dishes": [
+            "Dirty Latte",
+            "Matcha Pound Cake",
+            "Croffle"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "skylight",
+            "late night",
+            "coffee",
+            "croffle"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe"
+        ],
+        "price_min": 15,
+        "price_max": 30,
+        "dining_occasion": [
+            "Study",
+            "Tea Time",
+            "Late Night",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 53,
+        "name": "Rowan & Parsley Food Atelier",
+        "cuisine": "Texas Barbecue / Western",
+        "description": "A hidden gem set in a lush botanical garden offering authentic Texas-style smoked meats and a romantic evening ambiance.",
+        "address": "17, Jalan Cenderai 20, Taman Perindustrian Kota Puteri, 81750 Masai, Johor",
+        "area": "Masai",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM50-RM120",
+        "atmosphere": [
+            "scenic",
+            "Romantic",
+            "outdoor",
+            "elegant"
+        ],
+        "dining_options": [
+            "Dine-in"
+        ],
+        "opening_hours": "11:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 850,
+        "photos": [],
+        "popular_dishes": [
+            "Smoked Beef Brisket",
+            "BBQ Pork Ribs",
+            "Rosemary Chicken"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "bbq",
+            "smoked meat",
+            "garden cafe",
+            "romantic"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "American",
+            "Barbecue"
+        ],
+        "price_min": 50,
+        "price_max": 120,
+        "dining_occasion": [
+            "Romantic Dinner",
+            "Anniversary",
+            "Celebration",
+            "Dinner"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 54,
+        "name": "Flowers in the Window",
+        "cuisine": "Cafe / Western",
+        "description": "A whimsical, nature-inspired cafe heavily decorated with flora, offering edible flower cakes and hearty brunch meals.",
+        "address": "9, Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM25-RM50",
+        "atmosphere": [
+            "boutique",
+            "Cozy",
+            "Instagrammable",
+            "heritage"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 4:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 1020,
+        "photos": [],
+        "popular_dishes": [
+            "Herb Crust Salmon",
+            "Rose & Pistachio Cake",
+            "Spicy Crab Pasta"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "floral",
+            "aesthetic",
+            "cakes",
+            "brunch"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western"
+        ],
+        "price_min": 25,
+        "price_max": 50,
+        "dining_occasion": [
+            "Brunch",
+            "Date",
+            "Friends",
+            "Tea Time"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 55,
+        "name": "Roost Repurposed & Recycled",
+        "cuisine": "Cafe / Asian Fusion",
+        "description": "An eco-friendly, quirky cafe furnished with recycled and upcycled materials, offering healthy bowls and local fusion.",
+        "address": "14, Jalan Trus, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "casual",
+            "Cozy",
+            "heritage",
+            "vintage"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 PM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 760,
+        "photos": [],
+        "popular_dishes": [
+            "Mashed Potato with Meatballs",
+            "Hainanese Chicken Rice Bowl",
+            "Fresh Pressed Juices"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "upcycled",
+            "vintage",
+            "healthy",
+            "cafe"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Asian Fusion",
+            "Cafe"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Casual Dinner",
+            "Lunch",
+            "Healthy Eating",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 56,
+        "name": "Faculty of Caffeine",
+        "cuisine": "Cafe",
+        "description": "One of JB's pioneer independent coffee shops, offering a moody, artistic vibe with solid coffee and classic brunch dishes.",
+        "address": "106, Jalan Trus, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM40",
+        "atmosphere": [
+            "intimate",
+            "trendy",
+            "heritage",
+            "Casual"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 5:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 890,
+        "photos": [],
+        "popular_dishes": [
+            "Generous Breakfast",
+            "Truffle Fries",
+            "Signature Dark Chocolate"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "pioneer",
+            "coffee",
+            "artistic",
+            "brunch"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western"
+        ],
+        "price_min": 20,
+        "price_max": 40,
+        "dining_occasion": [
+            "Brunch",
+            "Quick Bite",
+            "Casual",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 57,
+        "name": "Sweet Blossom Coffee Roasters",
+        "cuisine": "Specialty Coffee",
+        "description": "A cozy neighborhood cafe highly regarded for its expertly roasted coffee, impressive 3D latte art, and quiet ambiance.",
+        "address": "28, Jalan Maju, Taman Pelangi, 80400 Johor Bahru, Johor",
+        "area": "Taman Pelangi",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM30",
+        "atmosphere": [
+            "Quiet",
+            "Cozy",
+            "study-friendly",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 5:00 PM",
+        "is_open_now": null,
+        "rating": 4.7,
+        "review_count": 650,
+        "photos": [],
+        "popular_dishes": [
+            "3D Latte Art Coffee",
+            "Filter Coffee",
+            "Matcha Roll Cake"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "3d latte art",
+            "specialty coffee",
+            "roaster",
+            "quiet"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Cafe"
+        ],
+        "price_min": 15,
+        "price_max": 30,
+        "dining_occasion": [
+            "Tea Time",
+            "Study",
+            "Remote Work",
+            "Quick Bite"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 58,
+        "name": "My Liberica Coffee",
+        "cuisine": "Specialty Coffee",
+        "description": "A locally proud coffee farm-to-cup cafe that specializes in Malaysian Liberica beans processed with various innovative methods.",
+        "address": "73, Jalan Molek 3/10, Taman Molek, 81100 Johor Bahru, Johor",
+        "area": "Taman Molek",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "authentic",
+            "Cozy",
+            "quiet",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 6:00 PM",
+        "is_open_now": null,
+        "rating": 4.6,
+        "review_count": 720,
+        "photos": [],
+        "popular_dishes": [
+            "Liberica Filter Coffee",
+            "Luak Coffee",
+            "Cheesecake"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "liberica",
+            "farm-to-cup",
+            "specialty coffee",
+            "local beans"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Cafe"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Tea Time",
+            "Business",
+            "Casual",
+            "Work"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 59,
+        "name": "The Brew Orchestra",
+        "cuisine": "Cafe / Western",
+        "description": "An upscale, music-themed cafe run by certified Q-graders, serving top-tier coffee and hearty brunch fare.",
+        "address": "19, Jalan Austin Heights 8/5, Taman Mount Austin, 81100 Johor Bahru, Johor",
+        "area": "Taman Mount Austin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM25-RM50",
+        "atmosphere": [
+            "elegant",
+            "Lively",
+            "air-conditioned",
+            "trendy"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:30 AM - 7:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 1050,
+        "photos": [],
+        "popular_dishes": [
+            "Truffle Mac & Cheese",
+            "Big Breakfast",
+            "Pour Over Coffee"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "q-grader",
+            "specialty coffee",
+            "brunch",
+            "mount austin"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western"
+        ],
+        "price_min": 25,
+        "price_max": 50,
+        "dining_occasion": [
+            "Brunch",
+            "Friends",
+            "Casual",
+            "Date"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 60,
+        "name": "Routine by Soon",
+        "cuisine": "Cafe / Fusion",
+        "description": "A spacious, pastel-hued cafe in R&F Mall offering a wide selection of creative fusion dishes and specialty drinks.",
+        "address": "Lot G-025, G-026, R&F Mall, Jalan Tanjung Puteri, 80300 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM30-RM60",
+        "atmosphere": [
+            "Instagrammable",
+            "Lively",
+            "family-friendly",
+            "trendy"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 680,
+        "photos": [],
+        "popular_dishes": [
+            "Quesadilla",
+            "Soft Shell Crab Pasta",
+            "Kombucha"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "mall cafe",
+            "aesthetic",
+            "fusion",
+            "pastel"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Fusion"
+        ],
+        "price_min": 30,
+        "price_max": 60,
+        "dining_occasion": [
+            "Casual Lunch",
+            "Family",
+            "Friends",
+            "Dinner"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 61,
+        "name": "Morihana Pastry",
+        "cuisine": "Dessert / Pastries",
+        "description": "A charming, cottage-style bakery and cafe known for its delicate, Japanese-inspired fruit cakes and tarts.",
+        "address": "Lot B, Jalan Ekoflora 1, Taman Ekoflora, 81100 Johor Bahru, Johor",
+        "area": "Taman Ekoflora",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "Cozy",
+            "Instagrammable",
+            "quiet",
+            "boutique"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 7:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 410,
+        "photos": [],
+        "popular_dishes": [
+            "Strawberry Shortcake",
+            "Matcha Tart",
+            "Earl Grey Chiffon"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "japanese pastry",
+            "cakes",
+            "tart",
+            "cottage core"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Desserts",
+            "Bakery"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Tea Time",
+            "Date",
+            "Friends",
+            "Quick Bite"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 62,
+        "name": "Bev C Cafe",
+        "cuisine": "Cafe / Desserts",
+        "description": "A unique fashion-store-meets-cafe concept known for its rustic interior, charcoal croissants, and creative espresso ice cubes.",
+        "address": "54, Jalan Tan Hiok Nee, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM45",
+        "atmosphere": [
+            "trendy",
+            "heritage",
+            "boutique",
+            "Instagrammable"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 6:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 890,
+        "photos": [],
+        "popular_dishes": [
+            "Espresso Ice Cube with Milk",
+            "Charcoal Croissant",
+            "Truffle Fries"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "fashion cafe",
+            "charcoal croissant",
+            "espresso cubes",
+            "heritage"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe"
+        ],
+        "price_min": 20,
+        "price_max": 45,
+        "dining_occasion": [
+            "Tea Time",
+            "Friends",
+            "Casual",
+            "Tourists"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 63,
+        "name": "F.I.G (Food in Garden)",
+        "cuisine": "Cafe / Western",
+        "description": "An aesthetic botanical-themed restaurant offering a relaxing garden dining experience with a menu of hearty western meals.",
+        "address": "JB Area, Johor Bahru, Johor",
+        "area": "Johor Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM30-RM60",
+        "atmosphere": [
+            "scenic",
+            "outdoor",
+            "Instagrammable",
+            "Cozy"
+        ],
+        "dining_options": [
+            "Dine-in"
+        ],
+        "opening_hours": "12:00 PM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 250,
+        "photos": [],
+        "popular_dishes": [
+            "Grilled Chicken Chop",
+            "Aglio Olio",
+            "Floral Tea"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "garden",
+            "botanical",
+            "western",
+            "aesthetic"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Western",
+            "Cafe"
+        ],
+        "price_min": 30,
+        "price_max": 60,
+        "dining_occasion": [
+            "Dinner",
+            "Casual Dinner",
+            "Date Night",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 64,
+        "name": "The Lightwood by Mues",
+        "cuisine": "Cafe / Sourdough",
+        "description": "A minimalist, hidden cafe specializing in artisanal sourdough bakes, hearty brunch plates, and craft coffee.",
+        "address": "18K, Basement, Jalan Abdul Samad, Kampung Bahru, 80100 Johor Bahru, Johor",
+        "area": "Kampung Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM25-RM50",
+        "atmosphere": [
+            "Quiet",
+            "hidden gem",
+            "Cozy",
+            "minimalist"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "8:30 AM - 5:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 550,
+        "photos": [],
+        "popular_dishes": [
+            "Sourdough Toast with Scrambled Eggs",
+            "Kombucha",
+            "Mushroom Soup"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "sourdough",
+            "hidden gem",
+            "basement cafe",
+            "minimalist"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Bakery"
+        ],
+        "price_min": 25,
+        "price_max": 50,
+        "dining_occasion": [
+            "Brunch",
+            "Breakfast",
+            "Quiet",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 65,
+        "name": "Reborn Cafe",
+        "cuisine": "Cafe",
+        "description": "A neighborhood favorite known for a welcoming atmosphere, excellent drip coffee, and wholesome comfort food.",
+        "address": "Johor Bahru, Johor",
+        "area": "Johor Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "casual",
+            "Cozy",
+            "local",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 6:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 300,
+        "photos": [],
+        "popular_dishes": [
+            "Classic Waffles",
+            "Latte",
+            "Chicken Rice Bowl"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "coffee",
+            "waffles",
+            "comfort food"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Casual Lunch",
+            "Tea Time",
+            "Friends",
+            "Quick Bite"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 66,
+        "name": "Kaffeinate",
+        "cuisine": "Cafe",
+        "description": "A modern, vibrant spot dedicated to coffee enthusiasts, offering a variety of beans and relaxed seating for work or study.",
+        "address": "Johor Bahru, Johor",
+        "area": "Johor Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM30",
+        "atmosphere": [
+            "study-friendly",
+            "trendy",
+            "Casual",
+            "Quiet"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "8:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 210,
+        "photos": [],
+        "popular_dishes": [
+            "Iced Americano",
+            "Almond Croissant",
+            "Avocado Toast"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "study spot",
+            "coffee",
+            "bakes"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe"
+        ],
+        "price_min": 15,
+        "price_max": 30,
+        "dining_occasion": [
+            "Work",
+            "Study",
+            "Remote Work",
+            "Quick Bite"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 67,
+        "name": "Seven Oaks Bakery Cafe",
+        "cuisine": "Bakery / Cafe",
+        "description": "A grand, multi-story bakery cafe offering an immense variety of freshly baked breads, pastries, and main courses.",
+        "address": "134, Jalan Serampang, Taman Pelangi, 80400 Johor Bahru, Johor",
+        "area": "Taman Pelangi",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM60",
+        "atmosphere": [
+            "elegant",
+            "family-friendly",
+            "Lively",
+            "upscale"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 1400,
+        "photos": [],
+        "popular_dishes": [
+            "Salted Egg Croissant",
+            "Seafood Tom Yum Pasta",
+            "Cruffin"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "bakery",
+            "pastry",
+            "grand",
+            "family"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Bakery",
+            "Fusion"
+        ],
+        "price_min": 20,
+        "price_max": 60,
+        "dining_occasion": [
+            "Family",
+            "Brunch",
+            "Celebration",
+            "Dinner"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 68,
+        "name": "Oriental Kopi (\u534e\u9633)",
+        "cuisine": "Malaysian / Kopitiam",
+        "description": "A wildly popular modern kopitiam famous for its thick egg tarts, polo buns, and robust traditional Nanyang coffee.",
+        "address": "Lot G-044, Mid Valley Southkey, 1, Persiaran Southkey 1, 80150 Johor Bahru, Johor",
+        "area": "Mid Valley Southkey",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "Lively",
+            "casual",
+            "vibrant",
+            "family-friendly"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 3200,
+        "photos": [],
+        "popular_dishes": [
+            "Oriental Egg Tart",
+            "Polo Bun with Butter",
+            "Oriental White Coffee",
+            "Nasi Lemak"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "kopitiam",
+            "egg tart",
+            "polo bun",
+            "local favourite"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malaysian",
+            "Kopitiam"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Breakfast",
+            "Casual Lunch",
+            "Family",
+            "Tea Time"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 69,
+        "name": "IT Roo Cafe",
+        "cuisine": "Hainanese / Western",
+        "description": "A nostalgic, long-standing establishment famed for serving what many claim to be the 'best chicken chop in town'.",
+        "address": "17, Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM30",
+        "atmosphere": [
+            "heritage",
+            "local landmark",
+            "casual",
+            "authentic"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 9:30 PM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 2800,
+        "photos": [],
+        "popular_dishes": [
+            "Hainanese Chicken Chop (Fried)",
+            "Hainanese Chicken Chop (Grilled)",
+            "Root Beer Float"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "chicken chop",
+            "hainanese",
+            "legacy",
+            "local favourite"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Hainanese",
+            "Western"
+        ],
+        "price_min": 15,
+        "price_max": 30,
+        "dining_occasion": [
+            "Casual Lunch",
+            "Dinner",
+            "Tourists",
+            "Family"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 70,
+        "name": "Restoran Hua Mui (\u534e\u7f8e\u8336\u9910\u5ba4)",
+        "cuisine": "Malaysian / Hainanese Kopitiam",
+        "description": "An iconic multi-generational traditional kopitiam serving landmark Hainanese chicken chop, signature local coffee, and charcoal toast since 1946.",
+        "address": "131, Jalan Trus, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM25",
+        "atmosphere": [
+            "local",
+            "local landmark",
+            "casual",
+            "authentic",
+            "heritage"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "7:30 AM - 9:30 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 3100,
+        "photos": [],
+        "popular_dishes": [
+            "Hainanese Chicken Chop",
+            "Hua Mui Mee",
+            "Kopi & Kaya Toast"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "kopitiam",
+            "chicken chop",
+            "heritage",
+            "breakfast",
+            "local landmark"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malaysian",
+            "Hainanese"
+        ],
+        "price_min": 10,
+        "price_max": 25,
+        "dining_occasion": [
+            "Breakfast",
+            "Casual Lunch",
+            "Family",
+            "Tourists"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 71,
+        "name": "Maco Cafe & Bakery",
+        "cuisine": "Cafe / Desserts",
+        "description": "A premier dessert destination famous for its extensive selection of delicate, handmade Mille Crepe cakes and specialty hot brews.",
+        "address": "65, Jalan Sutera Utama 8/2, Taman Sutera Utama, 81300 Skudai, Johor",
+        "area": "Sutera Utama",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM40",
+        "atmosphere": [
+            "Cozy",
+            "casual",
+            "air-conditioned",
+            "trendy"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 10:30 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 850,
+        "photos": [],
+        "popular_dishes": [
+            "Vanilla Mille Crepe",
+            "Matcha Crepe Cake",
+            "Rum & Raisin Crepe"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "mille crepe",
+            "bakery",
+            "desserts",
+            "cakes"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Desserts"
+        ],
+        "price_min": 15,
+        "price_max": 40,
+        "dining_occasion": [
+            "Tea Time",
+            "Friends",
+            "Snacks",
+            "Date"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 72,
+        "name": "Soil JB",
+        "cuisine": "Bakery / Cafe",
+        "description": "A fairytale-like, moss-covered cottage bakery tucked away inside Eco Spring Labs, specializing in exceptional artisanal French viennoiseries.",
+        "address": "Unit JTL2C, Jalan Ekoflora 1, Taman Ekoflora, 81100 Johor Bahru, Johor",
+        "area": "Taman Ekoflora",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM45",
+        "atmosphere": [
+            "scenic",
+            "Instagrammable",
+            "boutique",
+            "Cozy"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 6:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 920,
+        "photos": [],
+        "popular_dishes": [
+            "Croissant Amande",
+            "Matcha Croissant",
+            "Pain au Chocolat"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "bakery",
+            "croissant",
+            "cottage core",
+            "aesthetic"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Bakery",
+            "Cafe"
+        ],
+        "price_min": 15,
+        "price_max": 45,
+        "dining_occasion": [
+            "Breakfast",
+            "Tea Time",
+            "Friends",
+            "Date"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 73,
+        "name": "Just Want Coffee (JWC)",
+        "cuisine": "Specialty Coffee / Cafe",
+        "description": "Housed in a massive revamped factory building, this pioneer specialty roaster delivers industrial vibes alongside high-level barista creations.",
+        "address": "The Factory 30, 30, Jalan Mutiara Emas 5/3, Taman Mount Austin, 81100 Johor Bahru, Johor",
+        "area": "Taman Mount Austin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM50",
+        "atmosphere": [
+            "trendy",
+            "Lively",
+            "Instagrammable",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 11:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 1650,
+        "photos": [],
+        "popular_dishes": [
+            "Classic Cold Brew",
+            "Bagel Sandwiches",
+            "Sizzling Chocolate Brownie"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "industrial",
+            "roastery",
+            "specialty coffee",
+            "mount austin"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western"
+        ],
+        "price_min": 20,
+        "price_max": 50,
+        "dining_occasion": [
+            "Friends",
+            "Tea Time",
+            "Late Night",
+            "Group"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 74,
+        "name": "The Atlas Maison",
+        "cuisine": "Cafe / Western",
+        "description": "A minimalist white-and-wood aesthetic cafe curated by award-winning baristas, highlighting artisanal bakery lines and premium all-day breakfast plates.",
+        "address": "32, Jalan Austin Heights 8/7, Taman Mount Austin, 81100 Johor Bahru, Johor",
+        "area": "Taman Mount Austin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM25-RM55",
+        "atmosphere": [
+            "Instagrammable",
+            "elegant",
+            "Cozy",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 5:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 1120,
+        "photos": [],
+        "popular_dishes": [
+            "Atlas Big Breakfast",
+            "Eggs Benedict",
+            "Artisanal Sourdough Breads"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "all day breakfast",
+            "bakery",
+            "specialty coffee",
+            "minimalist"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western"
+        ],
+        "price_min": 25,
+        "price_max": 55,
+        "dining_occasion": [
+            "Breakfast",
+            "Brunch",
+            "Casual Lunch",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 75,
+        "name": "Ukiyo Cafe",
+        "cuisine": "French-Japanese Pastries",
+        "description": "A stunning, pastel pink boutique destination showcasing highly intricate French pastry techniques blended perfectly with delicate Japanese flavor profiles.",
+        "address": "17-02, Jalan Austin Heights 8/3, Taman Mount Austin, 81100 Johor Bahru, Johor",
+        "area": "Taman Mount Austin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM25-RM60",
+        "atmosphere": [
+            "boutique",
+            "Instagrammable",
+            "elegant",
+            "intimate"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 PM - 7:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 390,
+        "photos": [],
+        "popular_dishes": [
+            "Genmaicha Cube Dessert",
+            "Ukiyo Tart",
+            "Signature Matcha Coffee"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "gourmet pastries",
+            "pink aesthetic",
+            "japanese fusion",
+            "desserts"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Desserts",
+            "Japanese Fusion"
+        ],
+        "price_min": 25,
+        "price_max": 60,
+        "dining_occasion": [
+            "Tea Time",
+            "Date",
+            "Celebration",
+            "Snacks"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 76,
+        "name": "Komer Coffee",
+        "cuisine": "Specialty Coffee / Cafe",
+        "description": "A hidden, deeply minimalist hideout centered strictly around filter brew mastery, serving clean-profile single origins and small-batch bakes.",
+        "address": "Johor Bahru, Johor",
+        "area": "Johor Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "Quiet",
+            "cozy",
+            "study-friendly",
+            "intimate"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 6:00 PM",
+        "is_open_now": null,
+        "rating": 4.6,
+        "review_count": 180,
+        "photos": [],
+        "popular_dishes": [
+            "Single Origin Filter Brew",
+            "Cold White",
+            "Matcha Canele"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "filter coffee",
+            "minimalist",
+            "hidden gem",
+            "slow coffee"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Remote Work",
+            "Study",
+            "Tea Time",
+            "Quiet"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 77,
+        "name": "Let's Get Cereal",
+        "cuisine": "Novelty Dessert Cafe",
+        "description": "Malaysia's nostalgic cereal cafe concept offering an immersive playground of over 50 global, rare, and local cereal brands mixed with premium flavored milks.",
+        "address": "Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM25",
+        "atmosphere": [
+            "vibrant",
+            "casual",
+            "family-friendly",
+            "Instagrammable"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 8:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 290,
+        "photos": [],
+        "popular_dishes": [
+            "Custom Cereal Bowls",
+            "Cookie Monster Shake",
+            "Cereal Swirl Soft Serve"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "cereal",
+            "novelty",
+            "imported treats",
+            "nostalgic"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Desserts"
+        ],
+        "price_min": 10,
+        "price_max": 25,
+        "dining_occasion": [
+            "Breakfast",
+            "Snacks",
+            "Family",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 78,
+        "name": "The Replacement Lodge",
+        "cuisine": "Cafe / Western",
+        "description": "The dedicated hospitality extensions and heritage-infused bed & breakfast space paired dynamically with their famous down-stairs boutique kitchen concept.",
+        "address": "33-34, Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM25-RM55",
+        "atmosphere": [
+            "heritage",
+            "boutique",
+            "Cozy",
+            "Instagrammable"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 5:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 480,
+        "photos": [],
+        "popular_dishes": [
+            "B&B French Toast",
+            "Gourmet Churros",
+            "Scrambled Eggs Sourdough"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "boutique hotel",
+            "lodge",
+            "brunch",
+            "heritage street"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western"
+        ],
+        "price_min": 25,
+        "price_max": 55,
+        "dining_occasion": [
+            "Breakfast",
+            "Brunch",
+            "Tourists",
+            "Date"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 79,
+        "name": "Sorella Cafe",
+        "cuisine": "Japanese-French Pastries",
+        "description": "A cozy, artisan pastry kitchen committed to natural, premium ingredients, turning out light-textured Japanese cakes and fine French dessert tarts.",
+        "address": "48, Jalan Sutera Utama 8/19, Taman Sutera Utama, 81300 Skudai, Johor",
+        "area": "Sutera Utama",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM40",
+        "atmosphere": [
+            "Cozy",
+            "intimate",
+            "quiet",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 9:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 510,
+        "photos": [],
+        "popular_dishes": [
+            "Signature Earl Grey Cake",
+            "Fruit Tarts",
+            "Sorella High Tea Set"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "artisan cakes",
+            "low sugar",
+            "high tea",
+            "pastries"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Desserts",
+            "Cafe"
+        ],
+        "price_min": 15,
+        "price_max": 40,
+        "dining_occasion": [
+            "Tea Time",
+            "Date Night",
+            "Friends",
+            "Snacks"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 80,
+        "name": "Shakespeare Milkshakes",
+        "cuisine": "Dessert Cafe",
+        "description": "An intimate, trendy hotspot completely dedicated to loaded specialty milkshakes, premium croffles, and artisanal dessert pairings.",
+        "address": "9, Jalan Trus, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "trendy",
+            "intimate",
+            "Instagrammable",
+            "vibrant"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 PM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 670,
+        "photos": [],
+        "popular_dishes": [
+            "Kinder Bueno Shake",
+            "Berries Croffle",
+            "Dark Chocolate Soft Serve"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "milkshakes",
+            "croffle",
+            "waffles",
+            "dessert specialty"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Desserts"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Snacks",
+            "Late Night",
+            "Friends",
+            "Date"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 81,
+        "name": "Chaiwalla & Co. Honest Tea",
+        "cuisine": "Beverage Bar / Cafe",
+        "description": "JB's iconic original container cafe concept, famous for customized freshly brewed bubble teas, traditional chai blends, and outdoor vibes.",
+        "address": "36, Jalan Tan Hiok Nee, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM25",
+        "atmosphere": [
+            "Outdoor",
+            "outdoor",
+            "casual",
+            "heritage",
+            "vibrant"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 11:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 1250,
+        "photos": [],
+        "popular_dishes": [
+            "Thai Milk Tea",
+            "Honest Chai Brew",
+            "Spicy Potato Wedges"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "container cafe",
+            "bubble tea",
+            "chai",
+            "street culture"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Cafe"
+        ],
+        "price_min": 10,
+        "price_max": 25,
+        "dining_occasion": [
+            "Quick Bite",
+            "Tea Time",
+            "Late Night",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 82,
+        "name": "Orijinal",
+        "cuisine": "Cafe / Malaysian Fusion",
+        "description": "A stylish urban cafe blending traditional Malaysian local flavors with modern plating trends and premium specialty coffee options.",
+        "address": "Johor Bahru Area, Johor Bahru, Johor",
+        "area": "Johor Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM45",
+        "atmosphere": [
+            "casual",
+            "trendy",
+            "air-conditioned",
+            "vibrant"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 9:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 140,
+        "photos": [],
+        "popular_dishes": [
+            "Fusion Nasi Lemak Platters",
+            "Signature Ice Latte",
+            "Local Craft Pastries"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "local fusion",
+            "modern cafe",
+            "malaysian taste"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Malaysian"
+        ],
+        "price_min": 20,
+        "price_max": 45,
+        "dining_occasion": [
+            "Casual Lunch",
+            "Dinner",
+            "Friends",
+            "Lunch"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 83,
+        "name": "D'Cafe",
+        "cuisine": "Cafe / Western Fusion",
+        "description": "A magnificent flagship glasshouse sanctuary surrounded by natural light and lush greenery, famous for upscale brunching options.",
+        "address": "9, Jalan Kelewang, Taman Sri Tebrau, 80050 Johor Bahru, Johor",
+        "area": "Taman Sri Tebrau",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM30-RM65",
+        "atmosphere": [
+            "scenic",
+            "Instagrammable",
+            "elegant",
+            "Lively"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 7:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 1450,
+        "photos": [],
+        "popular_dishes": [
+            "Rosti with Smoked Salmon",
+            "Soft Shell Crab Pasta",
+            "Salted Caramel Waffles"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "glasshouse",
+            "brunch destination",
+            "botanical scenery",
+            "aesthetic"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western Fusion"
+        ],
+        "price_min": 30,
+        "price_max": 65,
+        "dining_occasion": [
+            "Brunch",
+            "Celebration",
+            "Date",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 84,
+        "name": "Grind.jb",
+        "cuisine": "Specialty Coffee Bar",
+        "description": "A raw, dedicated neighborhood micro-roastery and espresso venue strictly obsessed with precise extractions and micro-lot filter series.",
+        "address": "Johor Bahru Area, Johor Bahru, Johor",
+        "area": "Johor Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM30",
+        "atmosphere": [
+            "Quiet",
+            "casual",
+            "intimate",
+            "study-friendly"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 6:00 PM",
+        "is_open_now": null,
+        "rating": 4.6,
+        "review_count": 190,
+        "photos": [],
+        "popular_dishes": [
+            "Flat White",
+            "Hand Drip Coffee",
+            "Sourdough Toastlines"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "micro-roastery",
+            "espresso bar",
+            "specialty coffee",
+            "purist"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe"
+        ],
+        "price_min": 15,
+        "price_max": 30,
+        "dining_occasion": [
+            "Study",
+            "Remote Work",
+            "Quick Bite",
+            "Tea Time"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 85,
+        "name": "Brew 9",
+        "cuisine": "Cafe",
+        "description": "An intimate specialty espresso nook focused on delivering quality coffee extractions alongside quick breakfast items and artisanal pastries.",
+        "address": "Johor Bahru Area, Johor Bahru, Johor",
+        "area": "Johor Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM12-RM30",
+        "atmosphere": [
+            "Cozy",
+            "casual",
+            "quiet",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "8:30 AM - 5:30 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 110,
+        "photos": [],
+        "popular_dishes": [
+            "Cold Brew Series",
+            "Almond Croissant",
+            "Signature White"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "coffee bar",
+            "quick breakfast",
+            "bakes"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe"
+        ],
+        "price_min": 12,
+        "price_max": 30,
+        "dining_occasion": [
+            "Breakfast",
+            "Quick Bite",
+            "Work",
+            "Tea Time"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 86,
+        "name": "August Cafe",
+        "cuisine": "Cafe / Western",
+        "description": "A rustic, wood-furnished refuge in the historical cultural quarters, serving comforting local-infused western fare and manual brews.",
+        "address": "34, Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM45",
+        "atmosphere": [
+            "Cozy",
+            "heritage",
+            "quiet",
+            "intimate"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 6:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 420,
+        "photos": [],
+        "popular_dishes": [
+            "August Big Breakfast",
+            "Smoked Duck Pasta",
+            "House Filter Coffee"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "heritage street",
+            "rustic",
+            "cozy cafe",
+            "slow living"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western"
+        ],
+        "price_min": 20,
+        "price_max": 45,
+        "dining_occasion": [
+            "Brunch",
+            "Tea Time",
+            "Quiet",
+            "Casual Lunch"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 87,
+        "name": "The Ice-Cream Project (TIP)",
+        "cuisine": "Liquid Nitrogen Ice Cream",
+        "description": "Johor's legendary pioneer liquid nitrogen creamery, creating ultra-smooth, premium eggless ice creams completely fresh to order.",
+        "address": "31, Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM30",
+        "atmosphere": [
+            "Cozy",
+            "trendy",
+            "heritage",
+            "intimate"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "1:00 PM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 1380,
+        "photos": [],
+        "popular_dishes": [
+            "Brownie & Cream Ice Cream",
+            "Matcha Ice Cream",
+            "Premium Earl Grey Flavour"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "liquid nitrogen",
+            "artisan ice cream",
+            "eggless",
+            "heritage street"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Desserts"
+        ],
+        "price_min": 15,
+        "price_max": 30,
+        "dining_occasion": [
+            "Snacks",
+            "Late Night",
+            "Date",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 88,
+        "name": "Yeon Cafe",
+        "cuisine": "Korean / Cafe",
+        "description": "An aesthetic, bright Korean-inspired space integrating handcrafted traditional kimbap rolls, custom fried chickens, and vibrant signature mocktails.",
+        "address": "12, Jalan Perang, Taman Pelangi, 80400 Johor Bahru, Johor",
+        "area": "Taman Pelangi",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM50",
+        "atmosphere": [
+            "Instagrammable",
+            "Cozy",
+            "vibrant",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 PM - 9:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 460,
+        "photos": [],
+        "popular_dishes": [
+            "Classic Kimbap",
+            "Korean Sweet Spicy Fried Chicken",
+            "Injeolmi Croffle"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "korean cafe",
+            "kimbap",
+            "pelangi aesthetic",
+            "croffle"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Korean",
+            "Cafe"
+        ],
+        "price_min": 20,
+        "price_max": 50,
+        "dining_occasion": [
+            "Casual Lunch",
+            "Dinner",
+            "Friends",
+            "Tea Time"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 89,
+        "name": "Broovies Cafe",
+        "cuisine": "Cafe / Western",
+        "description": "A highly comfortable family neighborhood dining cafe serving abundant portions of Western classics and whimsical sweet offerings.",
+        "address": "Johor Bahru Area, Johor Bahru, Johor",
+        "area": "Johor Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM45",
+        "atmosphere": [
+            "casual",
+            "family-friendly",
+            "Cozy",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:30 AM - 9:30 PM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 180,
+        "photos": [],
+        "popular_dishes": [
+            "Chicken Chop Main",
+            "Carbonara Pasta",
+            "Waffle Sundaes"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "neighborhood cafe",
+            "western comfort",
+            "family dining"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western"
+        ],
+        "price_min": 20,
+        "price_max": 45,
+        "dining_occasion": [
+            "Family Dinner",
+            "Casual Lunch",
+            "Lunch",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 90,
+        "name": "Commune by the Creators",
+        "cuisine": "Cafe / Clean Eating",
+        "description": "An ultra-minimalist, stark white concept gallery cafe offering Nordic-inspired styling alongside health-conscious clean breakfast selections.",
+        "address": "228 & 230, Jalan Molek 1/9, Taman Molek, 81100 Johor Bahru, Johor",
+        "area": "Taman Molek",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM25-RM55",
+        "atmosphere": [
+            "minimalist",
+            "Quiet",
+            "Instagrammable",
+            "elegant"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 6:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 690,
+        "photos": [],
+        "popular_dishes": [
+            "Creators Big Breakfast",
+            "Avocado Toast Series",
+            "Specialty White Latte"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "stark white",
+            "minimalist",
+            "healthy eating",
+            "specialty coffee"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Healthy Eating"
+        ],
+        "price_min": 25,
+        "price_max": 55,
+        "dining_occasion": [
+            "Brunch",
+            "Healthy Eating",
+            "Remote Work",
+            "Study"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 91,
+        "name": "Echo Resort Cafe",
+        "cuisine": "Cafe / Fusion",
+        "description": "A themed leisure dining hub delivering relaxed vacation resort-inspired design details, serving international mains and sweet coolers.",
+        "address": "Johor Bahru Area, Johor Bahru, Johor",
+        "area": "Johor Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM25-RM50",
+        "atmosphere": [
+            "scenic",
+            "casual",
+            "family-friendly",
+            "Outdoor"
+        ],
+        "dining_options": [
+            "Dine-in"
+        ],
+        "opening_hours": "11:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 130,
+        "photos": [],
+        "popular_dishes": [
+            "Grilled Salmon Pack",
+            "Tropical Fruit Smoothies",
+            "Club Sandwich"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "resort theme",
+            "leisure",
+            "vacation vibes"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Fusion"
+        ],
+        "price_min": 25,
+        "price_max": 50,
+        "dining_occasion": [
+            "Family Dinner",
+            "Group",
+            "Lunch",
+            "Casual Dining"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 92,
+        "name": "Eden by Wizards",
+        "cuisine": "Modern European / Fusion",
+        "description": "A breathtaking flagship greenhouse-style architectural marvel at Eco Palladium, presenting high-end innovative European fusion lunching and dinner choices.",
+        "address": "Eco Palladium, Block B, Jalan Ekoflora 7/1, Taman Ekoflora, 81100 Johor Bahru, Johor",
+        "area": "Taman Ekoflora",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM40-RM90",
+        "atmosphere": [
+            "elegant",
+            "upscale",
+            "Instagrammable",
+            "scenic"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.6,
+        "review_count": 890,
+        "photos": [],
+        "popular_dishes": [
+            "Truffle Tagliolini",
+            "Wizards Brioche Burger",
+            "Gourmet Taro Specialty Latte"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "greenhouse architecture",
+            "fine dining",
+            "gourmet fusion",
+            "eco palladium"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Modern European",
+            "Fusion"
+        ],
+        "price_min": 40,
+        "price_max": 90,
+        "dining_occasion": [
+            "Date Night",
+            "Celebration",
+            "Fine Dining",
+            "Anniversary"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 93,
+        "name": "The Replacement",
+        "cuisine": "Cafe / Western",
+        "description": "The foundational gourmet flagship boutique kitchen on Jalan Dhoby street, praised for setting early Melbourne-style artisan breakfast culture across JB.",
+        "address": "33, Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM25-RM50",
+        "atmosphere": [
+            "Instagrammable",
+            "heritage",
+            "trendy",
+            "Casual"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 4:30 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 1560,
+        "photos": [],
+        "popular_dishes": [
+            "Soft Shell Crab Benedict",
+            "Signature Churros",
+            "Unagi Bao"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "pioneer cafe",
+            "brunch landmark",
+            "heritage quarter"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Western"
+        ],
+        "price_min": 25,
+        "price_max": 50,
+        "dining_occasion": [
+            "Brunch",
+            "Tourists",
+            "Friends",
+            "Date"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 94,
+        "name": "Knocknock",
+        "cuisine": "Cafe / Dessert",
+        "description": "A charming neighborhood minimalist corner coffee house serving delicate comfort cakes, rustic small bites, and custom family beverage profiles.",
+        "address": "Johor Bahru Area, Johor Bahru, Johor",
+        "area": "Johor Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "Cozy",
+            "casual",
+            "quiet",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 8:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 160,
+        "photos": [],
+        "popular_dishes": [
+            "Homemade Scones",
+            "Matcha Latte",
+            "Chocolate Fudge Cake"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "neighborhood corner",
+            "homey bakes",
+            "cozy coffee"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Cafe",
+            "Desserts"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Tea Time",
+            "Friends",
+            "Quick Bite",
+            "Casual"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 95,
+        "name": "Kam Long Ah Zai Curry Fish Head (\u91d1\u9f99\u963f\u4ed4\u5496\u55b1\u9c7c\u5934)",
+        "cuisine": "Chinese / Seafood",
+        "description": "A legendary establishment drawing massive daily queues for its single signature dish: a rich, deeply savory claypot curry fish head bubbling with cabbage, ladyfingers, and fried beancurd skin.",
+        "address": "74, Jalan Wong Ah Fook, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM45",
+        "atmosphere": [
+            "local",
+            "local landmark",
+            "casual",
+            "authentic",
+            "Lively"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "8:00 AM - 4:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 3400,
+        "photos": [],
+        "popular_dishes": [
+            "Claypot Curry Fish Head",
+            "Fried Beancurd Skin"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "curry fish head",
+            "local landmark",
+            "claypot",
+            "long queue"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Chinese",
+            "Seafood"
+        ],
+        "price_min": 20,
+        "price_max": 45,
+        "dining_occasion": [
+            "Casual Lunch",
+            "Lunch",
+            "Family",
+            "Tourists"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 96,
+        "name": "Restoran Ya Wang (\u9e2d\u7687\u836f\u6750\u70e4\u9e2d)",
+        "cuisine": "Chinese / Roasted Meat",
+        "description": "Widely recognized as the culinary advisor to Singapore's famous Dian Xiao Er, this traditional restaurant specializes in tender, crispy roasted ducks drenched in a fragrant herbal gravy.",
+        "address": "44, Jalan Segget, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM50",
+        "atmosphere": [
+            "local",
+            "casual",
+            "authentic",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "8:00 AM - 6:00 PM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 2100,
+        "photos": [],
+        "popular_dishes": [
+            "Ten Herbal Roasted Duck",
+            "Char Siew",
+            "Roasted Pork"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "herbal duck",
+            "roasted meat",
+            "traditional",
+            "legacy"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Chinese"
+        ],
+        "price_min": 20,
+        "price_max": 50,
+        "dining_occasion": [
+            "Casual Lunch",
+            "Lunch",
+            "Family Dinner",
+            "Tourists"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 97,
+        "name": "Hiap Joo Bakery & Biscuit Factory (\u534f\u88d5\u9762\u5305\u897f\u679c\u5382)",
+        "cuisine": "Traditional Bakery",
+        "description": "An iconic, century-old wood-fired bakery operating since 1919, world-famous for its ultra-moist, smoky, and intensely fragrant traditional banana cakes.",
+        "address": "13, Jalan Tan Hiok Nee, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM15",
+        "atmosphere": [
+            "local landmark",
+            "heritage",
+            "authentic"
+        ],
+        "dining_options": [
+            "Takeaway"
+        ],
+        "opening_hours": "7:30 AM - 4:30 PM",
+        "is_open_now": null,
+        "rating": 4.6,
+        "review_count": 4500,
+        "photos": [],
+        "popular_dishes": [
+            "Wood-Fired Banana Cake",
+            "Coconut Bun",
+            "Otak-Otak Bun"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "banana cake",
+            "wood-fired",
+            "heritage",
+            "bakery",
+            "local landmark"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Bakery"
+        ],
+        "price_min": 5,
+        "price_max": 15,
+        "dining_occasion": [
+            "Takeaway",
+            "Snacks",
+            "Tea Time",
+            "Breakfast"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 98,
+        "name": "Salahuddin Bakery",
+        "cuisine": "Traditional Bakery",
+        "description": "One of Johor Bahru's oldest operating bakeries, dating back to 1937, still using a massive traditional coal-fired oven to bake signature wood-shaped loaves and coal-baked pastries.",
+        "address": "26, Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM3-RM12",
+        "atmosphere": [
+            "heritage",
+            "local landmark",
+            "authentic"
+        ],
+        "dining_options": [
+            "Takeaway"
+        ],
+        "opening_hours": "9:00 AM - 6:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 1100,
+        "photos": [],
+        "popular_dishes": [
+            "Triangle Mutton Curry Puff",
+            "Bengali Bread",
+            "French Loaf"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "bakery",
+            "curry puff",
+            "traditional",
+            "heritage street"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Bakery"
+        ],
+        "price_min": 3,
+        "price_max": 12,
+        "dining_occasion": [
+            "Takeaway",
+            "Snacks",
+            "Breakfast"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 99,
+        "name": "Kacang Pool Haji",
+        "cuisine": "Malay",
+        "description": "The definitive birthplace of Johor's iconic Kacang Pool\u2014a rich, savory fava bean stew topped with minced meat, a sunny-side-up egg, and served alongside thick, toasted bread.",
+        "address": "Jalan Sabar, Taman Larkin Idaman, 80350 Johor Bahru, Johor",
+        "area": "Larkin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM15",
+        "atmosphere": [
+            "local",
+            "casual",
+            "local landmark",
+            "authentic"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "7:00 AM - 11:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 2800,
+        "photos": [],
+        "popular_dishes": [
+            "Kacang Pool Daging",
+            "Kacang Pool Kambing",
+            "Roti Bakar"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "kacang pool",
+            "local food",
+            "breakfast",
+            "specialty"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 5,
+        "price_max": 15,
+        "dining_occasion": [
+            "Breakfast",
+            "Brunch",
+            "Quick Bite",
+            "Snacks"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 100,
+        "name": "ZZ Sup Tulang Restaurant",
+        "cuisine": "Malay / Sup Tulang",
+        "description": "A rustic, tropical open-air kampong-style eatery famed for its heavy, aromatic Sup Tulang (bone marrow soup) served with straws to extract the rich marrow.",
+        "address": "20, Jalan Petri, Yahya Awal, 80100 Johor Bahru, Johor",
+        "area": "Kampung Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "local",
+            "Outdoor",
+            "outdoor",
+            "casual",
+            "Lively"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 PM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 2300,
+        "photos": [],
+        "popular_dishes": [
+            "Sup Tulang Gearbox",
+            "Mee Rebus Tulang",
+            "Mee Goreng Tulang"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "sup tulang",
+            "marrow bone",
+            "local favourite",
+            "malay cuisine"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Dinner",
+            "Casual Dinner",
+            "Family Dinner",
+            "Group"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 101,
+        "name": "Roslin Beriani House",
+        "cuisine": "Malay / Nasi Beriani",
+        "description": "A celebrated local hotspot specializing in premium, highly fragrant Johor-style Nasi Beriani Gam served with falling-off-the-bone mutton, beef, or chicken.",
+        "address": "14, Jalan Kelewang, Taman Sri Tebrau, 80050 Johor Bahru, Johor",
+        "area": "Taman Sri Tebrau",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM12-RM30",
+        "atmosphere": [
+            "local",
+            "casual",
+            "family-friendly",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "8:00 AM - 6:30 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 1400,
+        "photos": [],
+        "popular_dishes": [
+            "Nasi Beriani Gam Kambing",
+            "Nasi Beriani Ayam Goreng",
+            "Ayam Masak Merah"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "briyani",
+            "beriani gam",
+            "lunch spot",
+            "malay food"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 12,
+        "price_max": 30,
+        "dining_occasion": [
+            "Lunch",
+            "Casual Lunch",
+            "Family",
+            "Group"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 102,
+        "name": "Nasi Lemak Simple",
+        "cuisine": "Malay",
+        "description": "A massively popular night-time nasi lemak joint, loved for its simple wrapped packet nasi lemak paired with rich sambal and an excellent lineup of traditional side dishes.",
+        "address": "33, Jalan Dataran Larkin 1, Taman Dataran Larkin, 80350 Johor Bahru, Johor",
+        "area": "Larkin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM18",
+        "atmosphere": [
+            "local",
+            "casual",
+            "Lively"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "5:00 PM - 1:00 AM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 920,
+        "photos": [],
+        "popular_dishes": [
+            "Nasi Lemak Ayam Goreng Berempah",
+            "Sambal Paru",
+            "Sambal Sotong"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "nasi lemak",
+            "late night",
+            "supper",
+            "fried chicken"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 5,
+        "price_max": 18,
+        "dining_occasion": [
+            "Supper",
+            "Late Night",
+            "Dinner",
+            "Quick Bite"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 103,
+        "name": "Warong Saga",
+        "cuisine": "Malay",
+        "description": "An authentic, old-school open-air neighborhood warung that has been cooking up comforting traditional breakfast foods and classic Johor mee rebus since the 1980s.",
+        "address": "5, Jalan Saga, Taman Melodies, 80250 Johor Bahru, Johor",
+        "area": "Taman Melodies",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM15",
+        "atmosphere": [
+            "local",
+            "casual",
+            "authentic",
+            "outdoor"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "7:00 AM - 1:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 850,
+        "photos": [],
+        "popular_dishes": [
+            "Mee Rebus",
+            "Lontong Basah",
+            "Tauhu Bakar"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "warung",
+            "breakfast",
+            "traditional",
+            "lontong"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 5,
+        "price_max": 15,
+        "dining_occasion": [
+            "Breakfast",
+            "Brunch",
+            "Quick Bite",
+            "Casual Lunch"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 104,
+        "name": "Onn Kitchen",
+        "cuisine": "Malay",
+        "description": "A highly popular breakfast and brunch assembly yard known for a cheerful morning atmosphere, stretching roti canai lines, and classic wet lontong bowls.",
+        "address": "29-A, Jalan Tarom, Kampung Bahru, 80100 Johor Bahru, Johor",
+        "area": "Kampung Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM15",
+        "atmosphere": [
+            "local",
+            "casual",
+            "Lively",
+            "outdoor"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "7:00 AM - 12:30 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 1150,
+        "photos": [],
+        "popular_dishes": [
+            "Roti Canai",
+            "Lontong Kering",
+            "Nasi Lemak Bunis"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "roti canai",
+            "breakfast spot",
+            "lively morning",
+            "kampong food"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 5,
+        "price_max": 15,
+        "dining_occasion": [
+            "Breakfast",
+            "Brunch",
+            "Casual Lunch",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 105,
+        "name": "Banafee Village",
+        "cuisine": "Malay / Middle Eastern Fusion",
+        "description": "A massive, energetic 24-hour dining destination providing a vast mixed menu of Indonesian ayam penyet, Middle Eastern lines, and live music setups.",
+        "address": "9, Jalan Dato Abdullah Tahir, Taman Abad, 80300 Johor Bahru, Johor",
+        "area": "Taman Abad",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "Lively",
+            "casual",
+            "outdoor",
+            "vibrant"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 AM - 12:00 AM",
+        "is_open_now": null,
+        "rating": 4.0,
+        "review_count": 3800,
+        "photos": [],
+        "popular_dishes": [
+            "Nasi Ayam Penyet",
+            "Nasi Goreng Banafee",
+            "Roti Tissue"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "24 hours",
+            "live music",
+            "ayam penyet",
+            "supper gathering"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malay",
+            "Middle Eastern"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Supper",
+            "Late Night",
+            "Dinner",
+            "Group"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 106,
+        "name": "Sedap Corner",
+        "cuisine": "Malaysian / Peranakan Fusion",
+        "description": "A respected legacy family restaurant operating since 1987, preparing an expansive, clean catalog of Peranakan, traditional Malay, and local specialties.",
+        "address": "11, Jalan Abdul Samad, Kampung Bahru, 80100 Johor Bahru, Johor",
+        "area": "Kampung Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "family-friendly",
+            "Cozy",
+            "casual",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 1200,
+        "photos": [],
+        "popular_dishes": [
+            "Laksa Johor",
+            "Nasi Ambeng",
+            "Pandan Chicken"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "family favorite",
+            "nyonya",
+            "laksa johor",
+            "legacy"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malaysian",
+            "Peranakan"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Family Dinner",
+            "Lunch",
+            "Dinner",
+            "Family"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 107,
+        "name": "Restoran E&Y Sahabat",
+        "cuisine": "Mamak / Indian-Muslim",
+        "description": "A buzzing, bright, and expansive 24-hour mamak institution in Mount Austin, standardizing late-night football screening and top-tier stir-fried maggi noodles.",
+        "address": "Jalan Austin Heights 8/1, Taman Mount Austin, 81100 Johor Bahru, Johor",
+        "area": "Taman Mount Austin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM20",
+        "atmosphere": [
+            "Lively",
+            "casual",
+            "outdoor",
+            "vibrant"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 AM - 12:00 AM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 1600,
+        "photos": [],
+        "popular_dishes": [
+            "Maggi Goreng Double",
+            "Roti Canai",
+            "Teh Tarik Madu"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "mamak",
+            "24 hours",
+            "supper",
+            "mount austin"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Mamak"
+        ],
+        "price_min": 5,
+        "price_max": 20,
+        "dining_occasion": [
+            "Supper",
+            "Late Night",
+            "Quick Bite",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 108,
+        "name": "Restoran Osman",
+        "cuisine": "Mamak / Indian-Muslim",
+        "description": "A dominant, highly visible 24-hour family mamak chain known for sprawling seating plans, reliable roti varieties, and robust local mixed-rice plates.",
+        "address": "1, Jalan Sagu 18, Taman Daya, 81100 Johor Bahru, Johor",
+        "area": "Taman Daya",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM20",
+        "atmosphere": [
+            "casual",
+            "family-friendly",
+            "Lively"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 AM - 12:00 AM",
+        "is_open_now": null,
+        "rating": 3.9,
+        "review_count": 1450,
+        "photos": [],
+        "popular_dishes": [
+            "Roti Telur",
+            "Nasi Kandar Osman",
+            "Mee Goreng Mamak"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "mamak",
+            "24 hours",
+            "roti",
+            "football screening"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Mamak"
+        ],
+        "price_min": 5,
+        "price_max": 20,
+        "dining_occasion": [
+            "Late Night",
+            "Supper",
+            "Family",
+            "Quick Bite"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 109,
+        "name": "Medan Selera Meldrum Walk",
+        "cuisine": "Malaysian Street Food",
+        "description": "An intense, crowded back-alley open-air hawker market strip offering classic, high-heat smoky street food options right in downtown JB.",
+        "address": "Jalan Meldrum, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM25",
+        "atmosphere": [
+            "street food",
+            "local",
+            "Lively",
+            "outdoor"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "5:00 PM - 11:30 PM",
+        "is_open_now": null,
+        "rating": 4.0,
+        "review_count": 2200,
+        "photos": [],
+        "popular_dishes": [
+            "BBQ Chicken Wings",
+            "Char Kway Teow",
+            "Oyster Omelette"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "hawker stalls",
+            "street food",
+            "back alley",
+            "dinner lane"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malaysian Street Food"
+        ],
+        "price_min": 10,
+        "price_max": 25,
+        "dining_occasion": [
+            "Dinner",
+            "Supper",
+            "Tourists",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 110,
+        "name": "Bumbu Asli",
+        "cuisine": "Indonesian / Malay",
+        "description": "A dedicated, warm traditional diner serving authentic Indonesian cooking, highly praised for deeply marinated poultry bases and bold sambal components.",
+        "address": "39, Jalan Kolam Air, Taman Kolam Air, 80100 Johor Bahru, Johor",
+        "area": "Taman Kolam Air",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM30",
+        "atmosphere": [
+            "casual",
+            "Cozy",
+            "authentic",
+            "family-friendly"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 9:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 310,
+        "photos": [],
+        "popular_dishes": [
+            "Ayam Penyet",
+            "Tahu Telur",
+            "Dendeng Balado"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "indonesian",
+            "ayam penyet",
+            "spicy",
+            "comfort food"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Indonesian",
+            "Malay"
+        ],
+        "price_min": 15,
+        "price_max": 30,
+        "dining_occasion": [
+            "Lunch",
+            "Dinner",
+            "Family",
+            "Casual Lunch"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 111,
+        "name": "Asam Pedas Botak",
+        "cuisine": "Malay",
+        "description": "A legendary local seafood kitchen celebrated for its mouthwatering, tongue-numbing, and tangily balanced claypot asam pedas broths.",
+        "address": "14, Jalan Liku, Kampung Bahru, 80100 Johor Bahru, Johor",
+        "area": "Campung Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM12-RM25",
+        "atmosphere": [
+            "local",
+            "casual",
+            "authentic"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "8:00 AM - 4:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 780,
+        "photos": [],
+        "popular_dishes": [
+            "Asam Pedas Ikan Pari",
+            "Asam Pedas Ikan Mayong",
+            "Telur Asin"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "asam pedas",
+            "claypot fish",
+            "johor food",
+            "lunch lane"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 12,
+        "price_max": 25,
+        "dining_occasion": [
+            "Lunch",
+            "Casual Lunch",
+            "Family"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 112,
+        "name": "Nasi Kandar Al-Falah",
+        "cuisine": "Mamak / Nasi Kandar",
+        "description": "A bustling 24-hour nasi kandar corner hotspot noted for an amazing mixture of savory Indian-Muslim curries poured heavily over hot rice.",
+        "address": "Jalan Station, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM25",
+        "atmosphere": [
+            "local",
+            "casual",
+            "Lively"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 AM - 12:00 AM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 940,
+        "photos": [],
+        "popular_dishes": [
+            "Nasi Kandar Ayam Goreng",
+            "Kari Kepala Ikan",
+            "Sambal Sotong"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "nasi kandar",
+            "24 hours",
+            "mixed curry",
+            "city center"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Mamak"
+        ],
+        "price_min": 10,
+        "price_max": 25,
+        "dining_occasion": [
+            "Lunch",
+            "Dinner",
+            "Supper",
+            "Late Night"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 113,
+        "name": "D'Laksamana",
+        "cuisine": "Malay / Seafood",
+        "description": "A cozy culinary spot preparing deep, authentic versions of Johor heritage dishes like Laksa Johor, alongside family seafood packages.",
+        "address": "Johor Bahru Area, Johor Bahru, Johor",
+        "area": "Johor Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM45",
+        "atmosphere": [
+            "casual",
+            "Cozy",
+            "family-friendly"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 PM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 140,
+        "photos": [],
+        "popular_dishes": [
+            "Laksa Johor",
+            "Ikan Bakar Petai",
+            "Mee Rebus"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "laksa johor",
+            "seafood",
+            "malay heritage"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay",
+            "Seafood"
+        ],
+        "price_min": 20,
+        "price_max": 45,
+        "dining_occasion": [
+            "Dinner",
+            "Casual Dinner",
+            "Family Dinner",
+            "Lunch"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 114,
+        "name": "Nasi Ayam Keechup",
+        "cuisine": "Malay",
+        "description": "A widely viral culinary sensation showcasing deeply satisfying sweet-and-savory dark soy sauce fried chicken meals matched with spicy sambal.",
+        "address": "24A, Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM12-RM25",
+        "atmosphere": [
+            "casual",
+            "trendy",
+            "Lively",
+            "heritage"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 4:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 860,
+        "photos": [],
+        "popular_dishes": [
+            "Nasi Ayam Kicap Signature",
+            "Tempeh Goreng Crispy",
+            "Tauhu Goreng"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "ayam kicap",
+            "viral food",
+            "heritage street",
+            "malay modern"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 12,
+        "price_max": 25,
+        "dining_occasion": [
+            "Casual Lunch",
+            "Lunch",
+            "Tourists",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 115,
+        "name": "Ayam Bakar Kempas",
+        "cuisine": "Malay",
+        "description": "An exceptional roadside smoke stall churning out perfectly charred, sweet-marinated Indonesian-style grilled chickens paired with a blistering sambal raw mix.",
+        "address": "Jalan Kampong Kempas Baru, 81200 Johor Bahru, Johor",
+        "area": "Kempas",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM8-RM20",
+        "atmosphere": [
+            "local",
+            "casual",
+            "street food",
+            "outdoor"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "5:00 PM - 11:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 490,
+        "photos": [],
+        "popular_dishes": [
+            "Ayam Bakar Madu",
+            "Ikan Lele Bakar",
+            "Sambal Belacan Pecel"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "charcoal grilled",
+            "street food",
+            "ayam bakar",
+            "cheap eat"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 8,
+        "price_max": 20,
+        "dining_occasion": [
+            "Dinner",
+            "Casual Dinner",
+            "Takeaway",
+            "Quick Bite"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 116,
+        "name": "Warung Boyan",
+        "cuisine": "Malay",
+        "description": "A quaint, beloved residential neighborhood hideout renowned among locals for high-quality wet lontong servings and comforting morning hashes.",
+        "address": "Jalan Solok, Kampung Mohd Amin, 80100 Johor Bahru, Johor",
+        "area": "Kampung Mohd Amin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM15",
+        "atmosphere": [
+            "local",
+            "casual",
+            "authentic",
+            "quiet"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "7:00 AM - 12:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 320,
+        "photos": [],
+        "popular_dishes": [
+            "Lontong Basah",
+            "Mee Rebus Boyan",
+            "Nasi Goreng Kampung"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "hidden warung",
+            "breakfast",
+            "lontong",
+            "local village"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 5,
+        "price_max": 15,
+        "dining_occasion": [
+            "Breakfast",
+            "Brunch",
+            "Quick Bite",
+            "Quiet"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 117,
+        "name": "Tepian Tebrau Food Court",
+        "cuisine": "Malaysian / Seafood",
+        "description": "A historic beachfront open hawker center highly populated at night for custom-grilled marine picks, fiery sambal stingrays, and local snacks.",
+        "address": "Jalan Tengku Maimunah, Kampung Stulang Laut, 80050 Johor Bahru, Johor",
+        "area": "Stulang Laut",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM55",
+        "atmosphere": [
+            "local",
+            "Outdoor",
+            "outdoor",
+            "scenic",
+            "Lively"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "4:30 PM - 12:00 AM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 2900,
+        "photos": [],
+        "popular_dishes": [
+            "Ikan Bakar (Grilled Fish)",
+            "Sotong Bakar",
+            "Fruit Rojak"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "food court",
+            "seafood night",
+            "ikan bakar",
+            "coastal view"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malaysian",
+            "Seafood"
+        ],
+        "price_min": 20,
+        "price_max": 55,
+        "dining_occasion": [
+            "Dinner",
+            "Casual Dinner",
+            "Family Dinner",
+            "Group"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 118,
+        "name": "Murtabak Majid Special Cheese No. 1",
+        "cuisine": "Mamak / Indian-Muslim",
+        "description": "The innovative local landmark stall credited with revolutionizing traditional flatbreads by overloading them with heavy, melted cheese layers.",
+        "address": "38, Jalan Kancil, Kampung Stulang Baru, 81100 Johor Bahru, Johor",
+        "area": "Kampung Stulang Baru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM25",
+        "atmosphere": [
+            "local",
+            "casual",
+            "Lively",
+            "outdoor"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 PM - 7:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 1350,
+        "photos": [],
+        "popular_dishes": [
+            "Murtabak Cheese Daging",
+            "Murtabak Special Ayam",
+            "Mee Goreng"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "murtabak cheese",
+            "mamak stall",
+            "local landmark",
+            "cheese pull"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Mamak"
+        ],
+        "price_min": 10,
+        "price_max": 25,
+        "dining_occasion": [
+            "Lunch",
+            "Casual Lunch",
+            "Snacks",
+            "Family"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 119,
+        "name": "Mee Rebus Haji Wahid",
+        "cuisine": "Malay",
+        "description": "An undeniable royalty brand in Johor's food history since 1918, preparing legendary thick, sweet potato noodle coatings garnished with crispy cracker bits.",
+        "address": "L3-21, Plaza Angsana, Jalan Padi Emas 1/1, Bandar Baru Uda, 81200 Johor Bahru, Johor",
+        "area": "Bandar Baru Uda",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM8-RM20",
+        "atmosphere": [
+            "local",
+            "casual",
+            "local landmark",
+            "family-friendly"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 9:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 2100,
+        "photos": [],
+        "popular_dishes": [
+            "Mee Rebus Special",
+            "Mee Rebus Tulang",
+            "Satay Ayam"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "mee rebus",
+            "heritage standard",
+            "mall branch",
+            "local pioneer"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 8,
+        "price_max": 20,
+        "dining_occasion": [
+            "Lunch",
+            "Casual Lunch",
+            "Family",
+            "Quick Bite"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 120,
+        "name": "Nasi Kandar Hijrah",
+        "cuisine": "Mamak / Nasi Kandar",
+        "description": "A popular neighbourhood Nasi Kandar spot praised by locals for its thick, robust mixed gravies (kuah banjir) and perfectly spiced fried chicken.",
+        "address": "Jalan Laksamana 1, Taman Puteri Wangsa, 81800 Ulu Tiram, Johor",
+        "area": "Ulu Tiram",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM25",
+        "atmosphere": [
+            "local",
+            "casual",
+            "Lively"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "6:30 AM - 9:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 340,
+        "photos": [],
+        "popular_dishes": [
+            "Nasi Kandar Ayam Goreng",
+            "Daging Masak Hitam"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "nasi kandar",
+            "mixed curry",
+            "comfort food"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Mamak",
+            "Indian-Muslim"
+        ],
+        "price_min": 10,
+        "price_max": 25,
+        "dining_occasion": [
+            "Lunch",
+            "Casual Dinner"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 121,
+        "name": "Restoran ZZ",
+        "cuisine": "Malay",
+        "description": "A sister outlet to the famed local institution, continuing the tradition of serving authentic, rich Malay noodle dishes and aromatic bone marrow broths in a relaxed setting.",
+        "address": "Jalan Petri, Yahya Awal, 80100 Johor Bahru, Johor",
+        "area": "Kampung Bahru",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM30",
+        "atmosphere": [
+            "local",
+            "casual",
+            "authentic"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 PM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 520,
+        "photos": [],
+        "popular_dishes": [
+            "Mee Rebus Tulang",
+            "Sup Tulang Gearbox"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "sup tulang",
+            "mee rebus",
+            "local classic"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 10,
+        "price_max": 30,
+        "dining_occasion": [
+            "Lunch",
+            "Dinner",
+            "Family"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 122,
+        "name": "It Roo Cafe (Chicken Chop)",
+        "cuisine": "Hainanese / Western",
+        "description": "Proudly claiming the title of 'The Best Chicken Chop in Town,' this legendary pork-free Hainanese coffee shop serves historic crusted or grilled chicken chops drenched in signature black pepper or mushroom sauce.",
+        "address": "17, Jalan Dhoby, Bandar Johor Bahru, 80000 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "heritage",
+            "local landmark",
+            "casual",
+            "nostalgic"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 9:30 PM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 2800,
+        "photos": [],
+        "popular_dishes": [
+            "Hainanese Fried Chicken Chop",
+            "Grilled Chicken Chop",
+            "Root Beer Float"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "chicken chop",
+            "hainanese",
+            "heritage street",
+            "pork-free"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Hainanese",
+            "Western"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Lunch",
+            "Dinner",
+            "Tourists",
+            "Casual Dining"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 123,
+        "name": "K Fry Urban Korean (Halal-friendly)",
+        "cuisine": "Korean",
+        "description": "An incredibly popular, vibrant modern Korean spot famous for its mega-loaded cheesy fried chicken stir-ups executed tableside with dramatic cheese pulls.",
+        "address": "G-02, Holiday Villa, 260, Jalan Dato Sulaiman, Taman Abad, 80250 Johor Bahru, Johor",
+        "area": "Taman Abad",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM30-RM70",
+        "atmosphere": [
+            "Lively",
+            "trendy",
+            "vibrant",
+            "modern"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway",
+            "Delivery"
+        ],
+        "opening_hours": "11:00 AM - 11:00 PM",
+        "is_open_now": null,
+        "rating": 4.6,
+        "review_count": 4200,
+        "photos": [],
+        "popular_dishes": [
+            "Krayzy Cheesy Fried Chicken Buba",
+            "Yangnyeom Chicken",
+            "Korean Seafood Pancake"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "korean fried chicken",
+            "cheese pull",
+            "trendy",
+            "halal certified"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Korean"
+        ],
+        "price_min": 30,
+        "price_max": 70,
+        "dining_occasion": [
+            "Friends Gathering",
+            "Family",
+            "Birthday",
+            "Dinner"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 124,
+        "name": "DIN by Din Tai Fung (Halal)",
+        "cuisine": "Chinese / Dumplings",
+        "description": "The highly anticipated, pork-free alternative concept of the world-famous Michelin-starred franchise, perfecting the delicate art of the 18-fold chicken Xiao Long Bao.",
+        "address": "LG-005 & 006, The Mall, Mid Valley Southkey, Jalan Bakar Batu, 81100 Johor Bahru, Johor",
+        "area": "Taman Sentosa",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM35-RM80",
+        "atmosphere": [
+            "modern",
+            "elegant",
+            "family-friendly",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 1100,
+        "photos": [],
+        "popular_dishes": [
+            "Chicken Xiao Long Bao",
+            "Shrimp & Chicken Shao Mai",
+            "Spicy Shrimp & Chicken Wontons"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "xiao long bao",
+            "pork-free Chinese",
+            "mall dining",
+            "dim sum"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Chinese"
+        ],
+        "price_min": 35,
+        "price_max": 80,
+        "dining_occasion": [
+            "Family Dinner",
+            "Lunch",
+            "Gatherings"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 125,
+        "name": "Me'nate Steak Hub",
+        "cuisine": "Western / Steakhouse",
+        "description": "A premium, upscale halal steakhouse franchise allowing diners to custom-select their raw cuts directly from the meat humidor to be grilled exactly to their liking.",
+        "address": "G-12 & G-13, Jalan Austin Heights 8/1, Taman Mount Austin, 81100 Johor Bahru, Johor",
+        "area": "Taman Mount Austin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM50-RM250",
+        "atmosphere": [
+            "premium",
+            "Cozy",
+            "elegant",
+            "modern"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:00 AM - 11:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 890,
+        "photos": [],
+        "popular_dishes": [
+            "Wagyu Ribeye Steak",
+            "Angus Beef T-Bone",
+            "Lamb Shanks"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "steakhouse",
+            "premium meat",
+            "wagyu",
+            "halal western"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Western",
+            "Steakhouse"
+        ],
+        "price_min": 50,
+        "price_max": 250,
+        "dining_occasion": [
+            "Celebration",
+            "Date Night",
+            "Family Dinner"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 126,
+        "name": "The Wagyu Tavern",
+        "cuisine": "Japanese / Barbecue",
+        "description": "An all-you-can-eat Japanese yakiniku destination showcasing high-grade marbled Wagyu slices grilled over charcoal pits alongside premium sashimi sets.",
+        "address": "Jalan Austin Heights 8/2, Taman Mount Austin, 81100 Johor Bahru, Johor",
+        "area": "Taman Mount Austin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM80-RM250",
+        "atmosphere": [
+            "Lively",
+            "modern",
+            "smoky",
+            "casual"
+        ],
+        "dining_options": [
+            "Dine-in"
+        ],
+        "opening_hours": "5:00 PM - 12:00 AM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 310,
+        "photos": [],
+        "popular_dishes": [
+            "Wagyu Yakiniku Buffet",
+            "Premium Beef Tongue",
+            "Salmon Sashimi"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "yakiniku",
+            "wagyu buffet",
+            "japanese bbq",
+            "mount austin"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Japanese",
+            "Barbecue"
+        ],
+        "price_min": 80,
+        "price_max": 250,
+        "dining_occasion": [
+            "Dinner",
+            "Friends Gathering",
+            "Meat Lovers"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 127,
+        "name": "Tera-Thai Fine Dine Restaurant",
+        "cuisine": "Thai",
+        "description": "An exquisite fine-dining restaurant set inside an elegantly restored, traditional wooden Malay heritage house, preparing upscale, deeply authentic royal Thai recipes.",
+        "address": "2, Jalan Abdul Samad, Kampung Bahru, 80100 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM40-RM100",
+        "atmosphere": [
+            "elegant",
+            "heritage",
+            "romantic",
+            "Cozy"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:30 AM - 3:30 PM, 5:30 PM - 10:30 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 720,
+        "photos": [],
+        "popular_dishes": [
+            "Tom Yum Goong",
+            "Green Curry Chicken",
+            "Phad Thai"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "fine dine",
+            "thai food",
+            "heritage house",
+            "romantic setting"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Thai"
+        ],
+        "price_min": 40,
+        "price_max": 100,
+        "dining_occasion": [
+            "Date Night",
+            "Business Dinner",
+            "Celebration"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 128,
+        "name": "Yummy Nasi Lemak House",
+        "cuisine": "Malaysian",
+        "description": "A highly rated Chinese-style nasi lemak specialist in Johor Jaya, celebrated for its robust rendang stews, aromatic coconut rice, and crispy side dishes.",
+        "address": "12, Jalan Dedap 13, Taman Johor Jaya, 81100 Johor Bahru, Johor",
+        "area": "Taman Johor Jaya",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM25",
+        "atmosphere": [
+            "casual",
+            "local",
+            "clean",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "8:30 AM - 4:30 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 480,
+        "photos": [],
+        "popular_dishes": [
+            "Wild Boar Rendang Nasi Lemak",
+            "Fried Chicken Nasi Lemak",
+            "Otak-Otak"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "nasi lemak",
+            "chinese style",
+            "rendang",
+            "johor jaya"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malaysian"
+        ],
+        "price_min": 10,
+        "price_max": 25,
+        "dining_occasion": [
+            "Breakfast",
+            "Lunch",
+            "Casual Bite"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 129,
+        "name": "Village Briyani Cafe",
+        "cuisine": "Indian",
+        "description": "A cherished specialty spot preparing aromatic Indian biryani styles, notable for its exquisitely textured claypot dum biryanis and tender tandoori proteins.",
+        "address": "15, Jalan Tebrau Jaya, Taman Tebrau Jaya, 80100 Johor Bahru, Johor",
+        "area": "Taman Tebrau Jaya",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM40",
+        "atmosphere": [
+            "casual",
+            "family-friendly",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:30 AM - 10:30 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 910,
+        "photos": [],
+        "popular_dishes": [
+            "Mutton Dum Biryani",
+            "Chicken Tikka Masala",
+            "Garlic Naan"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "biryani",
+            "indian food",
+            "tandoori",
+            "claypot briyani"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Indian"
+        ],
+        "price_min": 15,
+        "price_max": 40,
+        "dining_occasion": [
+            "Lunch",
+            "Family Dinner",
+            "Group Dining"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 130,
+        "name": "Laziz Arabic Restaurant",
+        "cuisine": "Middle Eastern",
+        "description": "An authentic, highly hospitable Middle Eastern restaurant cooking up grand platters of smoky grilled meats and long-grain spiced mandi rice.",
+        "address": "Jalan Kebun Teh, Taman Kebun Teh, 80250 Johor Bahru, Johor",
+        "area": "Taman Kebun Teh",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM20-RM55",
+        "atmosphere": [
+            "family-friendly",
+            "Cozy",
+            "authentic",
+            "relaxed"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway",
+            "Delivery"
+        ],
+        "opening_hours": "11:00 AM - 11:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 680,
+        "photos": [],
+        "popular_dishes": [
+            "Lamb Mandi",
+            "Chicken Kabsa",
+            "Mixed Grill Platter"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "arabic food",
+            "mandi rice",
+            "middle eastern",
+            "large portions"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Middle Eastern"
+        ],
+        "price_min": 20,
+        "price_max": 55,
+        "dining_occasion": [
+            "Family Gathering",
+            "Group Dinner",
+            "Feast"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 131,
+        "name": "Restoran Dapur Window",
+        "cuisine": "Malay",
+        "description": "A comforting, rustic eatery delivering traditional Malay culinary staples, highlighted by daily kampung-style lunch spreads and classic local standard sets.",
+        "address": "Jalan Tampoi, Kampung Melayu Majidee, 81200 Johor Bahru, Johor",
+        "area": "Tampoi",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM25",
+        "atmosphere": [
+            "local",
+            "casual",
+            "rustic"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "7:00 AM - 4:00 PM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 190,
+        "photos": [],
+        "popular_dishes": [
+            "Nasi Campur (Mixed Rice)",
+            "Asam Pedas",
+            "Lontong"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "kampung food",
+            "nasi campur",
+            "breakfast lunch",
+            "local diner"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 10,
+        "price_max": 25,
+        "dining_occasion": [
+            "Breakfast",
+            "Lunch",
+            "Casual Dining"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 132,
+        "name": "Anisofea Asam Pedas Johor Asli",
+        "cuisine": "Malay",
+        "description": "A beloved champion of authentic Johor-style asam pedas, simmering fresh, local catches in a deeply sour, fiery chili broth that keeps regulars coming back.",
+        "address": "Jalan Persisiran Perling, Taman Perling, 81200 Johor Bahru, Johor",
+        "area": "Taman Perling",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "local",
+            "casual",
+            "Lively"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 8:00 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 560,
+        "photos": [],
+        "popular_dishes": [
+            "Asam Pedas Ikan Pari",
+            "Asam Pedas Kepala Ikan",
+            "Telur Dadar"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "asam pedas",
+            "johor asli",
+            "seafood",
+            "spicy broth"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Lunch",
+            "Casual Dinner",
+            "Family Dining"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 133,
+        "name": "Beryani Gam Putrajaya (JB Branch)",
+        "cuisine": "Malay / Nasi Briyani",
+        "description": "The dedicated Johor Bahru outpost of a famous brand, specializing in highly fragrant, classic long-grain Briyani Gam cooked slowly layered directly with spiced meats.",
+        "address": "Jalan Dahlia, Taman Dahlia, 81200 Johor Bahru, Johor",
+        "area": "Taman Dahlia",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "casual",
+            "family-friendly",
+            "local"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:30 AM - 5:00 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 410,
+        "photos": [],
+        "popular_dishes": [
+            "Nasi Briyani Gam Kambing",
+            "Nasi Briyani Gam Ayam",
+            "Acar Jelatah"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "briyani gam",
+            "malay rice",
+            "lunch spot"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Lunch",
+            "Family Lunch"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 134,
+        "name": "Restoran Nasi Kandar Utara",
+        "cuisine": "Mamak / Nasi Kandar",
+        "description": "Bringing northern-style Malaysian-Indian mixed curry profiles down south, delivering dark, robustly spiced stews over steaming plates of white rice.",
+        "address": "Jalan Dedap 4, Taman Johor Jaya, 81100 Johor Bahru, Johor",
+        "area": "Taman Johor Jaya",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM25",
+        "atmosphere": [
+            "local",
+            "casual",
+            "busy"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "7:00 AM - 10:00 PM",
+        "is_open_now": null,
+        "rating": 4.0,
+        "review_count": 280,
+        "photos": [],
+        "popular_dishes": [
+            "Nasi Kandar Ayam Merah",
+            "Kari Kambing",
+            "Sotong Masak Hitam"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "nasi kandar",
+            "northern curries",
+            "johor jaya"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Mamak"
+        ],
+        "price_min": 10,
+        "price_max": 25,
+        "dining_occasion": [
+            "Lunch",
+            "Dinner",
+            "Quick Bite"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 135,
+        "name": "Pondok Santapan",
+        "cuisine": "Malay",
+        "description": "An iconic Larkin breakfast institution, packing massive crowds daily for its world-class Lontong Basah, crispy Roti Canai, and endless array of traditional kuih-muih.",
+        "address": "Jalan Sentosa, Larkin, 80350 Johor Bahru, Johor",
+        "area": "Larkin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM20",
+        "atmosphere": [
+            "local",
+            "casual",
+            "highly active",
+            "outdoor"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "7:00 AM - 12:00 PM",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 1600,
+        "photos": [],
+        "popular_dishes": [
+            "Lontong Basah",
+            "Roti Canai",
+            "Nasi Lemak Daun Pisang"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "breakfast landmark",
+            "lontong",
+            "kuih muih",
+            "larkin food"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 5,
+        "price_max": 20,
+        "dining_occasion": [
+            "Breakfast",
+            "Brunch",
+            "Early Bite"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 136,
+        "name": "Senibong Bay Seafood",
+        "cuisine": "Seafood",
+        "description": "An expansive, scenic waterfront dining spot along the Senibong coast, cooking up customized pork-free seafood feasts, live catches, and signature black pepper crab plates.",
+        "address": "Jalan Senibong, Bandar Baru Permas Jaya, 81750 Johor Bahru, Johor",
+        "area": "Permas Jaya",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM40-RM120",
+        "atmosphere": [
+            "scenic",
+            "coastal",
+            "outdoor",
+            "family-friendly"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "12:00 PM - 12:00 AM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 1850,
+        "photos": [],
+        "popular_dishes": [
+            "Salted Egg Squid",
+            "Chili Crab",
+            "Ikan Bakar Petai"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "waterfront seafood",
+            "live catch",
+            "pork free seafood",
+            "sunset view"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Seafood"
+        ],
+        "price_min": 40,
+        "price_max": 120,
+        "dining_occasion": [
+            "Family Dinner",
+            "Group Feast",
+            "Tourists"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 137,
+        "name": "Danga Bay R&R Food Court",
+        "cuisine": "Malaysian Street Food",
+        "description": "A highly popular coastal open-air hawker centre right by Danga Bay, roaring with nightlife activity, custom grilled fish stalls, and local shell-out packages.",
+        "address": "Jalan Pantai, Danga Bay, 80200 Johor Bahru, Johor",
+        "area": "Danga Bay",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM40",
+        "atmosphere": [
+            "Lively",
+            "outdoor",
+            "coastal",
+            "vibrant"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "5:00 PM - 1:00 AM",
+        "is_open_now": null,
+        "rating": 3.9,
+        "review_count": 2100,
+        "photos": [],
+        "popular_dishes": [
+            "Ikan Bakar",
+            "Sotong Bakar",
+            "Char Kway Teow"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "food court",
+            "late night",
+            "seafood stalls",
+            "beach view"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malaysian Street Food"
+        ],
+        "price_min": 10,
+        "price_max": 40,
+        "dining_occasion": [
+            "Dinner",
+            "Supper",
+            "Late Night",
+            "Friends"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 138,
+        "name": "Restoran Seri Bayu Awana",
+        "cuisine": "Malay",
+        "description": "A spacious, airy local dining favorite revered for its affordable Malay buffet lines, signature slow-braised beef dishes, and classic traditional condiments.",
+        "address": "Jalan Larkin, Taman Larkin, 80350 Johor Bahru, Johor",
+        "area": "Larkin",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM35",
+        "atmosphere": [
+            "casual",
+            "family-friendly",
+            "spacious"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "10:00 AM - 5:00 PM",
+        "is_open_now": null,
+        "rating": 4.1,
+        "review_count": 470,
+        "photos": [],
+        "popular_dishes": [
+            "Daging Salai Masak Lemak Cili Api",
+            "Asam Pedas Patin",
+            "Ulam-Ulaman"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "malay buffet",
+            "larkin lunch",
+            "traditional food"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 15,
+        "price_max": 35,
+        "dining_occasion": [
+            "Lunch",
+            "Family Lunch",
+            "Group Dining"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 139,
+        "name": "Warung Pokok Ceri",
+        "cuisine": "Malay",
+        "description": "A heavily frequented 'under the cherry tree' rustic open warung in the city centre, loved for its authentic, comforting Lontong bowls and vast Malay mixed-rice options.",
+        "address": "Jalan Tamrin, Off Jalan Yahya Awal, 80100 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM20",
+        "atmosphere": [
+            "local",
+            "casual",
+            "outdoor",
+            "rustic"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "7:30 AM - 2:30 PM",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 940,
+        "photos": [],
+        "popular_dishes": [
+            "Lontong Kering",
+            "Nasi Campur",
+            "Mee Goreng Melayu"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "under the tree",
+            "breakfast lane",
+            "nasi campur",
+            "hidden gem"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malay"
+        ],
+        "price_min": 5,
+        "price_max": 20,
+        "dining_occasion": [
+            "Breakfast",
+            "Brunch",
+            "Casual Lunch"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 140,
+        "name": "Awagyu Restaurant",
+        "cuisine": "Japanese / Wagyu",
+        "description": "An ultra-premium dining establishment prioritizing authentic, directly imported Japanese A5 Wagyu beef prepared beautifully as yakiniku or delicate shabu-shabu slices.",
+        "address": "01-04 & 01-05, Menara Twin Galaxy, Jalan Jandu, 80300 Johor Bahru, Johor",
+        "area": "JB City Centre",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM100-RM400",
+        "atmosphere": [
+            "premium",
+            "luxurious",
+            "elegant",
+            "air-conditioned"
+        ],
+        "dining_options": [
+            "Dine-in"
+        ],
+        "opening_hours": "5:30 PM - 11:00 PM",
+        "is_open_now": null,
+        "rating": 4.5,
+        "review_count": 380,
+        "photos": [],
+        "popular_dishes": [
+            "A5 Wagyu Yakiniku Cuts",
+            "Wagyu Shabu-Shabu",
+            "Garlic Fried Rice"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": false,
+        "tags": [
+            "A5 wagyu",
+            "japanese fine food",
+            "yakiniku steak"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Japanese"
+        ],
+        "price_min": 100,
+        "price_max": 400,
+        "dining_occasion": [
+            "Celebration",
+            "Date Night",
+            "Luxury Dining"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 141,
+        "name": "Johor Jaya Pasar Malam (Street Food)",
+        "cuisine": "Malaysian Street Food",
+        "description": "A massive, energetic weekly night market strip lighting up Johor Jaya every Tuesday evening, highly populated with various local street hawkers and traditional snacks.",
+        "address": "Jalan Dedap 4, Taman Johor Jaya, 81100 Johor Bahru, Johor",
+        "area": "Taman Johor Jaya",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM25",
+        "atmosphere": [
+            "street food",
+            "Lively",
+            "crowded",
+            "outdoor"
+        ],
+        "dining_options": [
+            "Takeaway"
+        ],
+        "opening_hours": "5:00 PM - 10:00 PM (Tuesdays only)",
+        "is_open_now": null,
+        "rating": 4.3,
+        "review_count": 1200,
+        "photos": [],
+        "popular_dishes": [
+            "Fried Radish Cake",
+            "Stinky Tofu",
+            "Apam Balik",
+            "Suga Cane Juice"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "night market",
+            "street food",
+            "weekly market",
+            "local treats"
+        ],
+        "is_featured": false,
+        "created_at": null,
+        "cuisines": [
+            "Malaysian Street Food"
+        ],
+        "price_min": 5,
+        "price_max": 25,
+        "dining_occasion": [
+            "Takeaway",
+            "Snacks",
+            "Tourists",
+            "Late Dinner"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 142,
+        "name": "KSL Monday Night Market",
+        "cuisine": "Malaysian Street Food",
+        "description": "A world-famous street food night market stretching right outside KSL City Mall every Monday evening, popular with international food tourists chasing unique dynamic snacks.",
+        "address": "Jalan Seladang, Taman Abad, 80250 Johor Bahru, Johor",
+        "area": "Taman Abad",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM5-RM30",
+        "atmosphere": [
+            "street food",
+            "crowded",
+            "Lively",
+            "vibrant"
+        ],
+        "dining_options": [
+            "Takeaway"
+        ],
+        "opening_hours": "5:00 PM - 10:00 PM (Mondays only)",
+        "is_open_now": null,
+        "rating": 4.4,
+        "review_count": 3400,
+        "photos": [],
+        "popular_dishes": [
+            "Crispy Muah Chee",
+            "BBQ Oyster",
+            "Deep Fried Squid",
+            "Sweet Potato Balls"
+        ],
+        "is_halal": false,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "night market",
+            "ksl mall street",
+            "tourist magnet",
+            "street food"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malaysian Street Food"
+        ],
+        "price_min": 5,
+        "price_max": 30,
+        "dining_occasion": [
+            "Takeaway",
+            "Snacks",
+            "Tourists",
+            "Late Dinner"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 143,
+        "name": "B5 Johor Street Market",
+        "cuisine": "Malaysian Street Food",
+        "description": "A modernized, highly cultural retail and culinary centralized layout structured as a trendy street bazaar, gathering retail popups and local food vendors.",
+        "address": "Jalan Tampoi, Kawasan Perindustrian Tampoi, 81200 Johor Bahru, Johor",
+        "area": "Tampoi",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM10-RM35",
+        "atmosphere": [
+            "trendy",
+            "Lively",
+            "cultural",
+            "family-friendly"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "11:30 AM - 11:30 PM",
+        "is_open_now": null,
+        "rating": 4.2,
+        "review_count": 2800,
+        "photos": [],
+        "popular_dishes": [
+            "Laksa Johor",
+            "Murtabak",
+            "Pisang Goreng Cheese"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "cultural hub",
+            "street market",
+            "food bazaar",
+            "modern design"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Malaysian Street Food"
+        ],
+        "price_min": 10,
+        "price_max": 35,
+        "dining_occasion": [
+            "Dinner",
+            "Family Outing",
+            "Snacks",
+            "Tourists"
+        ],
+        "is_user_submitted": false
+    },
+    {
+        "id": 144,
+        "name": "Kilang Bateri (Food Hub)",
+        "cuisine": "Hipster Cafe / Street Food",
+        "description": "An iconic, historically groundbreaking repurposed factory hub that pioneered the hipster container yard dining movement in JB, organizing trendy cafes and local fast food bites.",
+        "address": "83, Jalan Tampoi, Kawasan Perindustrian Tampoi, 81200 Johor Bahru, Johor",
+        "area": "Tampoi",
+        "latitude": null,
+        "longitude": null,
+        "budget_range": "RM15-RM40",
+        "atmosphere": [
+            "industrial",
+            "trendy",
+            "vibrant",
+            "casual"
+        ],
+        "dining_options": [
+            "Dine-in",
+            "Takeaway"
+        ],
+        "opening_hours": "3:00 PM - 12:00 AM",
+        "is_open_now": null,
+        "rating": 4.0,
+        "review_count": 1950,
+        "photos": [],
+        "popular_dishes": [
+            "Gourmet Burgers",
+            "Shell Out Seafood",
+            "Hipster Coffee blends"
+        ],
+        "is_halal": true,
+        "is_vegetarian_friendly": true,
+        "tags": [
+            "repurposed space",
+            "container court",
+            "hipster vibe",
+            "youth hangout"
+        ],
+        "is_featured": true,
+        "created_at": null,
+        "cuisines": [
+            "Western",
+            "Malaysian"
+        ],
+        "price_min": 15,
+        "price_max": 40,
+        "dining_occasion": [
+            "Supper",
+            "Friends Gathering",
+            "Late Night"
+        ],
+        "is_user_submitted": false
+    }
+]
