@@ -39,32 +39,32 @@ export default function Dashboard() {
 
         {/* Stats Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <div className="bg-card border-2 border-border rounded-3xl p-6 shadow-sm flex flex-col gap-4">
+          <div className="glass-dark rounded-3xl p-6 flex flex-col gap-4">
             <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
               <Target className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-sm font-bold text-muted-foreground uppercase tracking-wider">Recommendations</p>
+              <p className="text-sm font-bold text-white/80 uppercase tracking-wider">Recommendations</p>
               <p className="text-4xl font-extrabold text-foreground mt-1">{dashboard.totalRecommendations}</p>
             </div>
           </div>
-          
-          <div className="bg-card border-2 border-border rounded-3xl p-6 shadow-sm flex flex-col gap-4">
+
+          <div className="glass-dark rounded-3xl p-6 flex flex-col gap-4">
             <div className="w-12 h-12 rounded-2xl bg-destructive/10 flex items-center justify-center text-destructive">
               <Heart className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-sm font-bold text-muted-foreground uppercase tracking-wider">Favorites</p>
+              <p className="text-sm font-bold text-white/80 uppercase tracking-wider">Favorites</p>
               <p className="text-4xl font-extrabold text-foreground mt-1">{dashboard.totalFavorites}</p>
             </div>
           </div>
 
-          <div className="bg-card border-2 border-border rounded-3xl p-6 shadow-sm flex flex-col gap-4 sm:col-span-2 md:col-span-1">
+          <div className="glass-dark rounded-3xl p-6 flex flex-col gap-4 sm:col-span-2 md:col-span-1">
             <div className="w-12 h-12 rounded-2xl bg-accent/20 flex items-center justify-center text-accent-foreground">
               <UtensilsCrossed className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-sm font-bold text-muted-foreground uppercase tracking-wider">Top Cuisine</p>
+              <p className="text-sm font-bold text-white/80 uppercase tracking-wider">Top Cuisine</p>
               <p className="text-3xl font-extrabold text-foreground mt-1 line-clamp-1">
                 {dashboard.topCuisines?.[0]?.cuisine || "None yet"}
               </p>
@@ -74,7 +74,7 @@ export default function Dashboard() {
 
         {/* Top Cuisines Chart (Simple Bars) */}
         {dashboard.topCuisines && dashboard.topCuisines.length > 0 && (
-          <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
+          <div className="glass-dark rounded-3xl p-8">
             <h3 className="text-xl font-bold text-foreground mb-6">Your Taste Composition</h3>
             <div className="flex flex-col gap-5">
               {dashboard.topCuisines.slice(0, 5).map((item, index) => {
@@ -83,13 +83,13 @@ export default function Dashboard() {
                 return (
                   <div key={item.cuisine} className="flex items-center gap-4">
                     <div className="w-32 font-bold text-sm text-foreground shrink-0">{item.cuisine}</div>
-                    <div className="flex-1 h-4 bg-muted rounded-full overflow-hidden">
-                      <div 
-                        className={`h-full rounded-full transition-all duration-1000 ${index === 0 ? 'bg-primary' : 'bg-secondary'}`} 
+                    <div className="flex-1 h-4 bg-white/20 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full rounded-full transition-all duration-1000 ${index === 0 ? 'bg-primary' : 'bg-secondary'}`}
                         style={{ width: `${percentage}%` }}
                       ></div>
                     </div>
-                    <div className="w-8 text-right font-bold text-sm text-muted-foreground">{item.count}</div>
+                    <div className="w-8 text-right font-bold text-sm text-white/80">{item.count}</div>
                   </div>
                 );
               })}
