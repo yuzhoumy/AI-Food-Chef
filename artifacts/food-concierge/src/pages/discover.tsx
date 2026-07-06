@@ -193,7 +193,7 @@ export default function Discover() {
                   type="button"
                   data-testid={`occasion-${value}`}
                   onClick={() => setOccasion(active ? null : value)}
-                  className="flex flex-1 flex-col items-center gap-2 py-5 rounded-2xl font-semibold text-sm transition-all duration-150"
+                  className="flex flex-1 flex-col items-center gap-2 py-5 rounded-2xl font-bold text-base transition-all duration-150"
                   style={
                     active
                       ? {
@@ -206,8 +206,9 @@ export default function Discover() {
                       : {
                           background: inactiveGlass,
                           border: inactiveBorder,
-                          color: "rgba(255,255,255,0.85)",
+                          color: "rgba(255,255,255,0.95)",
                           backdropFilter: "blur(8px)",
+                          textShadow: "0 1px 2px rgba(0,0,0,0.25)",
                         }
                   }
                 >
@@ -230,7 +231,7 @@ export default function Discover() {
                   type="button"
                   data-testid={`vibe-${v.toLowerCase()}`}
                   onClick={() => setVibe(active ? null : v)}
-                  className="px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-150"
+                  className="px-5 py-2.5 rounded-full text-base font-extrabold transition-all duration-150"
                   style={
                     active
                       ? {
@@ -243,8 +244,9 @@ export default function Discover() {
                       : {
                           background: inactiveGlass,
                           border: inactiveBorder,
-                          color: "rgba(255,255,255,0.85)",
+                          color: "rgba(255,255,255,0.95)",
                           backdropFilter: "blur(8px)",
+                          textShadow: "0 1px 2px rgba(0,0,0,0.25)",
                         }
                   }
                 >
@@ -266,7 +268,7 @@ export default function Discover() {
                   type="button"
                   data-testid={`cuisine-${c.toLowerCase().replace(/\s+/g, "-")}`}
                   onClick={() => setCuisine(active ? null : c)}
-                  className="px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-150"
+                  className="px-5 py-2.5 rounded-full text-base font-extrabold transition-all duration-150"
                   style={
                     active
                       ? {
@@ -279,8 +281,9 @@ export default function Discover() {
                       : {
                           background: inactiveGlass,
                           border: inactiveBorder,
-                          color: "rgba(255,255,255,0.85)",
+                          color: "rgba(255,255,255,0.95)",
                           backdropFilter: "blur(8px)",
+                          textShadow: "0 1px 2px rgba(0,0,0,0.25)",
                         }
                   }
                 >

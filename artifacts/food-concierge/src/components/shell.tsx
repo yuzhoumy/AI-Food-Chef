@@ -5,11 +5,15 @@ import { ReactNode } from "react";
 export function Shell({ children }: { children: ReactNode }) {
   const [location] = useLocation();
 
-  const navItems = [
+  const desktopNavItems = [
     { href: "/discover", icon: Compass, label: "Discover" },
     { href: "/favorites", icon: Heart, label: "Favourites" },
     { href: "/history", icon: History, label: "History" },
     { href: "/dashboard", icon: User, label: "Dashboard" },
+  ];
+
+  const mobileNavItems = [
+    ...desktopNavItems,
     { href: "/add-restaurant", icon: PlusCircle, label: "Add" },
   ];
 
@@ -33,7 +37,7 @@ export function Shell({ children }: { children: ReactNode }) {
 
         {/* Nav links */}
         <nav className="flex flex-col gap-1.5 flex-1">
-          {navItems.map((item) => {
+          {desktopNavItems.map((item) => {
             const isActive = location === item.href;
             return (
               <Link
@@ -105,7 +109,7 @@ export function Shell({ children }: { children: ReactNode }) {
           paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
         }}
       >
-        {navItems.map((item) => {
+        {mobileNavItems.map((item) => {
           const isActive = location === item.href;
           return (
             <Link
