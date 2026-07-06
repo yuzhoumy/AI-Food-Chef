@@ -2,7 +2,7 @@ import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 
 const path =
-  "attached_assets/Pasted--id-45-name-Keijometo-cuisine-Cafe-Japanese-Fusio-17832_1783271889271.txt";
+  "attached_assets/Pasted--id-161-name-VCR-Galloway-cuisine-Caf-u00e9--1783356546_1783356546211.txt";
 const raw = fs.readFileSync(path, "utf8");
 const restaurants = JSON.parse(raw);
 
