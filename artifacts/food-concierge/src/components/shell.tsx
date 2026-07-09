@@ -22,7 +22,7 @@ export function Shell({ children }: { children: ReactNode }) {
 
       {/* ── Desktop Sidebar ─────────────────────────────────────────────── */}
       <aside
-        className="hidden md:flex w-64 flex-col p-6 gap-8 shrink-0 bg-sidebar/60 border-r border-sidebar-border/50"
+        className="hidden md:flex w-64 flex-col p-6 gap-8 shrink-0 bg-sidebar/60 border-r border-sidebar-border/50 sticky top-0 h-screen overflow-y-auto"
         style={{ backdropFilter: "blur(16px)" }}
       >
         {/* Logo */}
