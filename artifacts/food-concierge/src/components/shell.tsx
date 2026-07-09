@@ -26,7 +26,7 @@ export function Shell({ children }: { children: ReactNode }) {
         style={{ backdropFilter: "blur(16px)" }}
       >
         {/* Logo */}
-        <Link href="/discover" className="flex items-center gap-3 no-underline outline-none">
+        <Link href="/" className="flex items-center gap-3 no-underline outline-none">
           <div className="w-10 h-10 rounded-xl bg-sidebar-primary flex items-center justify-center text-sidebar-primary-foreground shadow-lg border-2 border-white/50">
             <Compass className="w-5 h-5" />
           </div>
