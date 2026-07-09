@@ -4,7 +4,8 @@ import { useGetUserPreferences, useUpdatePreferences } from "@workspace/api-clie
 import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 import { useForm, useWatch } from "react-hook-form";
-import { Settings, Save } from "lucide-react";
+import { Settings, Save, Leaf, Flame, AlertTriangle } from "lucide-react";
+import { SectionCard } from "@/components/section-card";
 
 const COMMON_ALLERGENS = [
   "Peanuts",
@@ -95,17 +96,13 @@ export default function SettingsPage() {
             <Settings className="w-8 h-8 text-primary" />
             Preferences
           </h1>
-          <p className="text-muted-foreground font-medium">Your dietary rules — applied to every recommendation.</p>
+          <p className="text-white/70 font-medium">Your dietary rules — applied to every recommendation.</p>
         </div>
 
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6">
 
           {/* Dietary needs */}
-          <div className="bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm flex flex-col gap-5">
-            <div className="border-b border-border pb-4">
-              <h3 className="font-bold text-lg text-foreground">Dietary needs</h3>
-            </div>
-
+          <SectionCard icon={Leaf} title="Dietary needs">
             <div className="flex flex-col gap-4">
               {[
                 { key: "isHalal" as const, label: "Halal only", description: "Only show restaurants that are halal-certified" },
@@ -118,29 +115,26 @@ export default function SettingsPage() {
                     type="button"
                     onClick={() => form.setValue(key, !checked, { shouldDirty: true })}
                     className={`flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-all ${
-                      checked ? "border-primary bg-primary/5" : "border-border hover:border-primary/40"
+                      checked ? "border-primary bg-primary/10" : "border-white/30 hover:border-white/50 hover:bg-white/10"
                     }`}
                   >
                     <div className={`w-5 h-5 mt-0.5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${
-                      checked ? "border-primary bg-primary" : "border-muted-foreground"
+                      checked ? "border-primary bg-primary" : "border-white/40"
                     }`}>
                       {checked && <div className="w-2 h-2 bg-white rounded-full" />}
                     </div>
                     <div>
                       <div className="font-bold text-foreground">{label}</div>
-                      <div className="text-sm text-muted-foreground">{description}</div>
+                      <div className="text-sm text-white/70">{description}</div>
                     </div>
                   </button>
                 );
               })}
             </div>
-          </div>
+          </SectionCard>
 
           {/* Spice level */}
-          <div className="bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm flex flex-col gap-5">
-            <div className="border-b border-border pb-4">
-              <h3 className="font-bold text-lg text-foreground">Spice tolerance</h3>
-            </div>
+          <SectionCard icon={Flame} title="Spice tolerance">
             <div className="flex gap-2 flex-wrap">
               {["mild", "medium", "spicy", "extra-spicy"].map((level) => (
                 <button
@@ -149,21 +143,20 @@ export default function SettingsPage() {
                   onClick={() => form.setValue("spiceLevel", level, { shouldDirty: true })}
                   className={`px-5 py-2.5 rounded-full border-2 font-semibold text-sm capitalize transition-all ${
                     spiceLevel === level
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                      ? "border-primary bg-primary/10 text-foreground"
+                      : "border-white/30 text-white/80 hover:border-white/50 hover:bg-white/10"
                   }`}
                 >
                   {level}
                 </button>
               ))}
             </div>
-          </div>
+          </SectionCard>
 
           {/* Allergies */}
-          <div className="bg-card border border-border rounded-3xl p-6 md:p-8 shadow-sm flex flex-col gap-5">
-            <div className="flex items-center justify-between border-b border-border pb-4">
-              <h3 className="font-bold text-lg text-foreground">Allergies</h3>
-              <span className="text-sm font-medium text-muted-foreground">
+          <SectionCard icon={AlertTriangle} title="Allergies">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-white/70">
                 {allergies.length === 0 ? "None selected" : `${allergies.length} selected`}
               </span>
             </div>
@@ -179,7 +172,7 @@ export default function SettingsPage() {
                     className={`px-4 py-2 rounded-full border-2 font-semibold text-sm transition-all ${
                       selected
                         ? "border-destructive bg-destructive/10 text-destructive"
-                        : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                        : "border-white/30 text-white/80 hover:border-white/50 hover:bg-white/10"
                     }`}
                   >
                     {allergen}
@@ -187,7 +180,7 @@ export default function SettingsPage() {
                 );
               })}
             </div>
-          </div>
+          </SectionCard>
 
           <div className="flex justify-end pt-2">
             <button
