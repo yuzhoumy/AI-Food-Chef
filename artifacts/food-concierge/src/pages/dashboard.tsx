@@ -25,7 +25,7 @@ export default function Dashboard() {
     <Shell>
       <div className="flex flex-col gap-10 max-w-5xl mx-auto py-8 animate-in fade-in duration-500">
         
-        <div className="flex items-center gap-4 glass rounded-3xl p-5">
+        <div className="flex items-center gap-4 glass-subtle rounded-3xl p-5">
           <div className="w-16 h-16 rounded-full bg-white/20 text-white flex items-center justify-center overflow-hidden shrink-0 border-2 border-white/30">
             <User className="w-8 h-8" />
           </div>
@@ -39,7 +39,7 @@ export default function Dashboard() {
 
         {/* Stats Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <div className="glass rounded-3xl p-6 flex flex-col gap-4">
+          <div className="glass-subtle rounded-3xl p-6 flex flex-col gap-4">
             <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
               <Target className="w-6 h-6" />
             </div>
@@ -49,7 +49,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="glass rounded-3xl p-6 flex flex-col gap-4">
+          <div className="glass-subtle rounded-3xl p-6 flex flex-col gap-4">
             <div className="w-12 h-12 rounded-2xl bg-destructive/10 flex items-center justify-center text-destructive">
               <Heart className="w-6 h-6" />
             </div>
@@ -59,7 +59,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="glass rounded-3xl p-6 flex flex-col gap-4 sm:col-span-2 md:col-span-1">
+          <div className="glass-subtle rounded-3xl p-6 flex flex-col gap-4 sm:col-span-2 md:col-span-1">
             <div className="w-12 h-12 rounded-2xl bg-accent/20 flex items-center justify-center text-accent-foreground">
               <UtensilsCrossed className="w-6 h-6" />
             </div>
@@ -74,7 +74,7 @@ export default function Dashboard() {
 
         {/* Top Cuisines Chart (Simple Bars) */}
         {dashboard.topCuisines && dashboard.topCuisines.length > 0 && (
-          <div className="glass rounded-3xl p-8">
+          <div className="glass-subtle rounded-3xl p-8">
             <h3 className="text-xl font-extrabold text-white drop-shadow-sm mb-6">Your Taste Composition</h3>
             <div className="flex flex-col gap-5">
               {dashboard.topCuisines.slice(0, 5).map((item, index) => {
