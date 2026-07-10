@@ -258,7 +258,7 @@ export default function Discover() {
         </Section>
 
         {/* Q3 — Cuisine (optional) */}
-        <Section step={3} title="Any cuisine in mind? — optional">
+        <Section step={3} title="Any cuisine in mind?">
           <div className="flex flex-wrap gap-2">
             {CUISINES.map((c) => {
               const active = cuisine === c;

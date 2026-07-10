@@ -39,7 +39,7 @@ type RecommendationBody = {
   userLng?: number | null;
 };
 
-async function makeRecommendation(userId: string, body: RecommendationBody) {
+async function buildCandidates(userId: string, body: RecommendationBody) {
   const userPrefs = await db
     .select()
     .from(preferencesTable)
@@ -133,25 +133,46 @@ async function makeRecommendation(userId: string, body: RecommendationBody) {
     );
   }
 
-  // ── Step 4: bail out if nothing survived all filters ─────────────────────
+  return { candidates, userPrefs };
+}
+
+async function makeRecommendation(userId: string, body: RecommendationBody) {
+  // ── Try with all preferences, then progressively relax soft constraints ──
+  // Order: full filters → drop dining occasion → drop dining occasion + vibe.
+  let relaxedBody = body;
+  let result = await buildCandidates(userId, relaxedBody);
+
+  if (result.candidates.length === 0 && body.diningOccasion) {
+    relaxedBody = { ...body, diningOccasion: null };
+    result = await buildCandidates(userId, relaxedBody);
+  }
+
+  if (result.candidates.length === 0 && body.atmosphere) {
+    relaxedBody = { ...relaxedBody, atmosphere: null };
+    result = await buildCandidates(userId, relaxedBody);
+  }
+
+  let { candidates, userPrefs } = result;
+
+  // ── Step 4: bail out if nothing survived even the relaxed filters ──────────
   if (candidates.length === 0) {
     const err = new Error("There is no restaurant that suits your needs!") as Error & { code: string };
     err.code = "NO_MATCH";
     throw err;
   }
 
-  // ── Step 4: sort by rating so AI sees the best options first ────────────
+  // ── Step 5: sort by rating so AI sees the best options first ──────────────
   candidates = [...candidates].sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
 
   const aiResult = await getAIRecommendation({
-    mood: body.mood,
-    maxBudget: body.maxBudget,
-    budget: body.budget,
-    distance: body.distance,
-    cuisine: body.cuisine,
-    atmosphere: body.atmosphere,
-    diningOccasion: body.diningOccasion,
-    diningPreference: body.diningPreference,
+    mood: relaxedBody.mood,
+    maxBudget: relaxedBody.maxBudget,
+    budget: relaxedBody.budget,
+    distance: relaxedBody.distance,
+    cuisine: relaxedBody.cuisine,
+    atmosphere: relaxedBody.atmosphere,
+    diningOccasion: relaxedBody.diningOccasion,
+    diningPreference: relaxedBody.diningPreference,
     userPreferences: userPrefs
       ? {
           isHalal: userPrefs.isHalal,
@@ -178,7 +199,7 @@ async function makeRecommendation(userId: string, body: RecommendationBody) {
       tags: r.tags,
       popularDishes: r.popularDishes,
     })),
-    excludeIds: body.excludeRestaurantIds,
+    excludeIds: relaxedBody.excludeRestaurantIds,
   });
 
   const restaurant = await db
