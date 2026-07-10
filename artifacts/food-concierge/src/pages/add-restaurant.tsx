@@ -140,10 +140,10 @@ function BadgeChip({
     <button
       type="button"
       onClick={onClick}
-      className={`px-4 py-2 rounded-full border-2 font-bold text-base transition-all duration-150 ${
+      className={`px-4 py-2 rounded-full border-2 font-extrabold text-base transition-all duration-150 ${
         selected
           ? "text-[hsl(220,45%,12%)] shadow-md"
-          : "border-white/30 text-white hover:border-white/50 hover:bg-white/10"
+          : "border-white/30 text-white/95 hover:border-white/50 hover:bg-white/10"
       }`}
       style={
         selected
@@ -206,10 +206,10 @@ function ImageUploadZone({
           <ImagePlus className="w-6 h-6 text-white/70" />
         </div>
         <div className="text-center">
-          <p className="text-white font-bold text-base">
+          <p className="text-white font-extrabold text-lg tracking-tight drop-shadow-sm">
             {dragging ? "Drop images here" : "Click or drag to upload photos"}
           </p>
-          <p className="text-white/70 text-sm font-medium mt-1">
+          <p className="text-white/80 text-base font-bold mt-1">
             JPEG, PNG, WebP · Up to 10 images
           </p>
         </div>
@@ -289,11 +289,11 @@ function TextField({
   error?: string;
 }) {
   const cls =
-    "w-full rounded-xl px-4 py-3 text-white placeholder:text-white/50 font-semibold text-base outline-none transition-all resize-none " +
+    "w-full rounded-xl px-4 py-3.5 text-white placeholder:text-white/60 font-bold text-lg outline-none transition-all resize-none " +
     "bg-white/10 border border-white/20 focus:border-yellow-400/60 focus:bg-white/15";
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-white text-base font-bold">
+      <label className="text-white text-lg font-extrabold tracking-tight drop-shadow-sm">
         {label} {required && <span className="text-yellow-400">*</span>}
       </label>
       {multiline ? (
@@ -567,7 +567,7 @@ export default function AddRestaurant() {
                 onValueChange={setPriceRange}
                 className="w-full"
               />
-              <div className="flex justify-between text-sm text-white/60 font-bold">
+              <div className="flex justify-between text-base text-white/80 font-bold">
                 <span>RM5</span>
                 <span>RM300</span>
               </div>
@@ -609,8 +609,8 @@ export default function AddRestaurant() {
                     {checked && <div className="w-2 h-2 bg-[hsl(220,45%,12%)] rounded-full" />}
                   </div>
                   <div>
-                    <div className="font-bold text-white text-base">{label}</div>
-                    <div className="text-sm text-white/70 font-medium mt-0.5">{description}</div>
+                    <div className="font-extrabold text-white text-lg tracking-tight drop-shadow-sm">{label}</div>
+                    <div className="text-base text-white/80 font-bold mt-0.5">{description}</div>
                   </div>
                 </button>
               ))}
@@ -626,7 +626,7 @@ export default function AddRestaurant() {
           <button
             type="submit"
             disabled={submitting || uploadState.isUploading}
-            className="btn-glass-cta w-full flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="btn-glass-cta w-full py-4 rounded-2xl flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {submitting ? (
               <>

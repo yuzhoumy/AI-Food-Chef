@@ -124,8 +124,8 @@ export default function SettingsPage() {
                       {checked && <div className="w-2 h-2 bg-white rounded-full" />}
                     </div>
                     <div>
-                      <div className="font-bold text-foreground">{label}</div>
-                      <div className="text-sm text-white/70">{description}</div>
+                      <div className="font-extrabold text-white text-lg tracking-tight drop-shadow-sm">{label}</div>
+                      <div className="text-base text-white/80 font-bold">{description}</div>
                     </div>
                   </button>
                 );
@@ -141,10 +141,10 @@ export default function SettingsPage() {
                   key={level}
                   type="button"
                   onClick={() => form.setValue("spiceLevel", level, { shouldDirty: true })}
-                  className={`px-5 py-2.5 rounded-full border-2 font-semibold text-sm capitalize transition-all ${
+                  className={`px-5 py-2.5 rounded-full border-2 font-bold text-base capitalize transition-all ${
                     spiceLevel === level
                       ? "border-primary bg-primary/10 text-foreground"
-                      : "border-white/30 text-white/80 hover:border-white/50 hover:bg-white/10"
+                      : "border-white/30 text-white/90 hover:border-white/50 hover:bg-white/10"
                   }`}
                 >
                   {level}
@@ -156,7 +156,7 @@ export default function SettingsPage() {
           {/* Allergies */}
           <SectionCard icon={AlertTriangle} title="Allergies">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-white/70">
+              <span className="text-base font-bold text-white/80">
                 {allergies.length === 0 ? "None selected" : `${allergies.length} selected`}
               </span>
             </div>
@@ -169,10 +169,10 @@ export default function SettingsPage() {
                     key={allergen}
                     type="button"
                     onClick={() => toggleAllergen(allergen)}
-                    className={`px-4 py-2 rounded-full border-2 font-semibold text-sm transition-all ${
+                    className={`px-4 py-2 rounded-full border-2 font-bold text-base transition-all ${
                       selected
                         ? "border-destructive bg-destructive/10 text-destructive"
-                        : "border-white/30 text-white/80 hover:border-white/50 hover:bg-white/10"
+                        : "border-white/30 text-white/90 hover:border-white/50 hover:bg-white/10"
                     }`}
                   >
                     {allergen}

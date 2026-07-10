@@ -17,7 +17,7 @@ export function SectionCard({ icon: Icon, title, children }: SectionCardProps) {
         boxShadow: "0 4px 32px rgba(0,0,0,0.12)",
       }}
     >
-      <h3 className="font-display text-xl text-white font-bold flex items-center gap-2.5">
+      <h3 className="font-display text-xl text-white font-extrabold tracking-tight drop-shadow-sm flex items-center gap-2.5">
         <Icon className="w-5 h-5 text-yellow-300 shrink-0" />
         {title}
       </h3>
