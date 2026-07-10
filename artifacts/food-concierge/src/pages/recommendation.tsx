@@ -23,7 +23,16 @@ export default function Recommendation() {
   if (noResult) {
     return (
       <Shell>
-        <div className="flex flex-col items-center justify-center gap-8 max-w-lg mx-auto py-16 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <div className="relative max-w-lg mx-auto py-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <button
+            onClick={() => window.history.back()}
+            className="w-11 h-11 rounded-full bg-black/30 text-white flex items-center justify-center backdrop-blur-md border border-white/40 hover:bg-black/45 transition-colors"
+            aria-label="Go back"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </button>
+        </div>
+        <div className="flex flex-col items-center justify-center gap-8 max-w-lg mx-auto pb-16 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
           {/* Icon */}
           <div
             className="w-24 h-24 rounded-full flex items-center justify-center shadow-xl"
@@ -69,6 +78,13 @@ export default function Recommendation() {
     return (
       <Shell>
         <div className="flex flex-col gap-6 animate-pulse">
+          <button
+            disabled
+            className="w-11 h-11 rounded-full bg-black/30 text-white flex items-center justify-center backdrop-blur-md border border-white/40"
+            aria-label="Go back"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </button>
           <Skeleton className="h-12 w-1/2 rounded-xl bg-white/20" />
           <Skeleton className="h-[400px] w-full rounded-3xl bg-white/20" />
         </div>
@@ -108,6 +124,13 @@ export default function Recommendation() {
   return (
     <Shell>
       <div className="flex flex-col gap-8 max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <button
+          onClick={() => window.history.back()}
+          className="w-11 h-11 rounded-full bg-black/30 text-white flex items-center justify-center backdrop-blur-md border border-white/40 hover:bg-black/45 transition-colors"
+          aria-label="Go back"
+        >
+          <ArrowLeft className="w-5 h-5" />
+        </button>
 
         {/* Match badge + title */}
         <div className="flex flex-col gap-2">

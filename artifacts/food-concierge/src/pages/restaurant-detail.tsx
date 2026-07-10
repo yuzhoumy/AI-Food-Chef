@@ -2,7 +2,7 @@ import { useParams } from "wouter";
 import { useGetRestaurant, useListFavorites, useAddFavorite, useRemoveFavorite } from "@workspace/api-client-react";
 import { Shell } from "@/components/shell";
 import { Skeleton } from "@/components/ui/skeleton";
-import { MapPin, Star, Clock, Heart, Navigation, Share, Info, ChefHat, CheckCircle2, Flame, Leaf, Utensils } from "lucide-react";
+import { MapPin, Star, Clock, Heart, Navigation, Share, Info, ChefHat, CheckCircle2, Flame, Leaf, Utensils, ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useQueryClient } from "@tanstack/react-query";
 import { getListFavoritesQueryKey } from "@workspace/api-client-react";
@@ -73,6 +73,13 @@ export default function RestaurantDetail() {
         {/* ── Hero Banner ─────────────────────────────────────────────────── */}
         <div className="relative h-[300px] md:h-[450px] w-full rounded-3xl overflow-hidden shadow-2xl group"
           style={{ border: "2.5px solid rgba(255,255,255,0.40)" }}>
+          <button
+            onClick={() => window.history.back()}
+            className="absolute top-4 left-4 z-20 w-11 h-11 rounded-full bg-black/30 text-white flex items-center justify-center backdrop-blur-md border border-white/40 hover:bg-black/45 transition-colors"
+            aria-label="Go back"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </button>
           {restaurant.photos && restaurant.photos.length > 0 ? (
             <img
               src={restaurant.photos[0]}
